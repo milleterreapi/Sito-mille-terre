@@ -1,0 +1,583 @@
+<!doctype html><html lang="fr"><head><meta charset="UTF-8" data-astro-cid-c1baselayout><meta name="viewport" content="width=device-width, initial-scale=1.0" data-astro-cid-c1baselayout><title data-astro-cid-c1baselayout>Apicoltura Mille Terre — Reines, essaims et paquets d'abeilles</title><meta name="description" content="Apicoltura Mille Terre élève et sélectionne des reines Anatolienne, Caucasienne, Athos, Carpatique, Ligustica × Cordovan, Ligustica, Buckfast VSH+ et Buckfast M142, des cellules royales, des essaims et des paquets d'abeilles." data-astro-cid-c1baselayout><link rel="canonical" href="https://apicolturamilleterre.com/fr/" data-astro-cid-c1baselayout><link rel="alternate" hreflang="it" href="https://apicolturamilleterre.com/" data-astro-cid-c1baselayout><link rel="alternate" hreflang="en" href="https://apicolturamilleterre.com/en/" data-astro-cid-c1baselayout><link rel="alternate" hreflang="fr" href="https://apicolturamilleterre.com/fr/" data-astro-cid-c1baselayout><link rel="alternate" hreflang="de" href="https://apicolturamilleterre.com/de/" data-astro-cid-c1baselayout><link rel="alternate" hreflang="x-default" href="https://apicolturamilleterre.com/" data-astro-cid-c1baselayout><meta property="og:type" content="website" data-astro-cid-c1baselayout><meta property="og:title" content="Apicoltura Mille Terre — Reines, essaims et paquets d'abeilles" data-astro-cid-c1baselayout><meta property="og:description" content="Apicoltura Mille Terre élève et sélectionne des reines Anatolienne, Caucasienne, Athos, Carpatique, Ligustica × Cordovan, Ligustica, Buckfast VSH+ et Buckfast M142, des cellules royales, des essaims et des paquets d'abeilles." data-astro-cid-c1baselayout><meta property="og:url" content="https://apicolturamilleterre.com/fr/" data-astro-cid-c1baselayout><meta property="og:locale" content="fr_FR" data-astro-cid-c1baselayout><meta property="og:image" content="https://apicolturamilleterre.com/images/hero-apiario.webp" data-astro-cid-c1baselayout><meta name="theme-color" content="#16283D" data-astro-cid-c1baselayout><link rel="icon" type="image/png" href="/favicon.png" data-astro-cid-c1baselayout><link rel="apple-touch-icon" href="/apple-touch-icon.png" data-astro-cid-c1baselayout><script>(function(){
+"use strict";
+document.documentElement.classList.add('js');
+
+})();</script><link rel="stylesheet" href="/_astro/site.css"></head><body><a class="skip-link" href="#main" data-astro-cid-c1baselayout>↓</a><header class="site-nav" data-astro-cid-c2nav><div class="nav-inner" data-astro-cid-c2nav><a class="brand" href="/fr/" aria-label="Apicoltura Mille Terre — Home" data-astro-cid-c2nav><img src="/images/logo.webp" alt="" width="44" height="44" data-astro-cid-c2nav><span class="brand-name" data-astro-cid-c2nav>Mille <span data-astro-cid-c2nav>Terre</span></span></a><a href="/fr/commander/" class="nav-cta nav-cta-compact" data-astro-cid-c2nav>Commander</a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" data-astro-cid-c2nav><span class="visually-hidden" data-astro-cid-c2nav>Menu</span><span class="bars" aria-hidden="true" data-astro-cid-c2nav><i data-astro-cid-c2nav></i><i data-astro-cid-c2nav></i><i data-astro-cid-c2nav></i></span></button><div class="menu" id="site-menu" data-astro-cid-c2nav><nav class="links" aria-label="Menu" data-astro-cid-c2nav><a href="/fr/qui-sommes-nous/" data-astro-cid-c2nav>Qui sommes-nous</a><a href="/fr/reines/" data-astro-cid-c2nav>Reines</a><a href="/fr/cellules-royales/" data-astro-cid-c2nav>Cellules royales</a><a href="/fr/essaims/" data-astro-cid-c2nav>Essaims</a><a href="/fr/paquets-abeilles/" data-astro-cid-c2nav>Paquets d'abeilles</a><a href="/fr/pollinisation/" data-astro-cid-c2nav>Pollinisation</a><a href="/fr/miel/" data-astro-cid-c2nav>Miel</a><a href="/fr/contact/" data-astro-cid-c2nav>Contact</a></nav><a href="/fr/commander/" class="nav-cta" data-astro-cid-c2nav>Commander</a><div class="lang-switch" role="group" aria-label="Langue" data-astro-cid-c3languageswitcher><a href="/" hreflang="it" lang="it" title="Italiano" data-astro-cid-c3languageswitcher>IT</a><a href="/en/" hreflang="en" lang="en" title="English" data-astro-cid-c3languageswitcher>EN</a><a href="/fr/" hreflang="fr" lang="fr" class="active" aria-current="true" title="Français" data-astro-cid-c3languageswitcher>FR</a><a href="/de/" hreflang="de" lang="de" title="Deutsch" data-astro-cid-c3languageswitcher>DE</a></div></div></div></header><script>(function(){
+"use strict";
+const header = document.querySelector('.site-nav');
+const toggle = document.querySelector('.menu-toggle');
+const setOpen = (open) => {
+    toggle?.setAttribute('aria-expanded', String(open));
+    header?.classList.toggle('is-open', open);
+};
+toggle?.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+// si chiude da sola: con Esc, toccando fuori o scegliendo una voce
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && header?.classList.contains('is-open')) {
+        setOpen(false);
+        toggle?.focus();
+    }
+});
+document.addEventListener('click', (e) => {
+    if (!header?.classList.contains('is-open'))
+        return;
+    if (!header.contains(e.target))
+        setOpen(false);
+});
+header?.querySelectorAll('.menu a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
+let ticking = false;
+const apply = () => { ticking = false; header?.classList.toggle('is-scrolled', window.scrollY > 8); };
+const onScroll = () => { if (!ticking) {
+    ticking = true;
+    requestAnimationFrame(apply);
+} };
+window.addEventListener('scroll', onScroll, { passive: true });
+apply();
+
+})();</script><main id="main" data-astro-cid-c1baselayout><section class="hero" data-astro-cid-c8home><svg class="hero-hex-deco" viewBox="0 0 340 380" aria-hidden="true" data-astro-cid-c8home><polygon points="170,4 336,98 336,282 170,376 4,282 4,98" fill="none" stroke="#F0B429" stroke-opacity="0.30" stroke-width="1.6" data-astro-cid-c8home></polygon><polygon points="170,60 291,130 291,270 170,340 49,270 49,130" fill="none" stroke="#2E9C93" stroke-opacity="0.22" stroke-width="1.2" data-astro-cid-c8home></polygon></svg><div class="wrap hero-grid" data-astro-cid-c8home><div class="hero-text" data-astro-cid-c8home><img class="hero-logo" src="/images/logo.webp" alt="Apicoltura Mille Terre" width="150" height="150" data-astro-cid-c8home><h1 data-astro-cid-c8home>Des solutions professionnelles <em data-astro-cid-c8home>pour votre rucher</em></h1><p class="lead" data-astro-cid-c8home>Au cœur du Salento, Apicoltura Mille Terre produit des essaims, des reines, des paquets d'abeilles et du miel de haute qualité, la solution idéale pour répondre aux meilleurs standards de votre exploitation.</p><div class="cta-row" data-astro-cid-c8home><a href="#prodotti" class="btn btn-primary" data-astro-cid-c8home>Voir le catalogue</a><a href="/fr/commander/" class="btn btn-ghost" data-astro-cid-c8home>Passer commande</a></div><ul class="hero-facts" style="--colonne:3" data-astro-cid-c8home><li data-astro-cid-c8home><b data-astro-cid-c8home>8 000</b><span data-astro-cid-c8home>reines produites chaque année</span></li><li data-astro-cid-c8home><b data-astro-cid-c8home>8</b><span data-astro-cid-c8home>génétiques élevées</span></li><li data-astro-cid-c8home><b data-astro-cid-c8home>100 %</b><span data-astro-cid-c8home>filles de mères sélectionnées</span></li></ul></div></div></section><section class="section home-about" aria-labelledby="home-about-title" data-astro-cid-c13homeabout><div class="wrap ha-grid reveal" data-astro-cid-c13homeabout><div class="hex-media hex-landscape ha-photo" data-astro-cid-c14heximage><img src="/images/apiario-home.webp" alt="Le rucher de Mille Terre au printemps, ruches colorées parmi les oliviers" loading="eager" fetchpriority="high" decoding="async" width="900" height="780" data-astro-cid-c14heximage><svg class="hex-outline" viewBox="0 0 231 200" preserveAspectRatio="none" aria-hidden="true" data-astro-cid-c14heximage><polygon points="58,2 173,2 229,100 173,198 58,198 2,100" fill="none" stroke="#16283D" stroke-opacity="0.18" stroke-width="3" data-astro-cid-c14heximage></polygon></svg></div><div class="ha-text" data-astro-cid-c13homeabout><span class="eyebrow" data-astro-cid-c13homeabout>Qui sommes-nous</span><h2 id="home-about-title" data-astro-cid-c13homeabout>Un élevage qui suit le rythme des saisons</h2><p data-astro-cid-c13homeabout>Apicoltura Mille Terre élève des reines, des essaims et des paquets d'abeilles dans le Salento, en Italie du Sud. Nous sélectionnons nos souches pour la douceur, la productivité et la résistance, et nous vous aidons à choisir la génétique la mieux adaptée à votre région.</p><a class="link-arrow" href="/fr/qui-sommes-nous/" data-astro-cid-c13homeabout>En savoir plus sur nous <span aria-hidden="true" data-astro-cid-c13homeabout>→</span></a></div></div></section><section class="highlight-band" aria-label="Mille Terre" data-astro-cid-c9highlightband><svg class="wave-edge wave-top" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true" data-astro-cid-c9highlightband><path d="M0,60 L0,32 C240,4 480,52 720,30 C960,8 1200,50 1440,26 L1440,60 Z" fill="var(--paper)" transform="rotate(180 720 30)" data-astro-cid-c9highlightband></path></svg><div class="marquee-mask" id="marquee-mask" tabindex="0" data-astro-cid-c9highlightband><div class="marquee" data-astro-cid-c9highlightband><ul class="marquee-track" data-astro-cid-c9highlightband><li class="highlight-item" data-astro-cid-c9highlightband><svg class="highlight-bee" viewBox="0 0 48 48" aria-hidden="true" data-astro-cid-c10beeicon><ellipse cx="24" cy="26" rx="9" ry="12" fill="none" stroke="#16283D" stroke-width="1.6" data-astro-cid-c10beeicon></ellipse><path d="M17 20 h14 M16 26 h16 M17 32 h14" stroke="#16283D" stroke-width="1.6" fill="none" data-astro-cid-c10beeicon></path><path d="M24 14 C20 8 12 8 10 13 C13 17 19 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M24 14 C28 8 36 8 38 13 C35 17 29 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M20 12 L19 6 M28 12 L29 6" stroke="#16283D" stroke-width="1.4" stroke-linecap="round" data-astro-cid-c10beeicon></path></svg><h3 data-astro-cid-c9highlightband>Mères certifiées</h3><p data-astro-cid-c9highlightband>Pedigree généalogique disponible sur demande.</p></li><li class="highlight-item" data-astro-cid-c9highlightband><svg class="highlight-bee" viewBox="0 0 48 48" aria-hidden="true" data-astro-cid-c10beeicon><ellipse cx="24" cy="26" rx="9" ry="12" fill="none" stroke="#16283D" stroke-width="1.6" data-astro-cid-c10beeicon></ellipse><path d="M17 20 h14 M16 26 h16 M17 32 h14" stroke="#16283D" stroke-width="1.6" fill="none" data-astro-cid-c10beeicon></path><path d="M24 14 C20 8 12 8 10 13 C13 17 19 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M24 14 C28 8 36 8 38 13 C35 17 29 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M20 12 L19 6 M28 12 L29 6" stroke="#16283D" stroke-width="1.4" stroke-linecap="round" data-astro-cid-c10beeicon></path></svg><h3 data-astro-cid-c9highlightband>Reines sélectionnées</h3><p data-astro-cid-c9highlightband>D'avril à août.</p></li><li class="highlight-item" data-astro-cid-c9highlightband><svg class="highlight-bee" viewBox="0 0 48 48" aria-hidden="true" data-astro-cid-c10beeicon><ellipse cx="24" cy="26" rx="9" ry="12" fill="none" stroke="#16283D" stroke-width="1.6" data-astro-cid-c10beeicon></ellipse><path d="M17 20 h14 M16 26 h16 M17 32 h14" stroke="#16283D" stroke-width="1.6" fill="none" data-astro-cid-c10beeicon></path><path d="M24 14 C20 8 12 8 10 13 C13 17 19 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M24 14 C28 8 36 8 38 13 C35 17 29 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M20 12 L19 6 M28 12 L29 6" stroke="#16283D" stroke-width="1.4" stroke-linecap="round" data-astro-cid-c10beeicon></path></svg><h3 data-astro-cid-c9highlightband>Essaims et cellules royales</h3><p data-astro-cid-c9highlightband>Du matériel vivant soigné et manipulé avec attention.</p></li><li class="highlight-item" data-astro-cid-c9highlightband><svg class="highlight-bee" viewBox="0 0 48 48" aria-hidden="true" data-astro-cid-c10beeicon><ellipse cx="24" cy="26" rx="9" ry="12" fill="none" stroke="#16283D" stroke-width="1.6" data-astro-cid-c10beeicon></ellipse><path d="M17 20 h14 M16 26 h16 M17 32 h14" stroke="#16283D" stroke-width="1.6" fill="none" data-astro-cid-c10beeicon></path><path d="M24 14 C20 8 12 8 10 13 C13 17 19 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M24 14 C28 8 36 8 38 13 C35 17 29 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M20 12 L19 6 M28 12 L29 6" stroke="#16283D" stroke-width="1.4" stroke-linecap="round" data-astro-cid-c10beeicon></path></svg><h3 data-astro-cid-c9highlightband>Disponibilité saisonnière</h3><p data-astro-cid-c9highlightband>Périodes et quantités varient selon la saison.</p></li><li class="highlight-item" data-astro-cid-c9highlightband><svg class="highlight-bee" viewBox="0 0 48 48" aria-hidden="true" data-astro-cid-c10beeicon><ellipse cx="24" cy="26" rx="9" ry="12" fill="none" stroke="#16283D" stroke-width="1.6" data-astro-cid-c10beeicon></ellipse><path d="M17 20 h14 M16 26 h16 M17 32 h14" stroke="#16283D" stroke-width="1.6" fill="none" data-astro-cid-c10beeicon></path><path d="M24 14 C20 8 12 8 10 13 C13 17 19 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M24 14 C28 8 36 8 38 13 C35 17 29 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M20 12 L19 6 M28 12 L29 6" stroke="#16283D" stroke-width="1.4" stroke-linecap="round" data-astro-cid-c10beeicon></path></svg><h3 data-astro-cid-c9highlightband>Mères certifiées</h3><p data-astro-cid-c9highlightband>Pedigree généalogique disponible sur demande.</p></li><li class="highlight-item" data-astro-cid-c9highlightband><svg class="highlight-bee" viewBox="0 0 48 48" aria-hidden="true" data-astro-cid-c10beeicon><ellipse cx="24" cy="26" rx="9" ry="12" fill="none" stroke="#16283D" stroke-width="1.6" data-astro-cid-c10beeicon></ellipse><path d="M17 20 h14 M16 26 h16 M17 32 h14" stroke="#16283D" stroke-width="1.6" fill="none" data-astro-cid-c10beeicon></path><path d="M24 14 C20 8 12 8 10 13 C13 17 19 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M24 14 C28 8 36 8 38 13 C35 17 29 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M20 12 L19 6 M28 12 L29 6" stroke="#16283D" stroke-width="1.4" stroke-linecap="round" data-astro-cid-c10beeicon></path></svg><h3 data-astro-cid-c9highlightband>Reines sélectionnées</h3><p data-astro-cid-c9highlightband>D'avril à août.</p></li><li class="highlight-item" data-astro-cid-c9highlightband><svg class="highlight-bee" viewBox="0 0 48 48" aria-hidden="true" data-astro-cid-c10beeicon><ellipse cx="24" cy="26" rx="9" ry="12" fill="none" stroke="#16283D" stroke-width="1.6" data-astro-cid-c10beeicon></ellipse><path d="M17 20 h14 M16 26 h16 M17 32 h14" stroke="#16283D" stroke-width="1.6" fill="none" data-astro-cid-c10beeicon></path><path d="M24 14 C20 8 12 8 10 13 C13 17 19 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M24 14 C28 8 36 8 38 13 C35 17 29 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M20 12 L19 6 M28 12 L29 6" stroke="#16283D" stroke-width="1.4" stroke-linecap="round" data-astro-cid-c10beeicon></path></svg><h3 data-astro-cid-c9highlightband>Essaims et cellules royales</h3><p data-astro-cid-c9highlightband>Du matériel vivant soigné et manipulé avec attention.</p></li><li class="highlight-item" data-astro-cid-c9highlightband><svg class="highlight-bee" viewBox="0 0 48 48" aria-hidden="true" data-astro-cid-c10beeicon><ellipse cx="24" cy="26" rx="9" ry="12" fill="none" stroke="#16283D" stroke-width="1.6" data-astro-cid-c10beeicon></ellipse><path d="M17 20 h14 M16 26 h16 M17 32 h14" stroke="#16283D" stroke-width="1.6" fill="none" data-astro-cid-c10beeicon></path><path d="M24 14 C20 8 12 8 10 13 C13 17 19 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M24 14 C28 8 36 8 38 13 C35 17 29 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M20 12 L19 6 M28 12 L29 6" stroke="#16283D" stroke-width="1.4" stroke-linecap="round" data-astro-cid-c10beeicon></path></svg><h3 data-astro-cid-c9highlightband>Disponibilité saisonnière</h3><p data-astro-cid-c9highlightband>Périodes et quantités varient selon la saison.</p></li></ul><ul class="marquee-track" aria-hidden="true" data-astro-cid-c9highlightband><li class="highlight-item" data-astro-cid-c9highlightband><svg class="highlight-bee" viewBox="0 0 48 48" aria-hidden="true" data-astro-cid-c10beeicon><ellipse cx="24" cy="26" rx="9" ry="12" fill="none" stroke="#16283D" stroke-width="1.6" data-astro-cid-c10beeicon></ellipse><path d="M17 20 h14 M16 26 h16 M17 32 h14" stroke="#16283D" stroke-width="1.6" fill="none" data-astro-cid-c10beeicon></path><path d="M24 14 C20 8 12 8 10 13 C13 17 19 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M24 14 C28 8 36 8 38 13 C35 17 29 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M20 12 L19 6 M28 12 L29 6" stroke="#16283D" stroke-width="1.4" stroke-linecap="round" data-astro-cid-c10beeicon></path></svg><h3 data-astro-cid-c9highlightband>Mères certifiées</h3><p data-astro-cid-c9highlightband>Pedigree généalogique disponible sur demande.</p></li><li class="highlight-item" data-astro-cid-c9highlightband><svg class="highlight-bee" viewBox="0 0 48 48" aria-hidden="true" data-astro-cid-c10beeicon><ellipse cx="24" cy="26" rx="9" ry="12" fill="none" stroke="#16283D" stroke-width="1.6" data-astro-cid-c10beeicon></ellipse><path d="M17 20 h14 M16 26 h16 M17 32 h14" stroke="#16283D" stroke-width="1.6" fill="none" data-astro-cid-c10beeicon></path><path d="M24 14 C20 8 12 8 10 13 C13 17 19 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M24 14 C28 8 36 8 38 13 C35 17 29 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M20 12 L19 6 M28 12 L29 6" stroke="#16283D" stroke-width="1.4" stroke-linecap="round" data-astro-cid-c10beeicon></path></svg><h3 data-astro-cid-c9highlightband>Reines sélectionnées</h3><p data-astro-cid-c9highlightband>D'avril à août.</p></li><li class="highlight-item" data-astro-cid-c9highlightband><svg class="highlight-bee" viewBox="0 0 48 48" aria-hidden="true" data-astro-cid-c10beeicon><ellipse cx="24" cy="26" rx="9" ry="12" fill="none" stroke="#16283D" stroke-width="1.6" data-astro-cid-c10beeicon></ellipse><path d="M17 20 h14 M16 26 h16 M17 32 h14" stroke="#16283D" stroke-width="1.6" fill="none" data-astro-cid-c10beeicon></path><path d="M24 14 C20 8 12 8 10 13 C13 17 19 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M24 14 C28 8 36 8 38 13 C35 17 29 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M20 12 L19 6 M28 12 L29 6" stroke="#16283D" stroke-width="1.4" stroke-linecap="round" data-astro-cid-c10beeicon></path></svg><h3 data-astro-cid-c9highlightband>Essaims et cellules royales</h3><p data-astro-cid-c9highlightband>Du matériel vivant soigné et manipulé avec attention.</p></li><li class="highlight-item" data-astro-cid-c9highlightband><svg class="highlight-bee" viewBox="0 0 48 48" aria-hidden="true" data-astro-cid-c10beeicon><ellipse cx="24" cy="26" rx="9" ry="12" fill="none" stroke="#16283D" stroke-width="1.6" data-astro-cid-c10beeicon></ellipse><path d="M17 20 h14 M16 26 h16 M17 32 h14" stroke="#16283D" stroke-width="1.6" fill="none" data-astro-cid-c10beeicon></path><path d="M24 14 C20 8 12 8 10 13 C13 17 19 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M24 14 C28 8 36 8 38 13 C35 17 29 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M20 12 L19 6 M28 12 L29 6" stroke="#16283D" stroke-width="1.4" stroke-linecap="round" data-astro-cid-c10beeicon></path></svg><h3 data-astro-cid-c9highlightband>Disponibilité saisonnière</h3><p data-astro-cid-c9highlightband>Périodes et quantités varient selon la saison.</p></li><li class="highlight-item" data-astro-cid-c9highlightband><svg class="highlight-bee" viewBox="0 0 48 48" aria-hidden="true" data-astro-cid-c10beeicon><ellipse cx="24" cy="26" rx="9" ry="12" fill="none" stroke="#16283D" stroke-width="1.6" data-astro-cid-c10beeicon></ellipse><path d="M17 20 h14 M16 26 h16 M17 32 h14" stroke="#16283D" stroke-width="1.6" fill="none" data-astro-cid-c10beeicon></path><path d="M24 14 C20 8 12 8 10 13 C13 17 19 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M24 14 C28 8 36 8 38 13 C35 17 29 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M20 12 L19 6 M28 12 L29 6" stroke="#16283D" stroke-width="1.4" stroke-linecap="round" data-astro-cid-c10beeicon></path></svg><h3 data-astro-cid-c9highlightband>Mères certifiées</h3><p data-astro-cid-c9highlightband>Pedigree généalogique disponible sur demande.</p></li><li class="highlight-item" data-astro-cid-c9highlightband><svg class="highlight-bee" viewBox="0 0 48 48" aria-hidden="true" data-astro-cid-c10beeicon><ellipse cx="24" cy="26" rx="9" ry="12" fill="none" stroke="#16283D" stroke-width="1.6" data-astro-cid-c10beeicon></ellipse><path d="M17 20 h14 M16 26 h16 M17 32 h14" stroke="#16283D" stroke-width="1.6" fill="none" data-astro-cid-c10beeicon></path><path d="M24 14 C20 8 12 8 10 13 C13 17 19 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M24 14 C28 8 36 8 38 13 C35 17 29 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M20 12 L19 6 M28 12 L29 6" stroke="#16283D" stroke-width="1.4" stroke-linecap="round" data-astro-cid-c10beeicon></path></svg><h3 data-astro-cid-c9highlightband>Reines sélectionnées</h3><p data-astro-cid-c9highlightband>D'avril à août.</p></li><li class="highlight-item" data-astro-cid-c9highlightband><svg class="highlight-bee" viewBox="0 0 48 48" aria-hidden="true" data-astro-cid-c10beeicon><ellipse cx="24" cy="26" rx="9" ry="12" fill="none" stroke="#16283D" stroke-width="1.6" data-astro-cid-c10beeicon></ellipse><path d="M17 20 h14 M16 26 h16 M17 32 h14" stroke="#16283D" stroke-width="1.6" fill="none" data-astro-cid-c10beeicon></path><path d="M24 14 C20 8 12 8 10 13 C13 17 19 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M24 14 C28 8 36 8 38 13 C35 17 29 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M20 12 L19 6 M28 12 L29 6" stroke="#16283D" stroke-width="1.4" stroke-linecap="round" data-astro-cid-c10beeicon></path></svg><h3 data-astro-cid-c9highlightband>Essaims et cellules royales</h3><p data-astro-cid-c9highlightband>Du matériel vivant soigné et manipulé avec attention.</p></li><li class="highlight-item" data-astro-cid-c9highlightband><svg class="highlight-bee" viewBox="0 0 48 48" aria-hidden="true" data-astro-cid-c10beeicon><ellipse cx="24" cy="26" rx="9" ry="12" fill="none" stroke="#16283D" stroke-width="1.6" data-astro-cid-c10beeicon></ellipse><path d="M17 20 h14 M16 26 h16 M17 32 h14" stroke="#16283D" stroke-width="1.6" fill="none" data-astro-cid-c10beeicon></path><path d="M24 14 C20 8 12 8 10 13 C13 17 19 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M24 14 C28 8 36 8 38 13 C35 17 29 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M20 12 L19 6 M28 12 L29 6" stroke="#16283D" stroke-width="1.4" stroke-linecap="round" data-astro-cid-c10beeicon></path></svg><h3 data-astro-cid-c9highlightband>Disponibilité saisonnière</h3><p data-astro-cid-c9highlightband>Périodes et quantités varient selon la saison.</p></li></ul><ul class="marquee-track" aria-hidden="true" data-astro-cid-c9highlightband><li class="highlight-item" data-astro-cid-c9highlightband><svg class="highlight-bee" viewBox="0 0 48 48" aria-hidden="true" data-astro-cid-c10beeicon><ellipse cx="24" cy="26" rx="9" ry="12" fill="none" stroke="#16283D" stroke-width="1.6" data-astro-cid-c10beeicon></ellipse><path d="M17 20 h14 M16 26 h16 M17 32 h14" stroke="#16283D" stroke-width="1.6" fill="none" data-astro-cid-c10beeicon></path><path d="M24 14 C20 8 12 8 10 13 C13 17 19 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M24 14 C28 8 36 8 38 13 C35 17 29 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M20 12 L19 6 M28 12 L29 6" stroke="#16283D" stroke-width="1.4" stroke-linecap="round" data-astro-cid-c10beeicon></path></svg><h3 data-astro-cid-c9highlightband>Mères certifiées</h3><p data-astro-cid-c9highlightband>Pedigree généalogique disponible sur demande.</p></li><li class="highlight-item" data-astro-cid-c9highlightband><svg class="highlight-bee" viewBox="0 0 48 48" aria-hidden="true" data-astro-cid-c10beeicon><ellipse cx="24" cy="26" rx="9" ry="12" fill="none" stroke="#16283D" stroke-width="1.6" data-astro-cid-c10beeicon></ellipse><path d="M17 20 h14 M16 26 h16 M17 32 h14" stroke="#16283D" stroke-width="1.6" fill="none" data-astro-cid-c10beeicon></path><path d="M24 14 C20 8 12 8 10 13 C13 17 19 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M24 14 C28 8 36 8 38 13 C35 17 29 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M20 12 L19 6 M28 12 L29 6" stroke="#16283D" stroke-width="1.4" stroke-linecap="round" data-astro-cid-c10beeicon></path></svg><h3 data-astro-cid-c9highlightband>Reines sélectionnées</h3><p data-astro-cid-c9highlightband>D'avril à août.</p></li><li class="highlight-item" data-astro-cid-c9highlightband><svg class="highlight-bee" viewBox="0 0 48 48" aria-hidden="true" data-astro-cid-c10beeicon><ellipse cx="24" cy="26" rx="9" ry="12" fill="none" stroke="#16283D" stroke-width="1.6" data-astro-cid-c10beeicon></ellipse><path d="M17 20 h14 M16 26 h16 M17 32 h14" stroke="#16283D" stroke-width="1.6" fill="none" data-astro-cid-c10beeicon></path><path d="M24 14 C20 8 12 8 10 13 C13 17 19 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M24 14 C28 8 36 8 38 13 C35 17 29 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M20 12 L19 6 M28 12 L29 6" stroke="#16283D" stroke-width="1.4" stroke-linecap="round" data-astro-cid-c10beeicon></path></svg><h3 data-astro-cid-c9highlightband>Essaims et cellules royales</h3><p data-astro-cid-c9highlightband>Du matériel vivant soigné et manipulé avec attention.</p></li><li class="highlight-item" data-astro-cid-c9highlightband><svg class="highlight-bee" viewBox="0 0 48 48" aria-hidden="true" data-astro-cid-c10beeicon><ellipse cx="24" cy="26" rx="9" ry="12" fill="none" stroke="#16283D" stroke-width="1.6" data-astro-cid-c10beeicon></ellipse><path d="M17 20 h14 M16 26 h16 M17 32 h14" stroke="#16283D" stroke-width="1.6" fill="none" data-astro-cid-c10beeicon></path><path d="M24 14 C20 8 12 8 10 13 C13 17 19 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M24 14 C28 8 36 8 38 13 C35 17 29 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M20 12 L19 6 M28 12 L29 6" stroke="#16283D" stroke-width="1.4" stroke-linecap="round" data-astro-cid-c10beeicon></path></svg><h3 data-astro-cid-c9highlightband>Disponibilité saisonnière</h3><p data-astro-cid-c9highlightband>Périodes et quantités varient selon la saison.</p></li><li class="highlight-item" data-astro-cid-c9highlightband><svg class="highlight-bee" viewBox="0 0 48 48" aria-hidden="true" data-astro-cid-c10beeicon><ellipse cx="24" cy="26" rx="9" ry="12" fill="none" stroke="#16283D" stroke-width="1.6" data-astro-cid-c10beeicon></ellipse><path d="M17 20 h14 M16 26 h16 M17 32 h14" stroke="#16283D" stroke-width="1.6" fill="none" data-astro-cid-c10beeicon></path><path d="M24 14 C20 8 12 8 10 13 C13 17 19 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M24 14 C28 8 36 8 38 13 C35 17 29 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M20 12 L19 6 M28 12 L29 6" stroke="#16283D" stroke-width="1.4" stroke-linecap="round" data-astro-cid-c10beeicon></path></svg><h3 data-astro-cid-c9highlightband>Mères certifiées</h3><p data-astro-cid-c9highlightband>Pedigree généalogique disponible sur demande.</p></li><li class="highlight-item" data-astro-cid-c9highlightband><svg class="highlight-bee" viewBox="0 0 48 48" aria-hidden="true" data-astro-cid-c10beeicon><ellipse cx="24" cy="26" rx="9" ry="12" fill="none" stroke="#16283D" stroke-width="1.6" data-astro-cid-c10beeicon></ellipse><path d="M17 20 h14 M16 26 h16 M17 32 h14" stroke="#16283D" stroke-width="1.6" fill="none" data-astro-cid-c10beeicon></path><path d="M24 14 C20 8 12 8 10 13 C13 17 19 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M24 14 C28 8 36 8 38 13 C35 17 29 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M20 12 L19 6 M28 12 L29 6" stroke="#16283D" stroke-width="1.4" stroke-linecap="round" data-astro-cid-c10beeicon></path></svg><h3 data-astro-cid-c9highlightband>Reines sélectionnées</h3><p data-astro-cid-c9highlightband>D'avril à août.</p></li><li class="highlight-item" data-astro-cid-c9highlightband><svg class="highlight-bee" viewBox="0 0 48 48" aria-hidden="true" data-astro-cid-c10beeicon><ellipse cx="24" cy="26" rx="9" ry="12" fill="none" stroke="#16283D" stroke-width="1.6" data-astro-cid-c10beeicon></ellipse><path d="M17 20 h14 M16 26 h16 M17 32 h14" stroke="#16283D" stroke-width="1.6" fill="none" data-astro-cid-c10beeicon></path><path d="M24 14 C20 8 12 8 10 13 C13 17 19 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M24 14 C28 8 36 8 38 13 C35 17 29 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M20 12 L19 6 M28 12 L29 6" stroke="#16283D" stroke-width="1.4" stroke-linecap="round" data-astro-cid-c10beeicon></path></svg><h3 data-astro-cid-c9highlightband>Essaims et cellules royales</h3><p data-astro-cid-c9highlightband>Du matériel vivant soigné et manipulé avec attention.</p></li><li class="highlight-item" data-astro-cid-c9highlightband><svg class="highlight-bee" viewBox="0 0 48 48" aria-hidden="true" data-astro-cid-c10beeicon><ellipse cx="24" cy="26" rx="9" ry="12" fill="none" stroke="#16283D" stroke-width="1.6" data-astro-cid-c10beeicon></ellipse><path d="M17 20 h14 M16 26 h16 M17 32 h14" stroke="#16283D" stroke-width="1.6" fill="none" data-astro-cid-c10beeicon></path><path d="M24 14 C20 8 12 8 10 13 C13 17 19 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M24 14 C28 8 36 8 38 13 C35 17 29 17 24 14 Z" fill="none" stroke="#16283D" stroke-width="1.4" data-astro-cid-c10beeicon></path><path d="M20 12 L19 6 M28 12 L29 6" stroke="#16283D" stroke-width="1.4" stroke-linecap="round" data-astro-cid-c10beeicon></path></svg><h3 data-astro-cid-c9highlightband>Disponibilité saisonnière</h3><p data-astro-cid-c9highlightband>Périodes et quantités varient selon la saison.</p></li></ul></div></div><svg class="wave-edge wave-bottom" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true" data-astro-cid-c9highlightband><path d="M0,0 L0,28 C240,54 480,10 720,32 C960,54 1200,6 1440,30 L1440,0 Z" fill="var(--paper)" transform="rotate(180 720 30)" data-astro-cid-c9highlightband></path></svg></section><script>(function(){
+"use strict";
+// Nastro delle frasi: scorre da solo, ma si può trascinare con il dito,
+// con il mouse, con la rotella o con le frecce. Dopo un attimo riparte.
+const mask = document.querySelector('#marquee-mask');
+const pista = mask?.querySelector('.marquee-track');
+const fermo = window.matchMedia('(prefers-reduced-motion: reduce)');
+if (mask && pista && !fermo.matches) {
+    const VELOCITA = 40; // pixel al secondo, come l'animazione di prima
+    const ATTESA = 2200; // quanto aspetta prima di ripartire da solo
+    let giro = 0; // larghezza di una copia della pista
+    let ripartiA = 0;
+    let ultimo = 0;
+    let resto = 0; // i decimali avanzati: scrollLeft accetta solo interi
+    let scorsoPrec = -1; // per capire se lo slancio del dito si è esaurito
+    let attivo = true;
+    const misura = () => { giro = pista.scrollWidth; if (giro)
+        mask.scrollLeft = giro; };
+    misura();
+    window.addEventListener('resize', misura, { passive: true });
+    // Il nastro è doppio: quando esce da una copia rientra nell'altra, senza salti
+    // visibili. Restituisce di quanto ha spostato, perché durante un trascinamento
+    // va corretto anche il punto di partenza, altrimenti il dito e il nastro litigano.
+    const avvolgi = () => {
+        if (!giro)
+            return 0;
+        if (mask.scrollLeft >= giro * 1.5) {
+            mask.scrollLeft -= giro;
+            return -giro;
+        }
+        if (mask.scrollLeft <= giro * 0.5) {
+            mask.scrollLeft += giro;
+            return giro;
+        }
+        return 0;
+    };
+    const pausa = () => { attivo = false; ripartiA = performance.now() + ATTESA; };
+    const passo = (ora) => {
+        const dt = Math.min((ora - ultimo) / 1000, 0.05);
+        ultimo = ora;
+        if (!attivo && ora >= ripartiA)
+            attivo = true;
+        // il trascinamento col mouse si applica una volta per fotogramma: il mouse manda
+        // molti più eventi di quanti ne servano, e riscrivere lo scorrimento a ogni evento
+        // è proprio quello che faceva sembrare il nastro impuntato
+        if (giu && daApplicare !== null) {
+            mask.scrollLeft = partenzaScroll - daApplicare;
+            daApplicare = null;
+            partenzaScroll += avvolgi();
+        }
+        else if (!giu && attivo && !mask.matches(':hover')) {
+            resto += VELOCITA * dt;
+            const passi = Math.trunc(resto);
+            if (passi) {
+                resto -= passi;
+                mask.scrollLeft -= passi;
+            }
+        }
+        // durante un trascinamento col dito, e finché dura lo slancio, lo spostamento
+        // lo fa il browser: mettere mano allo scorrimento lì in mezzo lo fa sobbalzare
+        const ora2 = mask.scrollLeft;
+        const fermoDaUnPo = ora2 === scorsoPrec;
+        scorsoPrec = ora2;
+        if (!tocco && (giu || attivo || fermoDaUnPo))
+            avvolgi();
+        requestAnimationFrame(passo);
+    };
+    requestAnimationFrame((t) => { ultimo = t; passo(t); });
+    // trascinamento con mouse o dito
+    let giu = false, tocco = false, partenzaX = 0, partenzaScroll = 0;
+    let daApplicare = null;
+    mask.addEventListener('pointerdown', (e) => {
+        if (e.pointerType === 'mouse' && e.button !== 0)
+            return;
+        tocco = e.pointerType !== 'mouse';
+        partenzaX = e.clientX;
+        partenzaScroll = mask.scrollLeft;
+        daApplicare = null;
+        pausa();
+        if (!tocco) {
+            giu = true;
+            mask.classList.add('is-dragging');
+            mask.setPointerCapture(e.pointerId);
+        }
+    });
+    mask.addEventListener('pointermove', (e) => {
+        if (giu)
+            daApplicare = e.clientX - partenzaX;
+        else if (tocco)
+            pausa();
+    }, { passive: true });
+    const molla = () => {
+        giu = false;
+        tocco = false;
+        daApplicare = null;
+        mask.classList.remove('is-dragging');
+        pausa();
+    };
+    mask.addEventListener('pointerup', molla);
+    mask.addEventListener('pointercancel', molla);
+    // rotella e trackpad
+    mask.addEventListener('wheel', pausa, { passive: true });
+    mask.addEventListener('keydown', (e) => {
+        if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight')
+            return;
+        e.preventDefault();
+        mask.scrollLeft += e.key === 'ArrowRight' ? 160 : -160;
+        avvolgi();
+        pausa();
+    });
+}
+
+})();</script><section class="category-section" id="prodotti" data-astro-cid-c11categorygrid><div class="wrap" data-astro-cid-c11categorygrid><div class="section-head category-head reveal" data-astro-cid-c11categorygrid><p class="section-label" data-astro-cid-c11categorygrid>Ce que nous produisons</p><h2 class="section-title" data-astro-cid-c11categorygrid>Choisissez le produit qu’il vous faut</h2></div><div class="category-grid" data-astro-cid-c11categorygrid><a class="category-card reveal" href="/fr/reines/" style="--reveal-delay:0ms" data-astro-cid-c11categorygrid><div class="cat-icon category-hex" data-astro-cid-c12categoryicon><svg viewBox="0 0 200 225" role="img" aria-hidden="true" data-astro-cid-c12categoryicon><polygon points="100,2 198,56 198,169 100,223 2,169 2,56" fill="rgba(240, 180, 41, 0.10)" data-astro-cid-c12categoryicon></polygon><g class="art" data-astro-cid-c12categoryicon><g transform="translate(0 7)" data-astro-cid-c12categoryicon><g stroke="#16283D" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" fill="none" data-astro-cid-c12categoryicon><path d="M88 76 L73 64 L64 64" data-astro-cid-c12categoryicon></path><path d="M86 86 L66 84 L57 89" data-astro-cid-c12categoryicon></path><path d="M87 95 L69 106 L63 118" data-astro-cid-c12categoryicon></path><path d="M112 76 L127 64 L136 64" data-astro-cid-c12categoryicon></path><path d="M114 86 L134 84 L143 89" data-astro-cid-c12categoryicon></path><path d="M113 95 L131 106 L137 118" data-astro-cid-c12categoryicon></path></g><path d="M100 94 C114 94 121 110 120 130 C119 151 111 180 100 180 C89 180 81 151 80 130 C79 110 86 94 100 94 Z" fill="#fff" stroke="#16283D" stroke-width="3.4" stroke-linejoin="round" data-astro-cid-c12categoryicon></path><g stroke="#16283D" stroke-width="2.6" fill="none" stroke-linecap="round" data-astro-cid-c12categoryicon><path d="M81 114 C89 119 111 119 119 114" data-astro-cid-c12categoryicon></path><path d="M81 131 C89 136 111 136 119 131" data-astro-cid-c12categoryicon></path><path d="M84 148 C91 152 109 152 116 148" data-astro-cid-c12categoryicon></path><path d="M89 164 C93 167 107 167 111 164" data-astro-cid-c12categoryicon></path></g><g fill="rgba(46, 156, 147, 0.20)" stroke="#16283D" stroke-width="2.6" stroke-linejoin="round" data-astro-cid-c12categoryicon><path d="M93 100 C84 108 74 123 70 136 C68 143 73 146 79 140 C87 132 93 119 95 108 Z" data-astro-cid-c12categoryicon></path><path d="M107 100 C116 108 126 123 130 136 C132 143 127 146 121 140 C113 132 107 119 105 108 Z" data-astro-cid-c12categoryicon></path><path d="M94 88 C78 94 62 118 55 143 C53 151 58 155 65 149 C82 136 94 114 96 100 Z" data-astro-cid-c12categoryicon></path><path d="M106 88 C122 94 138 118 145 143 C147 151 142 155 135 149 C118 136 106 114 104 100 Z" data-astro-cid-c12categoryicon></path></g><g stroke="#16283D" stroke-width="1.4" fill="none" opacity="0.5" stroke-linecap="round" data-astro-cid-c12categoryicon><path d="M91 94 C80 104 69 124 63 142" data-astro-cid-c12categoryicon></path><path d="M109 94 C120 104 131 124 137 142" data-astro-cid-c12categoryicon></path></g><ellipse cx="100" cy="84" rx="17" ry="14" fill="#fff" stroke="#16283D" stroke-width="3.4" data-astro-cid-c12categoryicon></ellipse><circle cx="100" cy="82" r="6.4" fill="#F0B429" data-astro-cid-c12categoryicon></circle><g stroke="#16283D" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-c12categoryicon><path d="M93 48 L85 36 L74 32" data-astro-cid-c12categoryicon></path><path d="M107 48 L115 36 L126 32" data-astro-cid-c12categoryicon></path></g><path d="M100 42 C110 42 116 49 116 58 C116 66 109 71 100 71 C91 71 84 66 84 58 C84 49 90 42 100 42 Z" fill="#fff" stroke="#16283D" stroke-width="3.4" stroke-linejoin="round" data-astro-cid-c12categoryicon></path><ellipse cx="89" cy="56" rx="4.4" ry="8" transform="rotate(-10 89 56)" fill="#16283D" data-astro-cid-c12categoryicon></ellipse><ellipse cx="111" cy="56" rx="4.4" ry="8" transform="rotate(10 111 56)" fill="#16283D" data-astro-cid-c12categoryicon></ellipse></g></g><polygon points="100,2 198,56 198,169 100,223 2,169 2,56" fill="none" stroke="#16283D" stroke-opacity="0.18" stroke-width="3" data-astro-cid-c12categoryicon></polygon></svg></div><h3 data-astro-cid-c11categorygrid>Reines</h3><p data-astro-cid-c11categorygrid>Huit génétiques sélectionnées</p></a><a class="category-card reveal" href="/fr/cellules-royales/" style="--reveal-delay:80ms" data-astro-cid-c11categorygrid><div class="cat-icon category-hex" data-astro-cid-c12categoryicon><svg viewBox="0 0 200 225" role="img" aria-hidden="true" data-astro-cid-c12categoryicon><polygon points="100,2 198,56 198,169 100,223 2,169 2,56" fill="rgba(240, 180, 41, 0.10)" data-astro-cid-c12categoryicon></polygon><g class="art" data-astro-cid-c12categoryicon><g transform="translate(0 10)" data-astro-cid-c12categoryicon><rect x="20" y="48" width="160" height="16" rx="3" fill="#fff" stroke="#16283D" stroke-width="3.4" data-astro-cid-c12categoryicon></rect><path d="M28 56 L172 56" stroke="#16283D" stroke-width="1.6" opacity="0.35" stroke-linecap="round" data-astro-cid-c12categoryicon></path><g data-astro-cid-c12categoryicon><rect x="39" y="64" width="36" height="21" rx="3" fill="#fff" stroke="#16283D" stroke-width="3.4" data-astro-cid-c12categoryicon></rect><path d="M39 73 L75 73" stroke="#16283D" stroke-width="2.2" stroke-linecap="round" data-astro-cid-c12categoryicon></path><path d="M42 85 C40 100 41 116 44 128
+                    C46 138 50 149 53 155 C55 159 59 159 61 155
+                    C64 149 68 138 70 128 C73 116 74 100 72 85 Z" fill="#fff" stroke="#16283D" stroke-width="3.4" stroke-linejoin="round" data-astro-cid-c12categoryicon></path><g stroke="#16283D" stroke-width="2.2" fill="none" stroke-linecap="round" opacity="0.45" data-astro-cid-c12categoryicon><path d="M46 104 C47 122 50 141 53 152" data-astro-cid-c12categoryicon></path><path d="M57 104 L57 153" data-astro-cid-c12categoryicon></path><path d="M68 104 C67 122 64 141 61 152" data-astro-cid-c12categoryicon></path></g></g><g data-astro-cid-c12categoryicon><rect x="82" y="64" width="36" height="21" rx="3" fill="#fff" stroke="#16283D" stroke-width="3.4" data-astro-cid-c12categoryicon></rect><path d="M82 73 L118 73" stroke="#16283D" stroke-width="2.2" stroke-linecap="round" data-astro-cid-c12categoryicon></path><path d="M85 85 C83 100 84 116 87 128
+                    C89 138 93 149 96 155 C98 159 102 159 104 155
+                    C107 149 111 138 113 128 C116 116 117 100 115 85 Z" fill="#F0B429" stroke="#16283D" stroke-width="3.4" stroke-linejoin="round" data-astro-cid-c12categoryicon></path><g stroke="#16283D" stroke-width="2.2" fill="none" stroke-linecap="round" opacity="0.45" data-astro-cid-c12categoryicon><path d="M89 104 C90 122 93 141 96 152" data-astro-cid-c12categoryicon></path><path d="M100 104 L100 153" data-astro-cid-c12categoryicon></path><path d="M111 104 C110 122 107 141 104 152" data-astro-cid-c12categoryicon></path></g></g><g data-astro-cid-c12categoryicon><rect x="125" y="64" width="36" height="21" rx="3" fill="#fff" stroke="#16283D" stroke-width="3.4" data-astro-cid-c12categoryicon></rect><path d="M125 73 L161 73" stroke="#16283D" stroke-width="2.2" stroke-linecap="round" data-astro-cid-c12categoryicon></path><path d="M128 85 C126 100 127 116 130 128
+                    C132 138 136 149 139 155 C141 159 145 159 147 155
+                    C150 149 154 138 156 128 C159 116 160 100 158 85 Z" fill="#fff" stroke="#16283D" stroke-width="3.4" stroke-linejoin="round" data-astro-cid-c12categoryicon></path><g stroke="#16283D" stroke-width="2.2" fill="none" stroke-linecap="round" opacity="0.45" data-astro-cid-c12categoryicon><path d="M132 104 C133 122 136 141 139 152" data-astro-cid-c12categoryicon></path><path d="M143 104 L143 153" data-astro-cid-c12categoryicon></path><path d="M154 104 C153 122 150 141 147 152" data-astro-cid-c12categoryicon></path></g></g></g></g><polygon points="100,2 198,56 198,169 100,223 2,169 2,56" fill="none" stroke="#16283D" stroke-opacity="0.18" stroke-width="3" data-astro-cid-c12categoryicon></polygon></svg></div><h3 data-astro-cid-c11categorygrid>Cellules royales</h3><p data-astro-cid-c11categorygrid>Pour élever votre propre reine</p></a><a class="category-card reveal" href="/fr/essaims/" style="--reveal-delay:160ms" data-astro-cid-c11categorygrid><div class="cat-icon category-hex" data-astro-cid-c12categoryicon><svg viewBox="0 0 200 225" role="img" aria-hidden="true" data-astro-cid-c12categoryicon><polygon points="100,2 198,56 198,169 100,223 2,169 2,56" fill="rgba(240, 180, 41, 0.10)" data-astro-cid-c12categoryicon></polygon><g class="art" data-astro-cid-c12categoryicon><g transform="translate(0 -2)" data-astro-cid-c12categoryicon><g transform="rotate(-16 52 64)" data-astro-cid-c12categoryicon><ellipse cx="49" cy="59" rx="7" ry="4" fill="rgba(46, 156, 147, 0.25)" stroke="#16283D" stroke-width="1.8" data-astro-cid-c12categoryicon></ellipse><ellipse cx="56" cy="59" rx="7" ry="4" fill="rgba(46, 156, 147, 0.25)" stroke="#16283D" stroke-width="1.8" data-astro-cid-c12categoryicon></ellipse><ellipse cx="52" cy="66" rx="9" ry="5.5" fill="#F0B429" stroke="#16283D" stroke-width="2.2" data-astro-cid-c12categoryicon></ellipse><path d="M49 61.4 L49 70.6" stroke="#16283D" stroke-width="1.8" stroke-linecap="round" data-astro-cid-c12categoryicon></path><path d="M54 61 L54 71" stroke="#16283D" stroke-width="1.8" stroke-linecap="round" data-astro-cid-c12categoryicon></path></g><g transform="rotate(12 150 78)" data-astro-cid-c12categoryicon><ellipse cx="147" cy="73" rx="7" ry="4" fill="rgba(46, 156, 147, 0.25)" stroke="#16283D" stroke-width="1.8" data-astro-cid-c12categoryicon></ellipse><ellipse cx="154" cy="73" rx="7" ry="4" fill="rgba(46, 156, 147, 0.25)" stroke="#16283D" stroke-width="1.8" data-astro-cid-c12categoryicon></ellipse><ellipse cx="150" cy="80" rx="9" ry="5.5" fill="#F0B429" stroke="#16283D" stroke-width="2.2" data-astro-cid-c12categoryicon></ellipse><path d="M147 75.4 L147 84.6" stroke="#16283D" stroke-width="1.8" stroke-linecap="round" data-astro-cid-c12categoryicon></path><path d="M152 75 L152 85" stroke="#16283D" stroke-width="1.8" stroke-linecap="round" data-astro-cid-c12categoryicon></path></g><polygon points="34,118 58,92 166,92 142,118" fill="#fff" stroke="#16283D" stroke-width="3.4" stroke-linejoin="round" data-astro-cid-c12categoryicon></polygon><g stroke="#16283D" stroke-width="2.6" stroke-linecap="round" data-astro-cid-c12categoryicon><path d="M54 118 L78 92" data-astro-cid-c12categoryicon></path><path d="M76 118 L100 92" data-astro-cid-c12categoryicon></path><path d="M98 118 L122 92" data-astro-cid-c12categoryicon></path><path d="M120 118 L144 92" data-astro-cid-c12categoryicon></path></g><polygon points="142,118 166,92 166,150 142,176" fill="rgba(46, 156, 147, 0.14)" stroke="#16283D" stroke-width="3.4" stroke-linejoin="round" data-astro-cid-c12categoryicon></polygon><rect x="34" y="118" width="108" height="58" fill="#fff" stroke="#16283D" stroke-width="3.4" stroke-linejoin="round" data-astro-cid-c12categoryicon></rect><rect x="70" y="159" width="36" height="10" rx="2" fill="#F0B429" stroke="#16283D" stroke-width="2.6" data-astro-cid-c12categoryicon></rect></g></g><polygon points="100,2 198,56 198,169 100,223 2,169 2,56" fill="none" stroke="#16283D" stroke-opacity="0.18" stroke-width="3" data-astro-cid-c12categoryicon></polygon></svg></div><h3 data-astro-cid-c11categorygrid>Essaims</h3><p data-astro-cid-c11categorygrid>Des colonies déjà lancées</p></a><a class="category-card reveal" href="/fr/paquets-abeilles/" style="--reveal-delay:240ms" data-astro-cid-c11categorygrid><div class="cat-icon category-hex" data-astro-cid-c12categoryicon><svg viewBox="0 0 200 225" role="img" aria-hidden="true" data-astro-cid-c12categoryicon><polygon points="100,2 198,56 198,169 100,223 2,169 2,56" fill="rgba(240, 180, 41, 0.10)" data-astro-cid-c12categoryicon></polygon><g class="art" data-astro-cid-c12categoryicon><g transform="translate(0 -13)" data-astro-cid-c12categoryicon><ellipse cx="124" cy="78" rx="26" ry="9" fill="rgba(46, 156, 147, 0.22)" stroke="#16283D" stroke-width="3" data-astro-cid-c12categoryicon></ellipse><ellipse cx="124" cy="78" rx="14" ry="4.6" fill="none" stroke="#16283D" stroke-width="2.2" data-astro-cid-c12categoryicon></ellipse><rect x="32" y="84" width="136" height="15" rx="2" fill="#fff" stroke="#16283D" stroke-width="3.4" stroke-linejoin="round" data-astro-cid-c12categoryicon></rect><rect x="38" y="99" width="124" height="69" fill="#fff" stroke="#16283D" stroke-width="3.4" stroke-linejoin="round" data-astro-cid-c12categoryicon></rect><g stroke="#16283D" stroke-width="1.5" opacity="0.38" data-astro-cid-c12categoryicon><path d="M52 99 L52 168" data-astro-cid-c12categoryicon></path><path d="M64 99 L64 168" data-astro-cid-c12categoryicon></path><path d="M76 99 L76 168" data-astro-cid-c12categoryicon></path><path d="M86 99 L86 168" data-astro-cid-c12categoryicon></path><path d="M114 99 L114 168" data-astro-cid-c12categoryicon></path><path d="M124 99 L124 168" data-astro-cid-c12categoryicon></path><path d="M136 99 L136 168" data-astro-cid-c12categoryicon></path><path d="M148 99 L148 168" data-astro-cid-c12categoryicon></path><path d="M38 110 L162 110" data-astro-cid-c12categoryicon></path><path d="M38 122 L162 122" data-astro-cid-c12categoryicon></path><path d="M38 134 L162 134" data-astro-cid-c12categoryicon></path><path d="M38 146 L162 146" data-astro-cid-c12categoryicon></path><path d="M38 158 L162 158" data-astro-cid-c12categoryicon></path></g><rect x="92" y="99" width="16" height="69" fill="#F0B429" stroke="#16283D" stroke-width="2.8" data-astro-cid-c12categoryicon></rect><rect x="32" y="168" width="136" height="13" rx="2" fill="#fff" stroke="#16283D" stroke-width="3.4" stroke-linejoin="round" data-astro-cid-c12categoryicon></rect></g></g><polygon points="100,2 198,56 198,169 100,223 2,169 2,56" fill="none" stroke="#16283D" stroke-opacity="0.18" stroke-width="3" data-astro-cid-c12categoryicon></polygon></svg></div><h3 data-astro-cid-c11categorygrid>Paquets d'abeilles</h3><p data-astro-cid-c11categorygrid>Pour partir de zéro</p></a><a class="category-card reveal" href="/fr/miel/" style="--reveal-delay:0ms" data-astro-cid-c11categorygrid><div class="cat-icon category-hex" data-astro-cid-c12categoryicon><svg viewBox="0 0 200 225" role="img" aria-hidden="true" data-astro-cid-c12categoryicon><polygon points="100,2 198,56 198,169 100,223 2,169 2,56" fill="rgba(240, 180, 41, 0.10)" data-astro-cid-c12categoryicon></polygon><g class="art" data-astro-cid-c12categoryicon><g transform="translate(0 -5)" data-astro-cid-c12categoryicon><path d="M58 76 L142 76 L142 168 C142 178 134 184 123 184 L77 184 C66 184 58 178 58 168 Z" fill="#fff" stroke="#16283D" stroke-width="3.4" stroke-linejoin="round" data-astro-cid-c12categoryicon></path><path d="M63 116 C75 108 86 121 100 117 C114 113 126 107 137 115 L137 168 C137 175 131 179 123 179 L77 179 C69 179 63 175 63 168 Z" fill="#F0B429" data-astro-cid-c12categoryicon></path><path d="M63 116 C75 108 86 121 100 117 C114 113 126 107 137 115" fill="none" stroke="#16283D" stroke-width="2.4" stroke-linecap="round" data-astro-cid-c12categoryicon></path><rect x="76" y="130" width="48" height="34" rx="4" fill="#fff" stroke="#16283D" stroke-width="2.8" data-astro-cid-c12categoryicon></rect><polygon points="100,137 109,142.5 109,153.5 100,159 91,153.5 91,142.5" fill="rgba(46, 156, 147, 0.22)" stroke="#16283D" stroke-width="2.2" stroke-linejoin="round" data-astro-cid-c12categoryicon></polygon><rect x="52" y="50" width="96" height="26" rx="4" fill="#fff" stroke="#16283D" stroke-width="3.4" data-astro-cid-c12categoryicon></rect><g stroke="#16283D" stroke-width="2.2" opacity="0.45" stroke-linecap="round" data-astro-cid-c12categoryicon><path d="M68 58 L68 68" data-astro-cid-c12categoryicon></path><path d="M84 58 L84 68" data-astro-cid-c12categoryicon></path><path d="M100 58 L100 68" data-astro-cid-c12categoryicon></path><path d="M116 58 L116 68" data-astro-cid-c12categoryicon></path><path d="M132 58 L132 68" data-astro-cid-c12categoryicon></path></g></g></g><polygon points="100,2 198,56 198,169 100,223 2,169 2,56" fill="none" stroke="#16283D" stroke-opacity="0.18" stroke-width="3" data-astro-cid-c12categoryicon></polygon></svg></div><h3 data-astro-cid-c11categorygrid>Miel</h3><p data-astro-cid-c11categorygrid>Toutes fleurs de printemps et d'été</p></a></div></div></section><section class="partners-band" data-astro-cid-c16partners><div class="wrap" data-astro-cid-c16partners><p class="section-label" data-astro-cid-c16partners>Ils nous accompagnent</p><h2 class="section-title" data-astro-cid-c16partners>Nos partenaires</h2><ul class="partners-grid" data-astro-cid-c16partners><li class="partner-badge reveal" style="--reveal-delay:0ms" data-astro-cid-c16partners><a href="https://www.instagram.com/apicoltura_wild_area" target="_blank" rel="noopener noreferrer" aria-label="Wild Area — visiter le site" data-astro-cid-c16partners><img src="/images/partners/wild-area.webp" alt="Wild Area" title="Wild Area" width="255" height="300" loading="lazy" decoding="async" data-astro-cid-c16partners></a></li><li class="partner-badge reveal" style="--reveal-delay:70ms" data-astro-cid-c16partners><a href="https://www.dolcemiele.bio/" target="_blank" rel="noopener noreferrer" aria-label="Apicoltura Biologica Dolcemiele — visiter le site" data-astro-cid-c16partners><img src="/images/partners/dolcemiele.webp" alt="Apicoltura Biologica Dolcemiele" title="Apicoltura Biologica Dolcemiele" width="301" height="300" loading="lazy" decoding="async" data-astro-cid-c16partners></a></li><li class="partner-badge reveal" style="--reveal-delay:140ms" data-astro-cid-c16partners><a href="https://www.instagram.com/karmapicoltura/" target="_blank" rel="noopener noreferrer" aria-label="Karma Apicoltura — visiter le site" data-astro-cid-c16partners><img src="/images/partners/karma.webp" alt="Karma Apicoltura" title="Karma Apicoltura" width="540" height="190" loading="lazy" decoding="async" data-astro-cid-c16partners></a></li><li class="partner-badge reveal" style="--reveal-delay:210ms" data-astro-cid-c16partners><a href="https://www.instagram.com/esapicola" target="_blank" rel="noopener noreferrer" aria-label="Esapicola — visiter le site" data-astro-cid-c16partners><img src="/images/partners/esapicola.webp" alt="Esapicola" title="Esapicola" width="299" height="300" loading="lazy" decoding="async" data-astro-cid-c16partners></a></li><li class="partner-badge reveal" style="--reveal-delay:0ms" data-astro-cid-c16partners><a href="https://www.esterelapiculture.com/" target="_blank" rel="noopener noreferrer" aria-label="Esterel Apiculture — visiter le site" data-astro-cid-c16partners><img src="/images/partners/esterel.webp" alt="Esterel Apiculture" title="Esterel Apiculture" width="371" height="300" loading="lazy" decoding="async" data-astro-cid-c16partners></a></li><li class="partner-badge reveal" style="--reveal-delay:70ms" data-astro-cid-c16partners><a href="https://shop.ilmondodelleapi.com/" target="_blank" rel="noopener noreferrer" aria-label="Il Mondo delle Api — visiter le site" data-astro-cid-c16partners><img src="/images/partners/mondo-delle-api.webp" alt="Il Mondo delle Api" title="Il Mondo delle Api" width="312" height="196" loading="lazy" decoding="async" data-astro-cid-c16partners></a></li><li class="partner-badge reveal" style="--reveal-delay:140ms" data-astro-cid-c16partners><a href="https://mieledigigi.com/" target="_blank" rel="noopener noreferrer" aria-label="Miele di Gigi — visiter le site" data-astro-cid-c16partners><img src="/images/partners/miele-di-gigi.webp" alt="Miele di Gigi" title="Miele di Gigi" width="312" height="226" loading="lazy" decoding="async" data-astro-cid-c16partners></a></li></ul></div></section><script>(function(){
+"use strict";
+const logo = document.querySelector('.hero-logo');
+const still = window.matchMedia('(prefers-reduced-motion: reduce)');
+if (logo && !still.matches) {
+    const CLIC_NECESSARI = 5;
+    let clic = 0;
+    let ultimo = 0;
+    let sciame = null;
+    logo.style.cursor = 'pointer';
+    logo.addEventListener('click', () => {
+        const ora = performance.now();
+        clic = ora - ultimo < 1200 ? clic + 1 : 1;
+        ultimo = ora;
+        if (clic >= CLIC_NECESSARI && !sciame) {
+            clic = 0;
+            sciame = avvia(() => { sciame = null; });
+        }
+    });
+    // ---- disegno dell'ape, rasterizzato una volta sola in due pose ----
+    function sprite(apertura) {
+        const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 22" width="56" height="44">` +
+            `<g transform="translate(14 19.8) scale(1 ${apertura}) translate(-14 -19.8)">` +
+            `<ellipse cx="11" cy="5" rx="7" ry="4" fill="rgba(46,156,147,.32)" stroke="#16283D" stroke-width="1.5"/>` +
+            `<ellipse cx="18" cy="5" rx="7" ry="4" fill="rgba(46,156,147,.32)" stroke="#16283D" stroke-width="1.5"/>` +
+            `</g>` +
+            `<ellipse cx="14" cy="12" rx="9" ry="5.6" fill="#F0B429" stroke="#16283D" stroke-width="1.8"/>` +
+            `<path d="M11 7.2 L11 16.8 M16 7.4 L16 16.6" stroke="#16283D" stroke-width="1.5" stroke-linecap="round"/>` +
+            `</svg>`;
+        const img = new Image();
+        img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+        return img;
+    }
+    function avvia(finito) {
+        const pose = [sprite(1), sprite(0.5)];
+        const canvas = document.createElement('canvas');
+        canvas.className = 'swarm-canvas';
+        canvas.setAttribute('aria-hidden', 'true');
+        document.body.appendChild(canvas);
+        const ctx = canvas.getContext('2d');
+        let w = 0, h = 0, dpr = 1;
+        const misura = () => {
+            dpr = Math.min(window.devicePixelRatio || 1, 2);
+            w = window.innerWidth;
+            h = window.innerHeight;
+            canvas.width = Math.round(w * dpr);
+            canvas.height = Math.round(h * dpr);
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        };
+        misura();
+        window.addEventListener('resize', misura, { passive: true });
+        const quante = w < 760 ? 70 : 140;
+        const rnd = (a, b) => a + Math.random() * (b - a);
+        const api = [];
+        for (let i = 0; i < quante; i++) {
+            const bordo = Math.floor(rnd(0, 4));
+            const x = bordo === 0 ? -40 : bordo === 1 ? w + 40 : rnd(0, w);
+            const y = bordo === 2 ? -40 : bordo === 3 ? h + 40 : rnd(0, h);
+            const dir = Math.atan2(h / 2 - y, w / 2 - x) + rnd(-0.8, 0.8);
+            const vel = rnd(110, 210);
+            api.push({
+                x, y, vx: Math.cos(dir) * vel, vy: Math.sin(dir) * vel,
+                ang: dir, vag: 0, scala: rnd(0.75, 1.15), ala: 0,
+                attesa: rnd(0, 900), px: 0, py: 0, cx: 0, cy: 0,
+                bx: 0, by: 0, fase: rnd(0, 6.3),
+            });
+        }
+        const VOLO = 6200; // quanto dura il volo libero
+        let fase = 'volo';
+        let tFase = 0, tPrec = 0, rafId = 0, uscita = 0;
+        // il posto di ogni ape sul logo, tenuto come scarto dal centro:
+        // così il grappolo resta attaccato al logo anche se la pagina scorre
+        function posti(r) {
+            const d = r.width;
+            api.forEach((a) => {
+                // tre quarti delle api sul disco del logo, le altre nella barba che pende sotto
+                if (Math.random() < 0.74) {
+                    const ang = rnd(0, Math.PI * 2), rad = Math.sqrt(Math.random()) * d * 0.52;
+                    a.bx = Math.cos(ang) * rad;
+                    a.by = Math.sin(ang) * rad * 1.05 + d * 0.04;
+                }
+                else {
+                    const giu = Math.random();
+                    a.bx = rnd(-1, 1) * d * 0.3 * (1 - giu * 0.75);
+                    a.by = d * 0.4 + giu * d * 0.45;
+                }
+                a.px = a.x;
+                a.py = a.y;
+                a.cx = rnd(-140, 140);
+                a.cy = rnd(-140, 60);
+                a.scala = (d / 150) * rnd(1.15, 1.5);
+            });
+        }
+        function centroLogo() {
+            const r = logo.getBoundingClientRect();
+            return r.width ? { x: r.left + r.width / 2, y: r.top + r.height / 2, r } : null;
+        }
+        function passo(ts) {
+            if (!tFase) {
+                tFase = ts;
+                tPrec = ts;
+            }
+            const dt = Math.min((ts - tPrec) / 1000, 0.05);
+            tPrec = ts;
+            const da = ts - tFase;
+            const L = centroLogo();
+            if (fase === 'volo' && da > VOLO && L) {
+                posti(L.r);
+                fase = 'raduno';
+                tFase = ts;
+            }
+            if (fase === 'raduno' && da > 2600) {
+                fase = 'posate';
+                tFase = ts;
+            }
+            ctx.clearRect(0, 0, w, h);
+            for (const a of api) {
+                if (fase === 'volo') {
+                    a.vag += rnd(-0.05, 0.05);
+                    a.vag = Math.max(-0.9, Math.min(0.9, a.vag));
+                    const v = Math.hypot(a.vx, a.vy) || 1;
+                    let dir = Math.atan2(a.vy, a.vx) + a.vag * dt * 3;
+                    // rimbalzo morbido sui bordi
+                    const m = 60;
+                    if (a.x < m)
+                        dir = Math.atan2(a.vy, Math.abs(a.vx));
+                    if (a.x > w - m)
+                        dir = Math.atan2(a.vy, -Math.abs(a.vx));
+                    if (a.y < m)
+                        dir = Math.atan2(Math.abs(a.vy), a.vx);
+                    if (a.y > h - m)
+                        dir = Math.atan2(-Math.abs(a.vy), a.vx);
+                    a.vx = Math.cos(dir) * v;
+                    a.vy = Math.sin(dir) * v;
+                    a.x += a.vx * dt;
+                    a.y += a.vy * dt;
+                    a.ang = dir;
+                }
+                else if (fase === 'raduno' && L) {
+                    const k = Math.max(0, Math.min(1, (da - a.attesa) / 1500));
+                    const e = k * k * (3 - 2 * k);
+                    // curva di Bézier dalla partenza al posto sul grappolo, passando largo
+                    const fx = L.x + a.bx, fy = L.y + a.by;
+                    const cx = (a.px + fx) / 2 + a.cx, cy = (a.py + fy) / 2 + a.cy;
+                    const mx = (1 - e) * ((1 - e) * a.px + e * cx) + e * ((1 - e) * cx + e * fx);
+                    const my = (1 - e) * ((1 - e) * a.py + e * cy) + e * ((1 - e) * cy + e * fy);
+                    if (mx !== a.x || my !== a.y)
+                        a.ang = Math.atan2(my - a.y, mx - a.x);
+                    a.x = mx;
+                    a.y = my;
+                }
+                else if (fase === 'posate' && L) {
+                    a.fase += dt * 2.4;
+                    a.x = L.x + a.bx + Math.sin(a.fase) * 1.6;
+                    a.y = L.y + a.by + Math.cos(a.fase * 0.8) * 1.6;
+                }
+                else if (fase === 'via') {
+                    a.x += a.vx * dt;
+                    a.y += a.vy * dt;
+                    a.ang = Math.atan2(a.vy, a.vx);
+                }
+                a.ala += dt * (fase === 'posate' ? 14 : 34);
+                const img = pose[Math.floor(a.ala) % 2];
+                const lw = 26 * a.scala, lh = 20 * a.scala;
+                ctx.save();
+                ctx.translate(a.x, a.y);
+                ctx.rotate(a.ang + Math.PI / 2);
+                if (fase === 'via')
+                    ctx.globalAlpha = Math.max(0, 1 - (ts - uscita) / 900);
+                ctx.drawImage(img, -lw / 2, -lh / 2, lw, lh);
+                ctx.restore();
+            }
+            if (fase === 'via' && ts - uscita > 900) {
+                chiudi();
+                return;
+            }
+            rafId = requestAnimationFrame(passo);
+        }
+        function viaTutte() {
+            if (fase === 'via')
+                return;
+            fase = 'via';
+            uscita = performance.now();
+            api.forEach((a) => {
+                const dir = Math.atan2(a.y - h / 2, a.x - w / 2) + rnd(-0.6, 0.6);
+                const v = rnd(420, 760);
+                a.vx = Math.cos(dir) * v;
+                a.vy = Math.sin(dir) * v;
+            });
+        }
+        function chiudi() {
+            cancelAnimationFrame(rafId);
+            window.removeEventListener('resize', misura);
+            window.removeEventListener('keydown', suTasto);
+            window.removeEventListener('pointerdown', suClic);
+            canvas.remove();
+            finito();
+        }
+        const suTasto = (e) => { if (e.key === 'Escape')
+            viaTutte(); };
+        const suClic = () => viaTutte();
+        setTimeout(() => {
+            window.addEventListener('pointerdown', suClic);
+            window.addEventListener('keydown', suTasto);
+        }, 600);
+        let pronte = 0;
+        pose.forEach((p) => {
+            const parti = () => { if (++pronte === pose.length)
+                rafId = requestAnimationFrame(passo); };
+            p.complete ? parti() : p.addEventListener('load', parti);
+        });
+        return { stop: viaTutte };
+    }
+}
+
+})();</script></main><footer class="site-footer" data-astro-cid-c4footer><div class="wrap footer-top" data-astro-cid-c4footer><a class="footer-brand" href="/fr/" data-astro-cid-c4footer><img src="/images/logo.webp" alt="Apicoltura Mille Terre" width="88" height="88" loading="lazy" data-astro-cid-c4footer><span data-astro-cid-c4footer><strong data-astro-cid-c4footer>Apicoltura Mille Terre</strong><small data-astro-cid-c4footer>Reines, cellules royales, essaims et paquets d'abeilles</small></span></a><nav class="footer-links" aria-label="Menu" data-astro-cid-c4footer><a href="/fr/qui-sommes-nous/" data-astro-cid-c4footer>Qui sommes-nous</a><a href="/fr/reines/" data-astro-cid-c4footer>Reines</a><a href="/fr/cellules-royales/" data-astro-cid-c4footer>Cellules royales</a><a href="/fr/essaims/" data-astro-cid-c4footer>Essaims</a><a href="/fr/paquets-abeilles/" data-astro-cid-c4footer>Paquets d'abeilles</a><a href="/fr/pollinisation/" data-astro-cid-c4footer>Pollinisation</a><a href="/fr/miel/" data-astro-cid-c4footer>Miel</a><a href="/fr/commander/" data-astro-cid-c4footer>Commander</a><a href="/fr/contact/" data-astro-cid-c4footer>Contact</a></nav><div class="footer-contact" data-astro-cid-c4footer><small data-astro-cid-c4footer>Email commandes</small><a href="mailto:ordini@apicolturamilleterre.com" data-astro-cid-c4footer>ordini@apicolturamilleterre.com</a></div></div><div class="wrap footer-bottom" data-astro-cid-c4footer><span data-astro-cid-c4footer>© 2026 Apicoltura Mille Terre</span><span class="legal-links" data-astro-cid-c4footer><a href="/fr/conditions-de-vente/" data-astro-cid-c4footer>Conditions de vente</a><a href="/fr/politique-confidentialite/" data-astro-cid-c4footer>Confidentialité</a><a href="/fr/politique-cookies/" data-astro-cid-c4footer>Politique cookies</a><button type="button" data-cookie-prefs data-astro-cid-c4footer>Préférences cookies</button></span></div></footer><button type="button" class="to-top" id="to-top" aria-label="Haut de page" hidden data-astro-cid-c6backtotop><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-astro-cid-c6backtotop><path d="M12 19V6" data-astro-cid-c6backtotop></path><path d="M5 12l7-7 7 7" data-astro-cid-c6backtotop></path></svg></button><script>(function(){
+"use strict";
+const btn = document.querySelector('#to-top');
+if (btn) {
+    const soglia = () => window.innerHeight * 2;
+    let ticking = false;
+    const aggiorna = () => {
+        ticking = false;
+        const mostra = window.scrollY > soglia();
+        btn.hidden = !mostra;
+        btn.classList.toggle('is-on', mostra);
+    };
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(aggiorna);
+        }
+    }, { passive: true });
+    aggiorna();
+    btn.addEventListener('click', () => {
+        const dolce = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top: 0, behavior: dolce ? 'smooth' : 'auto' });
+    });
+}
+
+})();</script><div class="bees" aria-hidden="true" data-astro-cid-c5flyingbees><span class="bee bee-1" data-bee data-astro-cid-c5flyingbees><span class="bob" data-astro-cid-c5flyingbees><svg viewBox="0 0 28 22" data-astro-cid-c5flyingbees><g class="wings" data-astro-cid-c5flyingbees><ellipse cx="11" cy="5" rx="7" ry="4" fill="rgba(46, 156, 147, 0.30)" stroke="#16283D" stroke-width="1.5" data-astro-cid-c5flyingbees></ellipse><ellipse cx="18" cy="5" rx="7" ry="4" fill="rgba(46, 156, 147, 0.30)" stroke="#16283D" stroke-width="1.5" data-astro-cid-c5flyingbees></ellipse></g><ellipse cx="14" cy="12" rx="9" ry="5.6" fill="#F0B429" stroke="#16283D" stroke-width="1.8" data-astro-cid-c5flyingbees></ellipse><path d="M11 7.2 L11 16.8 M16 7.4 L16 16.6" stroke="#16283D" stroke-width="1.5" stroke-linecap="round" data-astro-cid-c5flyingbees></path></svg></span></span><span class="bee bee-2" data-bee data-astro-cid-c5flyingbees><span class="bob" data-astro-cid-c5flyingbees><svg viewBox="0 0 28 22" data-astro-cid-c5flyingbees><g class="wings" data-astro-cid-c5flyingbees><ellipse cx="11" cy="5" rx="7" ry="4" fill="rgba(46, 156, 147, 0.30)" stroke="#16283D" stroke-width="1.5" data-astro-cid-c5flyingbees></ellipse><ellipse cx="18" cy="5" rx="7" ry="4" fill="rgba(46, 156, 147, 0.30)" stroke="#16283D" stroke-width="1.5" data-astro-cid-c5flyingbees></ellipse></g><ellipse cx="14" cy="12" rx="9" ry="5.6" fill="#F0B429" stroke="#16283D" stroke-width="1.8" data-astro-cid-c5flyingbees></ellipse><path d="M11 7.2 L11 16.8 M16 7.4 L16 16.6" stroke="#16283D" stroke-width="1.5" stroke-linecap="round" data-astro-cid-c5flyingbees></path></svg></span></span><span class="bee bee-3" data-bee data-astro-cid-c5flyingbees><span class="bob" data-astro-cid-c5flyingbees><svg viewBox="0 0 28 22" data-astro-cid-c5flyingbees><g class="wings" data-astro-cid-c5flyingbees><ellipse cx="11" cy="5" rx="7" ry="4" fill="rgba(46, 156, 147, 0.30)" stroke="#16283D" stroke-width="1.5" data-astro-cid-c5flyingbees></ellipse><ellipse cx="18" cy="5" rx="7" ry="4" fill="rgba(46, 156, 147, 0.30)" stroke="#16283D" stroke-width="1.5" data-astro-cid-c5flyingbees></ellipse></g><ellipse cx="14" cy="12" rx="9" ry="5.6" fill="#F0B429" stroke="#16283D" stroke-width="1.8" data-astro-cid-c5flyingbees></ellipse><path d="M11 7.2 L11 16.8 M16 7.4 L16 16.6" stroke="#16283D" stroke-width="1.5" stroke-linecap="round" data-astro-cid-c5flyingbees></path></svg></span></span></div><script>(function(){
+"use strict";
+// Toccando un'ape, questa scappa nella direzione opposta al dito
+// e rientra più tardi riprendendo il suo giro abituale.
+const bees = document.querySelectorAll('[data-bee]');
+const still = window.matchMedia('(prefers-reduced-motion: reduce)');
+bees.forEach((bee) => {
+    bee.addEventListener('pointerdown', (ev) => {
+        if (still.matches || bee.classList.contains('fleeing'))
+            return;
+        const r = bee.getBoundingClientRect();
+        if (!r.width)
+            return;
+        // direzione: dal punto toccato verso l'esterno
+        let dx = r.left + r.width / 2 - ev.clientX;
+        let dy = r.top + r.height / 2 - ev.clientY;
+        if (!dx && !dy) {
+            dx = 1;
+            dy = -1;
+        }
+        const len = Math.hypot(dx, dy);
+        dx /= len;
+        dy /= len;
+        const far = Math.max(window.innerWidth, window.innerHeight) * 1.3;
+        const tilt = (Math.atan2(dy, dx) * 180) / Math.PI;
+        // scarto laterale, così la fuga non è una linea retta
+        const sx = -dy * 70, sy = dx * 70;
+        bee.classList.add('fleeing');
+        bee.style.animation = 'none';
+        const flight = bee.animate([
+            { transform: `translate(${r.left}px, ${r.top}px) rotate(0deg)`, opacity: 0.9 },
+            {
+                transform: `translate(${r.left + dx * far * 0.28 + sx}px, ${r.top + dy * far * 0.28 + sy}px) rotate(${tilt / 3}deg)`,
+                opacity: 0.9, offset: 0.4,
+            },
+            {
+                transform: `translate(${r.left + dx * far}px, ${r.top + dy * far}px) rotate(${tilt / 2}deg)`,
+                opacity: 0,
+            },
+        ], { duration: 1500, easing: 'cubic-bezier(.22,.7,.35,1)', fill: 'forwards' });
+        flight.addEventListener('finish', () => {
+            flight.cancel();
+            bee.style.animation = ''; // riparte il giro, con la sua attesa
+            bee.classList.remove('fleeing');
+        });
+    });
+});
+
+})();</script><div class="cc-root" id="cc-root" data-key="mt-consent" data-version="1" data-max-age="180" data-saved="Préférences enregistrées." data-astro-cid-c7cookieconsent><section class="cc-banner" id="cc-banner" role="dialog" aria-labelledby="cc-title" aria-describedby="cc-text" hidden data-astro-cid-c7cookieconsent><button class="cc-x" type="button" data-cc="reject" aria-label="Fermer et refuser" title="Fermer et refuser" data-astro-cid-c7cookieconsent><svg viewBox="0 0 20 20" aria-hidden="true" data-astro-cid-c7cookieconsent><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" data-astro-cid-c7cookieconsent></path></svg></button><div class="cc-head" data-astro-cid-c7cookieconsent><svg class="cc-hex" viewBox="0 0 46 46" aria-hidden="true" data-astro-cid-c7cookieconsent><path d="M23 2 L42 13 L42 33 L23 44 L4 33 L4 13 Z" fill="#F0B429" data-astro-cid-c7cookieconsent></path></svg><h2 id="cc-title" data-astro-cid-c7cookieconsent>Nous respectons votre vie privée</h2></div><p id="cc-text" data-astro-cid-c7cookieconsent>Nous utilisons uniquement des outils techniques nécessaires au fonctionnement du site. Avec votre consentement, nous pourrions aussi utiliser des cookies statistiques ou marketing. Vous pouvez accepter, refuser ou choisir ce que vous activez, et changer d'avis à tout moment. <a href="/fr/politique-cookies/" data-astro-cid-c7cookieconsent>Lire la politique cookies</a></p><div class="cc-actions" data-astro-cid-c7cookieconsent><button type="button" class="cc-btn cc-solid" data-cc="reject" data-astro-cid-c7cookieconsent>Refuser</button><button type="button" class="cc-btn cc-solid" data-cc="accept" data-astro-cid-c7cookieconsent>Tout accepter</button><button type="button" class="cc-btn cc-link" data-cc="customize" data-astro-cid-c7cookieconsent>Personnaliser</button></div></section><dialog class="cc-dialog" id="cc-dialog" aria-labelledby="cc-prefs-title" data-astro-cid-c7cookieconsent><form method="dialog" class="cc-dialog-inner" data-astro-cid-c7cookieconsent><header class="cc-dialog-head" data-astro-cid-c7cookieconsent><h2 id="cc-prefs-title" data-astro-cid-c7cookieconsent>Préférences cookies</h2><button class="cc-x cc-x-static" type="submit" value="close" aria-label="Fermer" data-astro-cid-c7cookieconsent><svg viewBox="0 0 20 20" aria-hidden="true" data-astro-cid-c7cookieconsent><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" data-astro-cid-c7cookieconsent></path></svg></button></header><p class="cc-intro" data-astro-cid-c7cookieconsent>Choisissez les catégories à activer. Les cookies nécessaires assurent le fonctionnement du site et ne peuvent pas être désactivés.</p><ul class="cc-cats" data-astro-cid-c7cookieconsent><li class="cc-cat" data-astro-cid-c7cookieconsent><div class="cc-cat-row" data-astro-cid-c7cookieconsent><label class="cc-cat-label" for="cc-cat-necessary" data-astro-cid-c7cookieconsent>Nécessaires</label><span class="cc-always" data-astro-cid-c7cookieconsent>Toujours actifs</span></div><p class="cc-cat-desc" data-astro-cid-c7cookieconsent>Ils permettent au site de fonctionner et mémorisent vos choix en matière de cookies. Aucun consentement requis.</p><p class="cc-cat-services" data-astro-cid-c7cookieconsent>mt-consent · Apicoltura Mille Terre</p></li><li class="cc-cat" data-astro-cid-c7cookieconsent><div class="cc-cat-row" data-astro-cid-c7cookieconsent><label class="cc-cat-label" for="cc-cat-external" data-astro-cid-c7cookieconsent>Contenus externes</label><span class="cc-switch" data-astro-cid-c7cookieconsent><input type="checkbox" id="cc-cat-external" data-cat="external" data-astro-cid-c7cookieconsent><span class="cc-track" aria-hidden="true" data-astro-cid-c7cookieconsent></span></span></div><p class="cc-cat-desc" data-astro-cid-c7cookieconsent>Ils permettent d'afficher des contenus d'autres sites, comme la carte Google Maps de la page Contact.</p><p class="cc-cat-services" data-astro-cid-c7cookieconsent>Google Maps · Google Ireland Ltd.</p></li><li class="cc-cat" data-astro-cid-c7cookieconsent><div class="cc-cat-row" data-astro-cid-c7cookieconsent><label class="cc-cat-label" for="cc-cat-analytics" data-astro-cid-c7cookieconsent>Statistiques</label><span class="cc-switch" data-astro-cid-c7cookieconsent><input type="checkbox" id="cc-cat-analytics" data-cat="analytics" data-astro-cid-c7cookieconsent><span class="cc-track" aria-hidden="true" data-astro-cid-c7cookieconsent></span></span></div><p class="cc-cat-desc" data-astro-cid-c7cookieconsent>Ils nous aident à comprendre, de manière agrégée, comment le site est utilisé afin de l'améliorer.</p><p class="cc-cat-services" data-astro-cid-c7cookieconsent>Aucun service n'est actif dans cette catégorie pour le moment.</p></li><li class="cc-cat" data-astro-cid-c7cookieconsent><div class="cc-cat-row" data-astro-cid-c7cookieconsent><label class="cc-cat-label" for="cc-cat-marketing" data-astro-cid-c7cookieconsent>Marketing</label><span class="cc-switch" data-astro-cid-c7cookieconsent><input type="checkbox" id="cc-cat-marketing" data-cat="marketing" data-astro-cid-c7cookieconsent><span class="cc-track" aria-hidden="true" data-astro-cid-c7cookieconsent></span></span></div><p class="cc-cat-desc" data-astro-cid-c7cookieconsent>Ils servent à vous proposer des contenus et des annonces adaptés à vos intérêts, y compris sur d'autres sites.</p><p class="cc-cat-services" data-astro-cid-c7cookieconsent>Aucun service n'est actif dans cette catégorie pour le moment.</p></li></ul><footer class="cc-dialog-actions" data-astro-cid-c7cookieconsent><button type="button" class="cc-btn cc-ghost" data-cc="reject" data-astro-cid-c7cookieconsent>Tout refuser</button><button type="button" class="cc-btn cc-ghost" data-cc="accept" data-astro-cid-c7cookieconsent>Tout accepter</button><button type="button" class="cc-btn cc-solid" data-cc="save" data-astro-cid-c7cookieconsent>Enregistrer mes choix</button></footer></form></dialog><p class="cc-toast" id="cc-toast" role="status" aria-live="polite" data-astro-cid-c7cookieconsent></p></div><script>(function(){
+"use strict";
+const root = document.getElementById('cc-root');
+const banner = document.getElementById('cc-banner');
+const dialog = document.getElementById('cc-dialog');
+const toast = document.getElementById('cc-toast');
+const KEY = root.dataset.key;
+const VERSION = Number(root.dataset.version);
+const MAX_AGE = Number(root.dataset.maxAge) * 864e5;
+const OPTIONAL = ['external', 'analytics', 'marketing'];
+function read() {
+    try {
+        const c = JSON.parse(localStorage.getItem(KEY) || 'null');
+        if (!c || c.v !== VERSION || Date.now() - c.ts > MAX_AGE)
+            return null;
+        return c;
+    }
+    catch {
+        return null;
+    }
+}
+/** Attiva gli script bloccati delle categorie accettate */
+function apply(c) {
+    document.querySelectorAll('script[type="text/plain"][data-consent]').forEach((old) => {
+        const cat = old.dataset.consent;
+        if (!c.categories[cat])
+            return;
+        const s = document.createElement('script');
+        for (const a of Array.from(old.attributes)) {
+            if (a.name !== 'type' && a.name !== 'data-consent')
+                s.setAttribute(a.name, a.value);
+        }
+        s.text = old.text;
+        old.replaceWith(s);
+    });
+    // Google Consent Mode v2, se in futuro viene aggiunto gtag
+    const w = window;
+    if (typeof w.gtag === 'function') {
+        const g = (on) => (on ? 'granted' : 'denied');
+        w.gtag('consent', 'update', {
+            analytics_storage: g(c.categories.analytics),
+            ad_storage: g(c.categories.marketing),
+            ad_user_data: g(c.categories.marketing),
+            ad_personalization: g(c.categories.marketing),
+        });
+    }
+}
+function save(cats) {
+    const prev = read();
+    const c = { v: VERSION, ts: Date.now(), categories: cats };
+    try {
+        localStorage.setItem(KEY, JSON.stringify(c));
+    }
+    catch { /* storage non disponibile */ }
+    banner.hidden = true;
+    if (dialog.open)
+        dialog.close();
+    document.dispatchEvent(new CustomEvent('mt:consent', { detail: c }));
+    // Se una categoria già attiva viene revocata, ricarichiamo per fermarne gli script
+    const revoked = prev && OPTIONAL.some((k) => prev.categories[k] && !cats[k]);
+    if (revoked) {
+        location.reload();
+        return;
+    }
+    apply(c);
+    toast.textContent = root.dataset.saved ?? '';
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2200);
+}
+const all = (on) => ({ external: on, analytics: on, marketing: on });
+function openPrefs() {
+    const c = read();
+    dialog.querySelectorAll('input[data-cat]').forEach((i) => {
+        i.checked = !!c?.categories[i.dataset.cat];
+    });
+    if (typeof dialog.showModal === 'function')
+        dialog.showModal();
+    else
+        dialog.setAttribute('open', '');
+}
+root.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-cc]');
+    if (!btn)
+        return;
+    const action = btn.dataset.cc;
+    if (action === 'accept')
+        save(all(true));
+    else if (action === 'reject')
+        save(all(false));
+    else if (action === 'customize')
+        openPrefs();
+    else if (action === 'save') {
+        const cats = all(false);
+        dialog.querySelectorAll('input[data-cat]').forEach((i) => {
+            cats[i.dataset.cat] = i.checked;
+        });
+        save(cats);
+    }
+});
+// Chiudere il pannello senza salvare non cambia nulla; se non c'è ancora una scelta il banner resta visibile
+dialog.addEventListener('close', () => { if (!read())
+    banner.hidden = false; });
+// Link "Preferenze cookie" nel footer e nella cookie policy
+const w = window;
+if (!w.__mtCookieBound) {
+    w.__mtCookieBound = true;
+    document.addEventListener('click', (e) => {
+        const link = e.target.closest('[data-cookie-prefs]');
+        if (!link)
+            return;
+        e.preventDefault();
+        document.getElementById('cc-root') && window.mtCookies?.open();
+    });
+}
+w.mtCookies = { open: openPrefs, get: read };
+const current = read();
+if (current)
+    apply(current);
+else
+    banner.hidden = false;
+
+})();</script><script>(function(){
+"use strict";
+// Animazioni di comparsa degli elementi allo scroll
+const els = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                io.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+    els.forEach((el) => io.observe(el));
+}
+else {
+    els.forEach((el) => el.classList.add('in-view'));
+}
+
+})();</script></body></html>

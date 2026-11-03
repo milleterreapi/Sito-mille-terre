@@ -1,0 +1,563 @@
+/* ==========================================================
+   Apicoltura Mille Terre — stili globali
+   ========================================================== */
+:root {
+  --ink: #16283D;
+  --ink-soft: #5B6B7A;
+  --ink-faint: #8B98A5;
+  --teal: #2E9C93;
+  --teal-dark: #1F6E68;
+  --ochre: #B87A22;
+  --honey: #F0B429;
+  --paper: #FFFFFF;
+  --paper-alt: #FAFAF8;
+  --line: rgba(22, 40, 61, 0.12);
+  --line-soft: rgba(22, 40, 61, 0.08);
+  --font-display: 'Fraunces Variable', 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'Public Sans Variable', 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --hex: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  --hex-flat: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  /* altezza della barra in alto: serve per le ancore e per gli elementi appiccicati */
+  --nav-h: 70px;
+  /* margine laterale della pagina: i blocchi a tutta larghezza ci si agganciano */
+  --gutter: 28px;
+}
+
+::selection { background: var(--honey); color: var(--ink); }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body { overflow-x: clip; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  animation: bodyFadeIn .5s ease both;
+}
+/* solo opacità: un transform sul body romperebbe gli elementi position: fixed (banner cookie) */
+@keyframes bodyFadeIn { from { opacity: 0; } to { opacity: 1; } }
+img, svg { max-width: 100%; }
+/* una regola con display: flex/grid batterebbe l'attributo hidden del browser */
+[hidden] { display: none !important; }
+
+/* Un contorno uguale su tutto ciò che si può raggiungere da tastiera */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+/* le ancore non finiscono sotto la barra in alto */
+[id] { scroll-margin-top: calc(var(--nav-h) + 16px); }
+a { color: inherit; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 var(--gutter); }
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+.skip-link {
+  position: absolute; left: 12px; top: -60px; z-index: 100;
+  background: var(--ink); color: var(--paper); padding: 10px 16px; text-decoration: none;
+}
+.skip-link:focus { top: 12px; }
+
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- REVEAL ON SCROLL ---------- */
+.js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+.js .reveal.in-view { opacity: 1; transform: translateY(0); transition-delay: var(--reveal-delay, 0ms); }
+
+/* ---------- BUTTONS ---------- */
+.btn {
+  display: inline-block; padding: 13px 26px; border-radius: 2px;
+  font-family: var(--font-body); font-weight: 600; font-size: 0.92rem; text-decoration: none;
+  cursor: pointer; border: 1px solid transparent;
+  transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease, box-shadow .25s ease;
+}
+.btn:active { transform: translateY(0); }
+.btn-primary { background: var(--ink); color: var(--paper); }
+.btn-primary:hover { background: var(--teal-dark); box-shadow: 0 10px 24px -12px rgba(22, 40, 61, 0.45); }
+/* lo scatto verso l'alto solo con un mouse: sul touch resterebbe appiccicato dopo il tocco */
+@media (hover: hover) and (pointer: fine) {
+  .btn:hover { transform: translateY(-2px); }
+}
+.btn-ghost { position: relative; }
+.btn-ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn-ghost:hover { border-color: var(--ink); background: rgba(22, 40, 61, 0.05); }
+.cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+
+/* ---------- HEX MEDIA ---------- */
+.hex-media { position: relative; overflow: hidden; }
+.hex-media img { width: 100%; height: 100%; display: block; object-fit: cover; }
+@media (hover: hover) and (pointer: fine) {
+  .hex-media img { transition: transform .5s ease; }
+  .hex-media:hover img { transform: scale(1.06); }
+}
+.hex-media .hex-outline { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.hex-portrait { aspect-ratio: 8 / 9; }
+.hex-portrait img { clip-path: var(--hex); }
+.hex-landscape { aspect-ratio: 8 / 6.93; }
+.hex-landscape img { clip-path: var(--hex-flat); }
+figcaption {
+  font-size: 0.8rem; color: var(--ink-faint); padding: 10px 2px 0; font-style: italic; text-align: center;
+}
+
+/* ---------- SECTION GENERIC ---------- */
+.section { padding: 84px 0; }
+.section-alt { background: var(--paper-alt); }
+.section-head { max-width: 60ch; margin-bottom: 48px; }
+.section-head p { color: var(--ink-soft); font-size: 1.02rem; margin: 0; }
+.section-label {
+  font-size: 0.8rem; font-weight: 600; color: var(--teal-dark);
+  letter-spacing: 0.02em; margin: 0 0 10px;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.section-label::before {
+  content: ""; width: 9px; height: 9px; flex: none;
+  background: var(--ochre); clip-path: var(--hex);
+}
+.section-head .section-title::after {
+  content: ""; display: block; width: 46px; height: 3px; background: var(--honey); margin-top: 18px;
+}
+.section-title {
+  font-family: var(--font-display); font-weight: 500;
+  font-size: clamp(1.7rem, 3vw, 2.3rem); margin: 0 0 14px; line-height: 1.18;
+  color: var(--ink);
+}
+.prose p { color: var(--ink-soft); font-size: 1.02rem; margin: 0 0 18px; }
+.prose p:last-of-type { margin-bottom: 0; }
+
+@media (max-width: 760px) {
+  :root { --gutter: 20px; }
+  .section { padding: 60px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+  .js .reveal { opacity: 1 !important; transform: none !important; }
+}
+
+.lang-switch[data-astro-cid-c3languageswitcher]{
+    display: flex; align-items: center; gap: 2px;
+    margin-left: 28px; border-left: 1px solid var(--line); padding-left: 20px;
+  }a[data-astro-cid-c3languageswitcher]{
+    font-size: 0.76rem; font-weight: 600; letter-spacing: 0.04em;
+    color: var(--ink-faint); text-decoration: none;
+    padding: 5px 7px; border-radius: 3px;
+    transition: color .2s ease, background .2s ease;
+  }a[data-astro-cid-c3languageswitcher]:hover{ color: var(--ink); background: rgba(22, 40, 61, 0.05); }a.active[data-astro-cid-c3languageswitcher]{ color: var(--paper); background: var(--teal); }@media (max-width: 1180px){.lang-switch[data-astro-cid-c3languageswitcher]{ margin: 18px 0 0; border-left: none; padding-left: 0; gap: 8px; }a[data-astro-cid-c3languageswitcher]{ font-size: 0.85rem; padding: 8px 12px; border: 1px solid var(--line); }a.active[data-astro-cid-c3languageswitcher]{ border-color: var(--teal); }}
+.site-nav[data-astro-cid-c2nav]{
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(14px) saturate(1.4);
+    -webkit-backdrop-filter: blur(14px) saturate(1.4);
+    border-bottom: 1px solid var(--line-soft);
+    transition: box-shadow .3s ease;
+  }.site-nav.is-scrolled[data-astro-cid-c2nav]{ box-shadow: 0 8px 24px -18px rgba(22, 40, 61, 0.35); }.nav-inner[data-astro-cid-c2nav]{
+    max-width: 1180px; margin: 0 auto; padding: 12px 28px;
+    display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  }.brand[data-astro-cid-c2nav]{ display: flex; align-items: center; gap: 12px; text-decoration: none; flex: none; }.brand[data-astro-cid-c2nav] img[data-astro-cid-c2nav]{ border-radius: 50%; display: block; }.brand-name[data-astro-cid-c2nav]{
+    font-family: var(--font-display); font-weight: 600; font-size: 1.15rem;
+    color: var(--ink); letter-spacing: 0.01em; white-space: nowrap;
+  }.brand-name[data-astro-cid-c2nav] span[data-astro-cid-c2nav]{ color: var(--teal); }.menu[data-astro-cid-c2nav]{ display: flex; align-items: center; }.links[data-astro-cid-c2nav]{ display: flex; gap: 28px; }.links[data-astro-cid-c2nav] a[data-astro-cid-c2nav]{
+    color: var(--ink-soft); text-decoration: none; font-size: 0.9rem; font-weight: 500;
+    padding: 6px 1px; border-bottom: 1px solid transparent; white-space: nowrap;
+    transition: border-color .2s ease, color .2s ease;
+  }.links[data-astro-cid-c2nav] a[data-astro-cid-c2nav]:hover, .links[data-astro-cid-c2nav] a.active[data-astro-cid-c2nav]{ color: var(--ink); border-color: var(--teal); }.nav-cta[data-astro-cid-c2nav]{
+    margin-left: 26px; padding: 8px 16px; border-radius: 2px;
+    background: var(--ink); color: var(--paper); text-decoration: none;
+    font-size: 0.86rem; font-weight: 600; white-space: nowrap;
+    transition: background .2s ease, transform .2s ease;
+  }.nav-cta[data-astro-cid-c2nav]:hover, .nav-cta.active[data-astro-cid-c2nav]{ background: var(--teal-dark); }@media (hover: hover) and (pointer: fine){.nav-cta[data-astro-cid-c2nav]:hover{ transform: translateY(-1px); }}.nav-cta-compact[data-astro-cid-c2nav]{ display: none; }.menu-toggle[data-astro-cid-c2nav]{
+    display: none; background: transparent; border: none; padding: 10px; cursor: pointer; color: var(--ink);
+    min-width: 44px; min-height: 44px;
+  }.bars[data-astro-cid-c2nav]{ display: grid; gap: 5px; width: 24px; }.bars[data-astro-cid-c2nav] i[data-astro-cid-c2nav]{ display: block; height: 2px; background: currentColor; border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }.is-open[data-astro-cid-c2nav] .bars[data-astro-cid-c2nav] i[data-astro-cid-c2nav]:nth-child(1){ transform: translateY(7px) rotate(45deg); }.is-open[data-astro-cid-c2nav] .bars[data-astro-cid-c2nav] i[data-astro-cid-c2nav]:nth-child(2){ opacity: 0; }.is-open[data-astro-cid-c2nav] .bars[data-astro-cid-c2nav] i[data-astro-cid-c2nav]:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }@media (max-width: 1280px){.links[data-astro-cid-c2nav]{ gap: 18px; }.nav-cta[data-astro-cid-c2nav]{ margin-left: 18px; }}@media (max-width: 1180px){.menu-toggle[data-astro-cid-c2nav]{ display: block; }.menu[data-astro-cid-c2nav]{
+      position: absolute; left: 0; right: 0; top: 100%;
+      flex-direction: column; align-items: stretch;
+      background: var(--paper); border-bottom: 1px solid var(--line);
+      padding: 8px 28px 24px;
+      box-shadow: 0 18px 30px -24px rgba(22, 40, 61, 0.4);
+      display: none;
+    }.is-open[data-astro-cid-c2nav] .menu[data-astro-cid-c2nav]{ display: flex; animation: pageFadeIn .25s ease both; }.links[data-astro-cid-c2nav]{ flex-direction: column; gap: 0; }.links[data-astro-cid-c2nav] a[data-astro-cid-c2nav]{ padding: 13px 0; border-bottom: 1px solid var(--line-soft); font-size: 1rem; }.links[data-astro-cid-c2nav] a.active[data-astro-cid-c2nav]{ border-bottom-color: var(--line-soft); color: var(--teal-dark); }.nav-cta[data-astro-cid-c2nav]{ margin: 18px 0 0; padding: 13px 16px; text-align: center; font-size: 0.95rem; }.menu[data-astro-cid-c2nav] .nav-cta[data-astro-cid-c2nav]{ display: none; }.nav-cta-compact[data-astro-cid-c2nav]{
+      display: inline-block; margin: 0 4px 0 auto; padding: 11px 18px;
+      font-size: 0.88rem; text-align: center;
+    }}@media (max-width: 380px){.brand-name[data-astro-cid-c2nav]{ display: none; }.nav-cta-compact[data-astro-cid-c2nav]{ padding: 11px 14px; }}
+.site-footer[data-astro-cid-c4footer]{ background: var(--ink); color: rgba(255, 255, 255, 0.72); font-size: 0.88rem; border-top: 3px solid var(--honey); }.footer-top[data-astro-cid-c4footer]{
+    display: grid; grid-template-columns: 1.3fr 1fr 0.9fr; gap: 40px; align-items: start;
+    padding-top: 56px; padding-bottom: 40px;
+  }.footer-brand[data-astro-cid-c4footer]{ display: flex; align-items: center; gap: 18px; text-decoration: none; }.footer-brand[data-astro-cid-c4footer] img[data-astro-cid-c4footer]{
+    border-radius: 50%; background: #fff; flex: none; padding: 7px;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.08);
+  }.footer-brand[data-astro-cid-c4footer] strong[data-astro-cid-c4footer]{ display: block; font-family: var(--font-display); font-weight: 500; font-size: 1.2rem; color: #fff; }.footer-brand[data-astro-cid-c4footer] small[data-astro-cid-c4footer]{ display: block; margin-top: 4px; line-height: 1.45; }.footer-links[data-astro-cid-c4footer]{ display: grid; grid-template-columns: 1fr 1fr; gap: 8px 20px; }.footer-links[data-astro-cid-c4footer] a[data-astro-cid-c4footer], .footer-contact[data-astro-cid-c4footer] a[data-astro-cid-c4footer]{ color: rgba(255, 255, 255, 0.82); text-decoration: none; transition: color .2s ease; }.footer-links[data-astro-cid-c4footer] a[data-astro-cid-c4footer]:hover, .footer-contact[data-astro-cid-c4footer] a[data-astro-cid-c4footer]:hover{ color: var(--honey); }.footer-contact[data-astro-cid-c4footer] small[data-astro-cid-c4footer]{ display: block; color: rgba(255, 255, 255, 0.5); margin-bottom: 4px; }.footer-contact[data-astro-cid-c4footer] a[data-astro-cid-c4footer]{ font-weight: 600; font-size: 1rem; }.footer-bottom[data-astro-cid-c4footer]{
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px; padding-bottom: 24px; font-size: 0.8rem; color: rgba(255, 255, 255, 0.5);
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px 24px;
+  }.legal-links[data-astro-cid-c4footer]{ display: flex; gap: 20px; flex-wrap: wrap; }.legal-links[data-astro-cid-c4footer] a[data-astro-cid-c4footer], .legal-links[data-astro-cid-c4footer] button[data-astro-cid-c4footer]{
+    color: rgba(255, 255, 255, 0.7); text-decoration: none; font: inherit; background: none; border: none; padding: 0; cursor: pointer;
+  }.legal-links[data-astro-cid-c4footer] a[data-astro-cid-c4footer]:hover, .legal-links[data-astro-cid-c4footer] button[data-astro-cid-c4footer]:hover{ color: var(--honey); }@media (max-width: 760px){.footer-top[data-astro-cid-c4footer]{ grid-template-columns: 1fr; gap: 28px; padding-top: 44px; }}
+.bees[data-astro-cid-c5flyingbees]{ position: fixed; inset: 0; pointer-events: none; z-index: 40; overflow: hidden; }.bee[data-astro-cid-c5flyingbees]{
+    position: absolute; top: 0; left: 0; width: 26px; opacity: 0;
+    will-change: transform, opacity;
+    pointer-events: auto; cursor: pointer; touch-action: manipulation;
+  }.bee[data-astro-cid-c5flyingbees]::after{ content: ""; position: absolute; inset: -14px; }.bee.fleeing[data-astro-cid-c5flyingbees]{ cursor: default; pointer-events: none; }.bee[data-astro-cid-c5flyingbees] svg[data-astro-cid-c5flyingbees]{ display: block; width: 100%; height: auto; }.bob[data-astro-cid-c5flyingbees]{ display: block; animation: bee-bob 1.1s ease-in-out infinite alternate; }.wings[data-astro-cid-c5flyingbees]{ transform-origin: 50% 90%; animation: bee-wings 0.16s linear infinite alternate; }@keyframes bee-bob{ from { transform: translateY(-3px); } to { transform: translateY(3px); } }@keyframes bee-wings{ from { transform: scaleY(1); } to { transform: scaleY(0.55); } }.bee-1[data-astro-cid-c5flyingbees]{ animation: bee-fly-1 46s linear 8s infinite; }@keyframes bee-fly-1{
+    0%   { transform: translate(-12vw, 78vh) rotate(6deg); opacity: 0; }
+    3%   { opacity: 0.9; }
+    8%   { transform: translate(26vw, 62vh) rotate(-4deg); }
+    15%  { transform: translate(58vw, 70vh) rotate(5deg); }
+    22%  { opacity: 0.9; }
+    26%  { transform: translate(112vw, 48vh) rotate(-3deg); opacity: 0; }
+    100% { transform: translate(112vw, 48vh); opacity: 0; }
+  }.bee-2[data-astro-cid-c5flyingbees]{ width: 21px; animation: bee-fly-2 61s linear 30s infinite; }.bee-2[data-astro-cid-c5flyingbees] .bob[data-astro-cid-c5flyingbees]{ transform: scaleX(-1); }@keyframes bee-fly-2{
+    0%   { transform: translate(110vw, 34vh) rotate(-5deg); opacity: 0; }
+    3%   { opacity: 0.85; }
+    9%   { transform: translate(64vw, 46vh) rotate(4deg); }
+    16%  { transform: translate(30vw, 30vh) rotate(-4deg); }
+    20%  { opacity: 0.85; }
+    24%  { transform: translate(-14vw, 40vh) rotate(3deg); opacity: 0; }
+    100% { transform: translate(-14vw, 40vh); opacity: 0; }
+  }.bee-3[data-astro-cid-c5flyingbees]{ width: 17px; animation: bee-fly-3 77s linear 52s infinite; }@keyframes bee-fly-3{
+    0%   { transform: translate(-10vw, 22vh) rotate(4deg); opacity: 0; }
+    4%   { opacity: 0.6; }
+    11%  { transform: translate(38vw, 12vh) rotate(-6deg); }
+    18%  { transform: translate(72vw, 26vh) rotate(5deg); }
+    24%  { opacity: 0.6; }
+    28%  { transform: translate(112vw, 16vh) rotate(-2deg); opacity: 0; }
+    100% { transform: translate(112vw, 16vh); opacity: 0; }
+  }@media (max-width: 760px){.bee-3[data-astro-cid-c5flyingbees]{ display: none; }}@media (prefers-reduced-motion: reduce){.bees[data-astro-cid-c5flyingbees]{ display: none; }}
+.to-top[data-astro-cid-c6backtotop]{
+    position: fixed; z-index: 60;
+    right: max(18px, env(safe-area-inset-right, 0px));
+    bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+    width: 46px; height: 46px; display: grid; place-items: center;
+    border: 1px solid var(--line); border-radius: 50%;
+    background: var(--paper); color: var(--ink); cursor: pointer;
+    box-shadow: 0 10px 26px -12px rgba(22, 40, 61, 0.45);
+    opacity: 0; transform: translateY(10px);
+    transition: opacity .25s ease, transform .25s ease, background .2s ease, color .2s ease;
+  }.to-top.is-on[data-astro-cid-c6backtotop]{ opacity: 1; transform: translateY(0); }.to-top[hidden][data-astro-cid-c6backtotop]{ display: none; }@media (hover: hover) and (pointer: fine){.to-top[data-astro-cid-c6backtotop]:hover{ background: var(--ink); color: var(--paper); border-color: var(--ink); }}@media (prefers-reduced-motion: reduce){.to-top[data-astro-cid-c6backtotop]{ transition: none; }}
+.cc-banner[data-astro-cid-c7cookieconsent]{
+    position: fixed; z-index: 90;
+    left: 20px; bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+    width: min(440px, calc(100vw - 40px));
+    background: var(--paper); color: var(--ink);
+    border: 1px solid var(--line); border-radius: 6px;
+    box-shadow: 0 24px 48px -24px rgba(22, 40, 61, 0.45);
+    padding: 22px 22px 18px;
+    animation: cc-in .45s ease both;
+  }.cc-banner[hidden][data-astro-cid-c7cookieconsent]{ display: none; }@keyframes cc-in{ from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }.cc-head[data-astro-cid-c7cookieconsent]{ display: flex; align-items: center; gap: 10px; margin: 0 28px 10px 0; }.cc-hex[data-astro-cid-c7cookieconsent]{ width: 22px; height: 22px; flex: none; }h2[data-astro-cid-c7cookieconsent]{ font-family: var(--font-display); font-weight: 600; font-size: 1.12rem; line-height: 1.25; margin: 0; color: var(--ink); }.cc-banner[data-astro-cid-c7cookieconsent] p[data-astro-cid-c7cookieconsent]{ font-size: 0.86rem; line-height: 1.55; color: var(--ink-soft); margin: 0 0 16px; }.cc-banner[data-astro-cid-c7cookieconsent] p[data-astro-cid-c7cookieconsent] a[data-astro-cid-c7cookieconsent]{ color: var(--teal-dark); font-weight: 600; }.cc-actions[data-astro-cid-c7cookieconsent]{ display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }.cc-actions[data-astro-cid-c7cookieconsent] .cc-link[data-astro-cid-c7cookieconsent]{ grid-column: 1 / -1; }.cc-btn[data-astro-cid-c7cookieconsent]{
+    font-family: var(--font-body); font-size: 0.86rem; font-weight: 600;
+    padding: 11px 14px; border-radius: 2px; cursor: pointer;
+    border: 1px solid transparent; transition: background .2s ease, border-color .2s ease, color .2s ease;
+  }.cc-solid[data-astro-cid-c7cookieconsent]{ background: var(--ink); color: var(--paper); }.cc-solid[data-astro-cid-c7cookieconsent]:hover{ background: var(--teal-dark); }.cc-ghost[data-astro-cid-c7cookieconsent]{ background: transparent; color: var(--ink); border-color: var(--line); }.cc-ghost[data-astro-cid-c7cookieconsent]:hover{ border-color: var(--ink); }.cc-link[data-astro-cid-c7cookieconsent]{ background: transparent; color: var(--teal-dark); text-decoration: underline; text-underline-offset: 3px; padding: 6px; }.cc-btn[data-astro-cid-c7cookieconsent]:focus-visible, .cc-x[data-astro-cid-c7cookieconsent]:focus-visible{ outline: 2px solid var(--teal); outline-offset: 2px; }.cc-x[data-astro-cid-c7cookieconsent]{
+    position: absolute; top: 12px; right: 12px; width: 32px; height: 32px;
+    display: grid; place-items: center; background: transparent; border: none; border-radius: 50%;
+    color: var(--ink-soft); cursor: pointer;
+  }.cc-x[data-astro-cid-c7cookieconsent]:hover{ background: rgba(22, 40, 61, 0.06); color: var(--ink); }.cc-x[data-astro-cid-c7cookieconsent] svg[data-astro-cid-c7cookieconsent]{ width: 18px; height: 18px; }.cc-x-static[data-astro-cid-c7cookieconsent]{ position: static; }.cc-dialog[data-astro-cid-c7cookieconsent]{
+    width: min(560px, calc(100vw - 32px)); max-height: calc(100dvh - 48px);
+    padding: 0; border: none; border-radius: 6px; color: var(--ink); background: var(--paper);
+    box-shadow: 0 30px 60px -30px rgba(22, 40, 61, 0.6);
+  }.cc-dialog[data-astro-cid-c7cookieconsent]::backdrop{ background: rgba(22, 40, 61, 0.45); backdrop-filter: blur(2px); }.cc-dialog-inner[data-astro-cid-c7cookieconsent]{ display: flex; flex-direction: column; max-height: calc(100dvh - 48px); }.cc-dialog-head[data-astro-cid-c7cookieconsent]{ display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 22px 24px 0; }.cc-dialog-head[data-astro-cid-c7cookieconsent] h2[data-astro-cid-c7cookieconsent]{ font-size: 1.35rem; font-weight: 500; }.cc-intro[data-astro-cid-c7cookieconsent]{ font-size: 0.9rem; color: var(--ink-soft); margin: 8px 24px 16px; }.cc-cats[data-astro-cid-c7cookieconsent]{ list-style: none; margin: 0; padding: 0 24px; overflow-y: auto; }.cc-cat[data-astro-cid-c7cookieconsent]{ border-top: 1px solid var(--line-soft); padding: 16px 0; }.cc-cat-row[data-astro-cid-c7cookieconsent]{ display: flex; align-items: center; justify-content: space-between; gap: 16px; }.cc-cat-label[data-astro-cid-c7cookieconsent]{ font-weight: 600; font-size: 0.98rem; }.cc-cat-desc[data-astro-cid-c7cookieconsent]{ font-size: 0.86rem; color: var(--ink-soft); margin: 6px 0 4px; line-height: 1.5; }.cc-cat-services[data-astro-cid-c7cookieconsent]{ font-size: 0.78rem; color: var(--ink-faint); margin: 0; font-style: italic; }.cc-always[data-astro-cid-c7cookieconsent]{ font-size: 0.78rem; font-weight: 600; color: var(--teal-dark); background: rgba(46, 156, 147, 0.1); padding: 4px 10px; border-radius: 20px; }.cc-switch[data-astro-cid-c7cookieconsent]{ position: relative; width: 44px; height: 26px; flex: none; }.cc-switch[data-astro-cid-c7cookieconsent] input[data-astro-cid-c7cookieconsent]{ position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; z-index: 1; }.cc-track[data-astro-cid-c7cookieconsent]{ position: absolute; inset: 0; background: #C9D1D9; border-radius: 13px; transition: background .2s ease; }.cc-track[data-astro-cid-c7cookieconsent]::after{
+    content: ""; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%;
+    background: #fff; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25); transition: transform .2s ease;
+  }.cc-switch[data-astro-cid-c7cookieconsent] input[data-astro-cid-c7cookieconsent]:checked + .cc-track[data-astro-cid-c7cookieconsent]{ background: var(--teal); }.cc-switch[data-astro-cid-c7cookieconsent] input[data-astro-cid-c7cookieconsent]:checked + .cc-track[data-astro-cid-c7cookieconsent]::after{ transform: translateX(18px); }.cc-switch[data-astro-cid-c7cookieconsent] input[data-astro-cid-c7cookieconsent]:focus-visible + .cc-track[data-astro-cid-c7cookieconsent]{ outline: 2px solid var(--teal); outline-offset: 2px; }.cc-dialog-actions[data-astro-cid-c7cookieconsent]{
+    display: grid; grid-template-columns: 1fr 1fr 1.2fr; gap: 8px;
+    padding: 16px 24px 22px; border-top: 1px solid var(--line-soft); background: var(--paper-alt);
+  }.cc-toast[data-astro-cid-c7cookieconsent]{
+    position: fixed; z-index: 95; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+    transform: translate(-50%, 20px); opacity: 0; pointer-events: none;
+    background: var(--ink); color: var(--paper); font-size: 0.86rem; font-weight: 600;
+    padding: 10px 18px; border-radius: 3px; margin: 0; transition: opacity .25s ease, transform .25s ease;
+  }.cc-toast.show[data-astro-cid-c7cookieconsent]{ opacity: 1; transform: translate(-50%, 0); }@media (max-width: 560px){.cc-banner[data-astro-cid-c7cookieconsent]{ left: 12px; right: 12px; width: auto; bottom: calc(12px + env(safe-area-inset-bottom, 0px)); padding: 20px 18px 14px; }.cc-dialog-actions[data-astro-cid-c7cookieconsent]{ grid-template-columns: 1fr 1fr; }.cc-dialog-actions[data-astro-cid-c7cookieconsent] .cc-solid[data-astro-cid-c7cookieconsent]{ grid-column: 1 / -1; }}
+.highlight-band[data-astro-cid-c9highlightband]{ position: relative; background: var(--honey); padding: 84px 0 92px; margin-top: 56px; overflow: hidden; }.wave-edge[data-astro-cid-c9highlightband]{ position: absolute; left: 0; width: 100%; height: 44px; display: block; z-index: 1; }.wave-top[data-astro-cid-c9highlightband]{ top: -1px; }.wave-bottom[data-astro-cid-c9highlightband]{ bottom: -1px; }.marquee-mask[data-astro-cid-c9highlightband]{
+    overflow-x: auto; overflow-y: hidden;
+    scrollbar-width: none; -ms-overflow-style: none;
+    overscroll-behavior-x: contain; cursor: grab;
+    will-change: scroll-position;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+    -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%; mask-size: 100% 100%;
+  }.marquee-mask[data-astro-cid-c9highlightband]::-webkit-scrollbar{ display: none; }.marquee-mask[data-astro-cid-c9highlightband]:focus-visible{ outline: 2px solid var(--ink); outline-offset: -4px; }.marquee-mask.is-dragging[data-astro-cid-c9highlightband]{ cursor: grabbing; user-select: none; }.marquee[data-astro-cid-c9highlightband]{ display: flex; width: max-content; }.marquee-track[data-astro-cid-c9highlightband]{ list-style: none; margin: 0; padding: 0; display: flex; flex: none; }.highlight-item[data-astro-cid-c9highlightband]{
+    width: 300px; flex: none; padding: 0 34px; text-align: center; position: relative;
+  }.highlight-item[data-astro-cid-c9highlightband]::after{
+    content: ""; position: absolute; right: -4px; top: 50%; width: 8px; height: 8px;
+    background: var(--ink); opacity: 0.35; clip-path: var(--hex);
+  }.highlight-bee{ width: 40px; height: 40px; margin: 0 auto 14px; display: block; }h3[data-astro-cid-c9highlightband]{ font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; color: var(--ink); margin: 0 0 10px; line-height: 1.2; }p[data-astro-cid-c9highlightband]{ color: var(--ink); opacity: 0.75; font-size: 0.92rem; margin: 0; }@media (max-width: 760px){.highlight-band[data-astro-cid-c9highlightband]{ padding: 64px 0 72px; }.highlight-item[data-astro-cid-c9highlightband]{ width: 240px; padding: 0 24px; }.marquee-mask[data-astro-cid-c9highlightband]{
+      -webkit-mask-image: linear-gradient(to right, transparent, #000 22%, #000 78%, transparent);
+      mask-image: linear-gradient(to right, transparent, #000 22%, #000 78%, transparent);
+    }h3[data-astro-cid-c9highlightband]{ font-size: 1.05rem; }}@media (prefers-reduced-motion: reduce){.marquee[data-astro-cid-c9highlightband]{ width: auto; justify-content: center; flex-wrap: wrap; }.marquee-track[data-astro-cid-c9highlightband] + .marquee-track[data-astro-cid-c9highlightband], .highlight-item[data-astro-cid-c9highlightband]:nth-child(n+5)[data-astro-cid-c9highlightband]{ display: none; }.marquee-mask[data-astro-cid-c9highlightband]{ overflow-x: hidden; cursor: auto; }}
+.cat-icon[data-astro-cid-c12categoryicon]{ aspect-ratio: 8 / 9; }.cat-icon[data-astro-cid-c12categoryicon] svg[data-astro-cid-c12categoryicon]{ width: 100%; height: 100%; display: block; }.cat-icon[data-astro-cid-c12categoryicon] .art[data-astro-cid-c12categoryicon]{
+    transform-origin: 100px 118px;
+    transform: scale(1);
+    transition: transform .35s ease;
+  }@media (hover: hover) and (pointer: fine){a:hover .cat-icon[data-astro-cid-c12categoryicon] .art[data-astro-cid-c12categoryicon]{ transform: scale(1.06); }}@media (prefers-reduced-motion: reduce){.cat-icon[data-astro-cid-c12categoryicon] .art[data-astro-cid-c12categoryicon]{ transition: none; }a:hover .cat-icon[data-astro-cid-c12categoryicon] .art[data-astro-cid-c12categoryicon]{ transform: none; }}
+.category-section[data-astro-cid-c11categorygrid]{ padding: 84px 0 100px; }.category-head[data-astro-cid-c11categorygrid]{ text-align: center; margin: 0 auto 48px; max-width: 30ch; text-wrap: balance; }.category-head[data-astro-cid-c11categorygrid] .section-label{ justify-content: center; }.category-head[data-astro-cid-c11categorygrid] .section-title::after{ margin-inline: auto; }.category-grid[data-astro-cid-c11categorygrid]{
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 40px 26px;
+    max-width: 1140px; margin: 0 auto;
+  }.category-card[data-astro-cid-c11categorygrid]{ display: block; text-decoration: none; color: inherit; text-align: center; }.category-card[data-astro-cid-c11categorygrid] .category-hex{ max-width: 210px; margin: 0 auto; }h3[data-astro-cid-c11categorygrid]{
+    font-family: var(--font-display); font-weight: 500; font-size: 1.15rem;
+    margin: 18px 0 4px; color: var(--ink); transition: color .2s ease;
+  }.category-card[data-astro-cid-c11categorygrid]:hover h3[data-astro-cid-c11categorygrid]{ color: var(--teal-dark); }.category-card[data-astro-cid-c11categorygrid] h3[data-astro-cid-c11categorygrid]::after{
+    content: ""; display: block; width: 34px; height: 2px; background: var(--honey);
+    margin: 8px auto 0; transform: scaleX(0); transition: transform .25s ease;
+  }@media (hover: hover) and (pointer: fine){.category-card[data-astro-cid-c11categorygrid]:hover h3[data-astro-cid-c11categorygrid]::after{ transform: scaleX(1); }}p[data-astro-cid-c11categorygrid]{ color: var(--ink-soft); font-size: 0.86rem; margin: 0; }@media (max-width: 1000px){.category-grid[data-astro-cid-c11categorygrid]{ grid-template-columns: repeat(3, 1fr); max-width: 760px; }}@media (max-width: 760px){.category-section[data-astro-cid-c11categorygrid]{ padding: 64px 0 72px; }.category-grid[data-astro-cid-c11categorygrid]{ grid-template-columns: 1fr 1fr; gap: 32px 16px; }.category-card[data-astro-cid-c11categorygrid] .category-hex{ max-width: 150px; }.category-card[data-astro-cid-c11categorygrid]:last-child:nth-child(odd){ grid-column: 1 / -1; }.category-card[data-astro-cid-c11categorygrid]:last-child:nth-child(odd) .category-hex{ max-width: 160px; }h3[data-astro-cid-c11categorygrid]{ font-size: 1.02rem; }}
+.home-about[data-astro-cid-c13homeabout]{ padding: 72px 0 8px; }.ha-grid[data-astro-cid-c13homeabout]{
+    display: grid; grid-template-columns: 0.95fr 1fr; gap: 56px; align-items: center;
+  }.ha-photo{ width: 100%; max-width: 520px; margin-right: auto; }.eyebrow[data-astro-cid-c13homeabout]{
+    display: block; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--teal-dark); margin-bottom: 12px;
+  }h2[data-astro-cid-c13homeabout]{
+    font-family: var(--font-display); font-weight: 500; font-size: clamp(1.5rem, 2.4vw, 2rem);
+    line-height: 1.15; margin: 0 0 18px; color: var(--ink); max-width: 20ch; text-wrap: balance;
+  }p[data-astro-cid-c13homeabout]{ color: var(--ink-soft); margin: 0 0 24px; max-width: 46ch; }.link-arrow[data-astro-cid-c13homeabout]{
+    font-weight: 600; color: var(--ochre); text-decoration: none;
+    border-bottom: 1px solid transparent; transition: border-color 0.2s ease;
+  }.link-arrow[data-astro-cid-c13homeabout]:hover{ border-bottom-color: currentColor; }.link-arrow[data-astro-cid-c13homeabout] span[data-astro-cid-c13homeabout]{ display: inline-block; transition: transform 0.2s ease; }.link-arrow[data-astro-cid-c13homeabout]:hover span[data-astro-cid-c13homeabout]{ transform: translateX(3px); }@media (max-width: 860px){.ha-grid[data-astro-cid-c13homeabout]{ grid-template-columns: 1fr; gap: 32px; }h2[data-astro-cid-c13homeabout], p[data-astro-cid-c13homeabout]{ max-width: none; }}
+
+  .swarm-canvas {
+    position: fixed; inset: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 45;
+  }
+
+.partners-band[data-astro-cid-c16partners]{ background: var(--paper-alt); border-top: 1px solid var(--line-soft); padding: 76px 0 72px; }.section-title[data-astro-cid-c16partners]{ margin-bottom: 36px; }.partners-grid[data-astro-cid-c16partners]{
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;
+  }.partner-badge[data-astro-cid-c16partners]{
+    padding: 12px; min-height: 150px;
+    display: flex; align-items: center; justify-content: center;
+    transition: transform .2s ease;
+  }@media (hover: hover) and (pointer: fine){.partner-badge[data-astro-cid-c16partners]:hover{ transform: translateY(-2px); }}.partner-badge[data-astro-cid-c16partners] a[data-astro-cid-c16partners]{ display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; }.partner-badge[data-astro-cid-c16partners] a[data-astro-cid-c16partners]:focus-visible{ outline: 2px solid var(--teal); outline-offset: 6px; }img[data-astro-cid-c16partners]{ max-width: 100%; max-height: 130px; width: auto; height: auto; object-fit: contain; }@media (max-width: 760px){.partners-grid[data-astro-cid-c16partners]{ grid-template-columns: 1fr 1fr; gap: 16px; }.partner-badge[data-astro-cid-c16partners]{ min-height: 120px; }img[data-astro-cid-c16partners]{ max-height: 104px; }}
+.hero[data-astro-cid-c8home]{ padding: 64px 0 8px; position: relative; overflow: hidden; }.hero-grid[data-astro-cid-c8home]{ position: relative; z-index: 1; text-align: center; }.hero-text[data-astro-cid-c8home]{ max-width: 44rem; margin-inline: auto; }.hero-logo[data-astro-cid-c8home]{
+    display: block; margin: 0 auto 24px; border-radius: 50%;
+    width: clamp(104px, 11vw, 150px); height: auto;
+  }h1[data-astro-cid-c8home]{
+    font-family: var(--font-display); font-weight: 500;
+    font-size: clamp(2.1rem, 3.6vw, 3.1rem); line-height: 1.1;
+    margin: 0 0 20px; max-width: 20ch; margin-inline: auto; color: var(--ink); text-wrap: balance;
+  }h1[data-astro-cid-c8home] em[data-astro-cid-c8home]{ font-style: italic; color: var(--teal-dark); }.lead[data-astro-cid-c8home]{
+    font-size: 1.06rem; color: var(--ink-soft); max-width: 52ch;
+    margin: 0 auto 30px; text-wrap: pretty;
+  }.cta-row[data-astro-cid-c8home]{ justify-content: center; }.hero-facts[data-astro-cid-c8home]{
+    list-style: none; display: grid;
+    grid-template-columns: repeat(var(--colonne, 3), minmax(0, 1fr));
+    gap: 20px 28px; max-width: 640px; margin: 40px auto 0; padding: 26px 0 0;
+    border-top: 1px solid var(--line);
+  }.hero-facts[data-astro-cid-c8home] li[data-astro-cid-c8home]{ text-align: center; min-width: 0; }.hero-facts[data-astro-cid-c8home] b[data-astro-cid-c8home]{
+    display: block; font-family: var(--font-display); font-size: 1.55rem; font-weight: 500;
+    color: var(--ink); line-height: 1.1;
+  }.hero-facts[data-astro-cid-c8home] span[data-astro-cid-c8home]{ display: block; margin-top: 4px; font-size: 0.82rem; color: var(--ink-soft); line-height: 1.35; }.stat-extra[data-astro-cid-c8home]{
+    display: block; margin-top: 7px; font-size: 0.74rem; font-weight: 700;
+    letter-spacing: 0.01em; color: var(--teal-dark);
+  }.hero-hex-deco[data-astro-cid-c8home]{
+    position: absolute; top: -70px; right: -60px; width: 340px; height: 380px;
+    pointer-events: none; z-index: 0;
+    animation: hexBreathe 8s ease-in-out infinite; transform-origin: center;
+  }@keyframes hexBreathe{
+    0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.9; }
+    50% { transform: scale(1.04) rotate(2deg); opacity: 1; }
+  }@media (max-width: 900px){.hero-facts[data-astro-cid-c8home]{ text-align: center; }}@media (max-width: 760px){.hero[data-astro-cid-c8home]{ padding-top: 40px; }.hero-hex-deco[data-astro-cid-c8home]{ width: 220px; height: 250px; right: -90px; top: -40px; }.hero-facts[data-astro-cid-c8home]{ gap: 16px 14px; padding-top: 22px; }.hero-facts[data-astro-cid-c8home] b[data-astro-cid-c8home]{ font-size: 1.2rem; }.hero-facts[data-astro-cid-c8home] span[data-astro-cid-c8home]{ font-size: 0.74rem; }.stat-extra[data-astro-cid-c8home]{ font-size: 0.68rem; }}
+.stat-extra[data-astro-cid-c17about]{ display: inline-block; margin-top: 4px; font-weight: 700; color: var(--teal-dark); }.about-grid[data-astro-cid-c17about]{ max-width: 66ch; margin-inline: auto; }.stat-row[data-astro-cid-c17about]{
+    display: flex; flex-wrap: wrap; gap: 28px 40px; margin-top: 32px; padding-top: 28px; border-top: 1px solid var(--line);
+  }.stat[data-astro-cid-c17about] b[data-astro-cid-c17about]{ display: block; font-family: var(--font-display); font-size: 1.7rem; color: var(--ink); font-weight: 500; }.stat[data-astro-cid-c17about] span[data-astro-cid-c17about]{ font-size: 0.86rem; color: var(--ink-soft); }.people[data-astro-cid-c17about]{ padding-top: 8px; }.person[data-astro-cid-c17about]{
+    display: grid; grid-template-columns: minmax(0, 310px) 1fr; gap: 44px; align-items: center;
+  }.person[data-astro-cid-c17about] + .person[data-astro-cid-c17about]{ margin-top: 64px; padding-top: 64px; border-top: 1px solid var(--line-soft); }.person-flip[data-astro-cid-c17about]{ grid-template-columns: 1fr minmax(0, 310px); }.person-flip[data-astro-cid-c17about] .person-photo{ order: 2; }.person-flip[data-astro-cid-c17about] .person-text[data-astro-cid-c17about]{ order: 1; }.person-photo{ width: 100%; }.person[data-astro-cid-c17about] h2[data-astro-cid-c17about]{
+    font-family: var(--font-display); font-weight: 500; font-size: clamp(1.5rem, 2.3vw, 1.95rem);
+    line-height: 1.15; margin: 10px 0 16px; color: var(--ink);
+  }.person-bio[data-astro-cid-c17about]{ color: var(--ink-soft); margin: 0; max-width: 56ch; }.apiary-inner[data-astro-cid-c17about]{ display: flex; flex-direction: column; align-items: center; gap: 36px; }figure[data-astro-cid-c17about]{ margin: 0; width: 100%; max-width: 440px; }.cta-row[data-astro-cid-c17about]{ justify-content: center; }@media (max-width: 760px){.person[data-astro-cid-c17about], .person-flip[data-astro-cid-c17about]{ grid-template-columns: 1fr; gap: 28px; }.person-flip[data-astro-cid-c17about] .person-photo, .person-flip[data-astro-cid-c17about] .person-text[data-astro-cid-c17about]{ order: initial; }.person-photo{ max-width: 240px; margin-inline: auto; }.person[data-astro-cid-c17about] + .person[data-astro-cid-c17about]{ margin-top: 44px; padding-top: 44px; }}
+
+.ps{padding:72px 0 88px;border-top:1px solid var(--line-soft);background:var(--paper)}
+.ps-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:52px;align-items:start}
+.ps-media{position:relative;background:#F5F4F0;border-radius:4px;padding:32px 28px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;min-height:460px}
+.ps-media img{width:100%;max-width:620px;height:auto;display:block}
+.ps-legend{position:absolute;left:18px;bottom:16px;display:flex;gap:16px;font-size:.78rem;font-weight:500}
+.ps-legend i{display:inline-block;width:12px;height:12px;border:1px solid var(--ink);border-radius:2px;margin-right:6px;vertical-align:-1px}
+.ps-note{display:flex;gap:10px;align-items:flex-start;background:#fff;border-radius:6px;padding:12px 16px;margin:0;font-size:.9rem;line-height:1.5;color:var(--ink);align-self:stretch}
+.ps-note svg{flex:none;margin-top:1px}
+.ps-badge{position:absolute;top:16px;right:16px;display:inline-flex;align-items:center;gap:6px;background:var(--teal-dark);color:#fff;font-size:.8rem;font-weight:700;padding:7px 14px;border-radius:18px}
+.ps-badge[hidden]{display:none}
+.ps-col{display:flex;flex-direction:column;gap:24px}
+.ps-tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.08em;color:var(--teal-dark);background:rgba(46,156,147,.12);padding:4px 10px;border-radius:2px}
+.ps-name{font-family:var(--font-body);font-weight:800;font-size:2.5rem;letter-spacing:-.025em;line-height:1;margin:12px 0 8px;color:var(--ink)}
+.ps-sub{margin:0;color:var(--ink-soft);font-size:1.02rem;line-height:1.5}
+.ps-price{display:flex;align-items:flex-start;gap:3px;margin-top:16px}
+.ps-price .cur{font-weight:800;font-size:1.25rem;margin-top:6px}
+.ps-price .val{font-weight:800;font-size:3rem;line-height:1;letter-spacing:-.03em;background:var(--honey);color:var(--ink);padding:4px 12px 7px}
+.ps-price-note{margin:8px 0 0;font-size:.88rem;color:var(--ink-soft)}
+.ps-price-note[hidden]{display:none}
+.ps-h{margin:0 0 10px;font-weight:700;font-size:.95rem;color:var(--ink)}
+.ps-parts{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.ps-parts li{display:flex;align-items:center;gap:14px;padding:10px 0;border-bottom:1px solid var(--line-soft);font-size:.95rem;color:var(--ink);line-height:1.35}
+.ps-parts small{display:block;color:var(--ink-soft);font-size:.84rem;margin-top:2px}
+.ps-parts .x{margin-left:auto;font-weight:700}
+.ps-parts-2{display:grid;grid-template-columns:1fr 1fr;column-gap:18px}
+.ps-num{display:inline-flex;gap:4px;min-width:88px;flex:none;color:var(--ink)}
+.ps-parts-2 .ps-num,.ps-parts-1 .ps-num{min-width:0}
+.ps-num span{width:26px;height:26px;border-radius:50%;border:2px solid var(--ink);display:inline-flex;align-items:center;justify-content:center;font-size:.74rem;font-weight:800;box-sizing:border-box}
+.ps-num span.r{background:var(--teal-dark);color:#fff}
+.ps-block[hidden]{display:none}
+.ps-pills{display:flex;flex-wrap:wrap;gap:8px}
+.ps-pill{height:44px;padding:0 18px;border-radius:22px;border:1px solid #B9B5AB;background:#fff;color:var(--ink);font:500 .9rem var(--font-body);cursor:pointer;transition:background .15s,border-color .15s}
+.ps-pill:hover{border-color:var(--ink)}
+.ps-pill[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff;font-weight:700}
+.ps-opt{border:2px dashed var(--teal);border-radius:8px;padding:16px;display:grid;gap:14px}
+.ps-switch{display:flex;gap:14px;align-items:center;background:none;border:0;padding:0;text-align:left;cursor:pointer;color:var(--ink);font:inherit;min-height:44px}
+.ps-switch strong{display:block;font-size:1rem}
+.ps-switch small{display:block;color:var(--ink-soft);font-size:.84rem;line-height:1.4}
+.ps-switch .track{width:52px;height:30px;border-radius:15px;background:#B9B5AB;position:relative;flex:none;transition:background .2s}
+.ps-switch .track::after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;transition:transform .2s}
+.ps-switch[aria-pressed="true"] .track{background:var(--teal-dark)}
+.ps-switch[aria-pressed="true"] .track::after{transform:translateX(22px)}
+.ps-buy{display:flex;gap:12px;align-items:center}
+.ps-qty{display:flex;align-items:center;height:54px;border:1px solid #B9B5AB;border-radius:27px;flex:none}
+.ps-qty button{width:48px;height:52px;border:0;background:none;font-size:1.3rem;cursor:pointer;color:var(--ink)}
+.ps-qty output{min-width:30px;text-align:center;font-weight:700}
+.ps-add{flex:1;height:54px;border-radius:27px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;text-decoration:none;transition:background .2s;padding:0 16px;text-align:center}
+.ps-add:hover{background:var(--teal-dark)}
+.ps-total{margin:-12px 0 0;font-size:.88rem;color:var(--ink-soft)}
+.ps-info{display:grid;gap:10px;font-size:.92rem;color:var(--ink)}
+.ps-info > div{display:flex;gap:10px;align-items:baseline}
+.ps-dot{width:10px;height:10px;border-radius:50%;background:#0A8A3A;flex:none}
+.ps-dot.o{background:var(--honey)}
+.ps-specs{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;margin-top:44px;padding-top:20px;border-top:1px solid var(--line)}
+.ps-specs span{display:block;font-size:.78rem;color:var(--ink-soft)}
+.ps-specs b{font-size:1.2rem;font-weight:800;color:var(--ink)}
+@media (max-width:900px){.ps{padding:48px 0 60px}.ps-grid{grid-template-columns:1fr;gap:28px}.ps-media{min-height:0;padding:20px 14px}.ps-name{font-size:2.1rem}.ps-specs{grid-template-columns:repeat(2,1fr)}.ps-legend{position:static}.ps-parts-2{grid-template-columns:1fr}}
+@media (max-width:420px){.ps-buy{flex-wrap:wrap}.ps-add{flex-basis:100%}.ps-num{min-width:70px}}
+
+.breed-filter[data-astro-cid-c18queens]{
+    position: sticky; top: var(--nav-h); z-index: 20;
+    display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    flex-wrap: wrap; margin: 0 calc(var(--gutter) * -1) 26px; padding: 12px var(--gutter);
+    background: rgba(250, 250, 248, 0.88);
+    backdrop-filter: blur(12px) saturate(1.3);
+    -webkit-backdrop-filter: blur(12px) saturate(1.3);
+    box-shadow: 0 1px 0 var(--line), 0 10px 18px -16px rgba(22, 40, 61, .5);
+  }.chips[data-astro-cid-c18queens]{ display: flex; gap: 8px; flex-wrap: wrap; }.chip[data-astro-cid-c18queens]{
+    font: inherit; font-size: 0.84rem; font-weight: 600; line-height: 1;
+    padding: 9px 14px; border-radius: 20px; cursor: pointer;
+    border: 1px solid var(--line); background: var(--paper); color: var(--ink-soft);
+    transition: border-color .2s ease, background .2s ease, color .2s ease;
+  }.chip.is-on[data-astro-cid-c18queens]{ border-color: var(--teal); background: var(--teal); color: #fff; }@media (hover: hover) and (pointer: fine){.chip[data-astro-cid-c18queens]:not(.is-on):hover{ border-color: var(--ink); color: var(--ink); }}.price-note[data-astro-cid-c18queens]{ margin: 0; font-size: 0.86rem; color: var(--ink-soft); white-space: nowrap; }@media (max-width: 760px){.breed-filter[data-astro-cid-c18queens]{ gap: 12px; }.chips[data-astro-cid-c18queens]{
+      flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none;
+      margin: 0 calc(var(--gutter) * -1); padding: 2px var(--gutter);
+      scroll-padding: var(--gutter); width: calc(100% + var(--gutter) * 2);
+    }.chips[data-astro-cid-c18queens]::-webkit-scrollbar{ display: none; }.chip[data-astro-cid-c18queens]{ flex: none; padding: 11px 16px; }.price-note[data-astro-cid-c18queens]{ white-space: normal; }}.catalog-intro[data-astro-cid-c18queens]{ display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; margin-bottom: 56px; }.section-head[data-astro-cid-c18queens]{ margin-bottom: 0; }figure[data-astro-cid-c18queens]{ margin: 0; }.catalog-photo{ max-width: 400px; margin-left: auto; }.shipping[data-astro-cid-c18queens]{
+    display: flex; gap: 20px; align-items: flex-start;
+    background: var(--paper); border: 1px solid var(--line); border-left: 4px solid var(--honey);
+    padding: 22px 26px; margin-bottom: 28px;
+  }.shipping-photo[data-astro-cid-c18queens]{ width: 190px; height: 140px; object-fit: cover; flex: none; border-radius: 2px; }.shipping[data-astro-cid-c18queens] h2[data-astro-cid-c18queens]{ font-family: var(--font-display); font-weight: 500; font-size: 1.15rem; margin: 0 0 8px; color: var(--ink); }.shipping[data-astro-cid-c18queens] ul[data-astro-cid-c18queens]{ margin: 0; padding-left: 18px; color: var(--ink-soft); font-size: 0.94rem; }.shipping[data-astro-cid-c18queens] li[data-astro-cid-c18queens]{ margin-bottom: 4px; }.shipping[data-astro-cid-c18queens] li[data-astro-cid-c18queens]::marker{ color: var(--honey); }@media (max-width: 560px){.shipping[data-astro-cid-c18queens]{ flex-direction: column; gap: 14px; padding: 20px; }.shipping-photo[data-astro-cid-c18queens]{ width: 100%; height: 180px; }}.breed-grid[data-astro-cid-c18queens]{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }.breed-card[data-astro-cid-c18queens]{ background: var(--paper); padding: 32px 30px; transition: background .25s ease; }.breed-filler[data-astro-cid-c18queens]{ background: var(--paper); }.breed-card[data-astro-cid-c18queens]{ border-top: 3px solid var(--breed); }.breed-card[data-astro-cid-c18queens]:hover{ background: color-mix(in srgb, var(--breed) 7%, var(--paper)); }.breed-hex[data-astro-cid-c18queens]{ width: 40px; height: 40px; margin-bottom: 18px; transition: transform .3s ease; }@media (hover: hover) and (pointer: fine){.breed-card[data-astro-cid-c18queens]:hover .breed-hex[data-astro-cid-c18queens]{ transform: rotate(20deg) scale(1.08); }}h2[data-astro-cid-c18queens]{ font-family: var(--font-display); font-weight: 500; font-size: 1.3rem; margin: 0 0 4px; color: var(--ink); }.latin[data-astro-cid-c18queens]{ font-style: italic; color: var(--ink-faint); font-size: 0.85rem; margin: 0 0 12px; display: block; }.breed-origin[data-astro-cid-c18queens]{
+    display: flex; align-items: center; gap: 18px;
+    margin: 0 0 14px; padding: 12px 14px;
+    border-left: 3px solid var(--breed); background: var(--paper-alt);
+  }.origin-main[data-astro-cid-c18queens]{ flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 3px; }.origin-label[data-astro-cid-c18queens]{
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint);
+  }.origin-list[data-astro-cid-c18queens]{ list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 8px; }.origin-list[data-astro-cid-c18queens] li[data-astro-cid-c18queens]{ display: flex; flex-direction: column; }.origin-list[data-astro-cid-c18queens] b[data-astro-cid-c18queens]{ font-size: 0.92rem; color: var(--ink); font-weight: 600; }.origin-list[data-astro-cid-c18queens] span[data-astro-cid-c18queens]{
+    font-size: 0.82rem; color: var(--ink-soft); font-variant-numeric: tabular-nums;
+  }.origin-photos[data-astro-cid-c18queens]{ flex: none; display: flex; gap: 8px; }.origin-photo[data-astro-cid-c18queens]{ width: 84px; height: auto; display: block; clip-path: var(--hex); }.breed-tags[data-astro-cid-c18queens]{ list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 14px; padding: 0; }.breed-tags[data-astro-cid-c18queens] li[data-astro-cid-c18queens]{
+    font-size: 0.74rem; font-weight: 600; letter-spacing: 0.01em; color: var(--ink);
+    background: color-mix(in srgb, var(--breed) 18%, transparent);
+    padding: 4px 10px; border-radius: 20px;
+  }p[data-astro-cid-c18queens]{ color: var(--ink-soft); font-size: 0.94rem; margin: 0 0 18px; }.breed-order[data-astro-cid-c18queens]{ color: var(--ochre); text-decoration: none; font-weight: 600; font-size: 0.88rem; border-bottom: 1px solid transparent; }.breed-order[data-astro-cid-c18queens]:hover{ border-color: var(--ochre); }@media (max-width: 760px){.catalog-intro[data-astro-cid-c18queens]{ grid-template-columns: 1fr; gap: 28px; align-items: start; }.breed-grid[data-astro-cid-c18queens]{ grid-template-columns: 1fr; }}
+.intro-grid[data-astro-cid-c20pollination]{ display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }.lead[data-astro-cid-c20pollination]{ font-size: 1.06rem; color: var(--ink-soft); max-width: 48ch; margin: 0 0 22px; }.price-tag[data-astro-cid-c20pollination]{ display: flex; align-items: baseline; gap: 8px; margin: 0 0 28px; }.price-tag[data-astro-cid-c20pollination] .cur[data-astro-cid-c20pollination]{ font-size: 1.1rem; font-weight: 600; color: var(--ink); }.price-tag[data-astro-cid-c20pollination] .val[data-astro-cid-c20pollination]{
+    font-family: var(--font-body); font-weight: 800; font-size: 2.4rem; letter-spacing: -0.02em; color: var(--ink);
+    background: var(--honey); padding: 2px 14px; line-height: 1.15;
+  }.price-tag[data-astro-cid-c20pollination] small[data-astro-cid-c20pollination]{ font-size: 0.86rem; color: var(--ink-soft); }.intro-photo{ max-width: 460px; width: 100%; margin-left: auto; }.block-title[data-astro-cid-c20pollination]{
+    font-family: var(--font-display); font-weight: 500; font-size: 1.6rem; color: var(--ink); margin: 0 0 28px;
+  }.made[data-astro-cid-c20pollination]{ list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }.made-item[data-astro-cid-c20pollination]{ border-top: 3px solid var(--honey); padding-top: 18px; }.made-item[data-astro-cid-c20pollination] h3[data-astro-cid-c20pollination]{ font-family: var(--font-display); font-weight: 500; font-size: 1.1rem; margin: 0 0 6px; color: var(--ink); }.made-item[data-astro-cid-c20pollination] p[data-astro-cid-c20pollination]{ color: var(--ink-soft); font-size: 0.92rem; margin: 0; }.uses[data-astro-cid-c20pollination]{ list-style: none; display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 56px; padding: 0; }.uses[data-astro-cid-c20pollination] li[data-astro-cid-c20pollination]{
+    font-size: 0.88rem; font-weight: 500; color: var(--ink);
+    border: 1px solid var(--line); border-radius: 20px; padding: 7px 16px; background: var(--paper-alt);
+  }.two-col[data-astro-cid-c20pollination]{ display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px; align-items: start; }.side[data-astro-cid-c20pollination]{ display: grid; gap: 28px; }.panel[data-astro-cid-c20pollination]{ border: 1px solid var(--line); padding: 26px 28px; background: var(--paper); }.panel-soft[data-astro-cid-c20pollination]{ background: var(--paper-alt); border-color: var(--line-soft); }.panel-heat[data-astro-cid-c20pollination]{ background: rgba(240, 180, 41, 0.12); border-color: rgba(184, 122, 34, 0.35); }.panel-heat[data-astro-cid-c20pollination] h3[data-astro-cid-c20pollination]{ display: flex; align-items: center; gap: 10px; color: var(--ink); }.heat-icon[data-astro-cid-c20pollination]{ width: 22px; height: 22px; flex: none; color: var(--ochre); }.panel[data-astro-cid-c20pollination] h3[data-astro-cid-c20pollination]{ font-family: var(--font-display); font-weight: 500; font-size: 1.2rem; margin: 0 0 12px; color: var(--ink); }.panel[data-astro-cid-c20pollination] p[data-astro-cid-c20pollination]{ color: var(--ink-soft); margin: 0; font-size: 0.96rem; }.place[data-astro-cid-c20pollination]{ margin: 0; padding-left: 20px; color: var(--ink-soft); font-size: 0.96rem; }.place[data-astro-cid-c20pollination] li[data-astro-cid-c20pollination]{ margin-bottom: 12px; }.place[data-astro-cid-c20pollination] li[data-astro-cid-c20pollination]:last-child{ margin-bottom: 0; }.place[data-astro-cid-c20pollination] li[data-astro-cid-c20pollination]::marker{ color: var(--teal); }.closing[data-astro-cid-c20pollination]{ margin-top: 36px; }@media (max-width: 900px){.intro-grid[data-astro-cid-c20pollination], .two-col[data-astro-cid-c20pollination]{ grid-template-columns: 1fr; gap: 36px; }.intro-photo{ max-width: 380px; margin-inline: auto; }.made[data-astro-cid-c20pollination]{ grid-template-columns: 1fr 1fr; gap: 24px; }}@media (max-width: 560px){.made[data-astro-cid-c20pollination]{ grid-template-columns: 1fr; }}
+.intro-grid[data-astro-cid-c21honey]{ display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }.lead[data-astro-cid-c21honey]{ font-size: 1.06rem; color: var(--ink-soft); max-width: 48ch; margin: 0 0 28px; }.intro-art{ max-width: 400px; width: 100%; margin-left: auto; }.block-title[data-astro-cid-c21honey]{
+    font-family: var(--font-display); font-weight: 500; font-size: 1.6rem; color: var(--ink); margin: 0 0 10px;
+  }.price-intro[data-astro-cid-c21honey]{ color: var(--ink-soft); font-size: 0.94rem; margin: 0 0 24px; }.lines[data-astro-cid-c21honey]{ display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 20px; }.line-card[data-astro-cid-c21honey]{
+    background: var(--paper); border: 1px solid var(--line); border-top: 4px solid var(--tone);
+    padding: 28px 30px; display: grid; grid-template-columns: 116px 1fr; gap: 26px; align-items: start;
+  }.line-photo[data-astro-cid-c21honey]{ width: 116px; height: auto; display: block; }.line-badge[data-astro-cid-c21honey]{
+    display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink); background: color-mix(in srgb, var(--tone) 32%, transparent);
+    padding: 4px 10px; border-radius: 3px; margin-bottom: 14px;
+  }.line-card[data-astro-cid-c21honey] h3[data-astro-cid-c21honey]{ font-family: var(--font-display); font-weight: 500; font-size: 1.3rem; margin: 0 0 4px; color: var(--ink); }.period[data-astro-cid-c21honey]{ font-size: 0.82rem; color: var(--ink-faint); margin: 0 0 14px; font-style: italic; }.line-card[data-astro-cid-c21honey] p[data-astro-cid-c21honey]{ color: var(--ink-soft); font-size: 0.95rem; margin: 0; }.table-wrap[data-astro-cid-c21honey]{ overflow-x: auto; margin-bottom: 20px; }.price-table[data-astro-cid-c21honey]{ width: 100%; border-collapse: collapse; min-width: 420px; }.price-table[data-astro-cid-c21honey] th[data-astro-cid-c21honey], .price-table[data-astro-cid-c21honey] td[data-astro-cid-c21honey]{ padding: 14px 16px; text-align: left; border-bottom: 1px solid var(--line); }.price-table[data-astro-cid-c21honey] thead[data-astro-cid-c21honey] th[data-astro-cid-c21honey]{
+    font-family: var(--font-body); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--ink-faint); border-bottom: 2px solid var(--ink);
+  }.price-table[data-astro-cid-c21honey] tbody[data-astro-cid-c21honey] th[data-astro-cid-c21honey]{ font-weight: 600; color: var(--ink); white-space: nowrap; }.price-table[data-astro-cid-c21honey] td[data-astro-cid-c21honey]{ color: var(--ink); font-variant-numeric: tabular-nums; }.price-table[data-astro-cid-c21honey] tbody[data-astro-cid-c21honey] tr[data-astro-cid-c21honey]:last-child th[data-astro-cid-c21honey], .price-table[data-astro-cid-c21honey] tbody[data-astro-cid-c21honey] tr[data-astro-cid-c21honey]:last-child td[data-astro-cid-c21honey]{ border-bottom: none; }.missing[data-astro-cid-c21honey]{
+    background: #FDECC0; color: #7A4F0E; font-weight: 600; font-size: 0.84em;
+    padding: 1px 7px; border-radius: 3px; white-space: nowrap;
+  }.bulk[data-astro-cid-c21honey]{ font-size: 0.9rem; color: var(--ink-soft); margin: 0 0 32px; }.bucket[data-astro-cid-c21honey]{
+    display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; align-items: center;
+    background: var(--paper-alt); border: 1px solid var(--line); border-left: 4px solid var(--ochre);
+    padding: 28px 30px;
+  }.bucket[data-astro-cid-c21honey] h3[data-astro-cid-c21honey]{ font-family: var(--font-display); font-weight: 500; font-size: 1.3rem; margin: 0 0 10px; color: var(--ink); }.bucket[data-astro-cid-c21honey] p[data-astro-cid-c21honey]{ color: var(--ink-soft); font-size: 0.95rem; margin: 0; max-width: 46ch; }.bucket-quote[data-astro-cid-c21honey]{ display: grid; gap: 14px; justify-items: start; }.bucket-quote[data-astro-cid-c21honey] p[data-astro-cid-c21honey]{ font-size: 0.92rem; }.bucket-quote[data-astro-cid-c21honey] .btn[data-astro-cid-c21honey]{ white-space: nowrap; }.two-col[data-astro-cid-c21honey]{ display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px; align-items: start; margin-top: 36px; }.panel[data-astro-cid-c21honey]{ border: 1px solid var(--line); padding: 26px 28px; background: var(--paper); }.panel-soft[data-astro-cid-c21honey]{ background: var(--paper-alt); border-color: var(--line-soft); }.panel[data-astro-cid-c21honey] h3[data-astro-cid-c21honey]{ font-family: var(--font-display); font-weight: 500; font-size: 1.2rem; margin: 0 0 12px; color: var(--ink); }.panel[data-astro-cid-c21honey] p[data-astro-cid-c21honey]{ color: var(--ink-soft); margin: 0; font-size: 0.96rem; }.how[data-astro-cid-c21honey]{ margin: 0; padding-left: 20px; color: var(--ink-soft); font-size: 0.96rem; }.how[data-astro-cid-c21honey] li[data-astro-cid-c21honey]{ margin-bottom: 12px; }.how[data-astro-cid-c21honey] li[data-astro-cid-c21honey]:last-child{ margin-bottom: 0; }.how[data-astro-cid-c21honey] li[data-astro-cid-c21honey]::marker{ color: var(--honey); }.closing[data-astro-cid-c21honey]{ color: var(--ink-soft); margin: 36px 0 22px; max-width: 54ch; }@media (max-width: 900px){.intro-grid[data-astro-cid-c21honey], .two-col[data-astro-cid-c21honey], .lines[data-astro-cid-c21honey], .bucket[data-astro-cid-c21honey]{ grid-template-columns: 1fr; gap: 32px; }.intro-art{ max-width: 320px; margin-inline: auto; }}@media (max-width: 420px){.line-card[data-astro-cid-c21honey]{ grid-template-columns: 88px 1fr; gap: 18px; padding: 24px 20px; }.line-photo[data-astro-cid-c21honey]{ width: 88px; }}@media (max-width: 560px){.price-table[data-astro-cid-c21honey]{ min-width: 0; }.price-table[data-astro-cid-c21honey] th[data-astro-cid-c21honey], .price-table[data-astro-cid-c21honey] td[data-astro-cid-c21honey]{ padding: 12px 8px; font-size: 0.9rem; }.price-table[data-astro-cid-c21honey] thead[data-astro-cid-c21honey] th[data-astro-cid-c21honey]{ font-size: 0.7rem; letter-spacing: 0.04em; }.missing[data-astro-cid-c21honey]{ font-size: 0.76em; padding: 1px 5px; }}
+.order-form[data-astro-cid-c23orderform]{ border: 1px solid var(--line); padding: 34px; background: var(--paper); }.field[data-astro-cid-c23orderform]{ margin: 0 0 20px; }fieldset.field[data-astro-cid-c23orderform]{ border: none; padding: 0; min-width: 0; }label[data-astro-cid-c23orderform], legend[data-astro-cid-c23orderform]{ display: block; font-size: 0.86rem; font-weight: 600; margin-bottom: 7px; color: var(--ink); padding: 0; }input[type='text'][data-astro-cid-c23orderform], input[type='number'][data-astro-cid-c23orderform], textarea[data-astro-cid-c23orderform]{
+    width: 100%; padding: 11px 13px; border: 1px solid var(--line); border-radius: 2px;
+    background: var(--paper-alt); color: var(--ink); font-family: var(--font-body); font-size: 0.94rem;
+  }input[data-astro-cid-c23orderform]:focus, textarea[data-astro-cid-c23orderform]:focus{ outline: 1.5px solid var(--teal); outline-offset: 1px; }textarea[data-astro-cid-c23orderform]{ min-height: 96px; resize: vertical; }.checkbox-group[data-astro-cid-c23orderform]{ display: flex; flex-wrap: wrap; gap: 10px; }.checkbox-group[data-astro-cid-c23orderform] label[data-astro-cid-c23orderform]{
+    display: flex; align-items: center; gap: 7px; font-weight: 500; font-size: 0.9rem; margin: 0;
+    border: 1px solid var(--line); border-radius: 20px; padding: 8px 14px; cursor: pointer;
+    background: var(--paper-alt); transition: border-color .2s ease, background .2s ease;
+  }.checkbox-group[data-astro-cid-c23orderform] label[data-astro-cid-c23orderform]:has(input:checked){ border-color: var(--teal); background: rgba(46, 156, 147, 0.08); }.checkbox-group[data-astro-cid-c23orderform] input[data-astro-cid-c23orderform]{ accent-color: var(--teal); }.field-hint[data-astro-cid-c23orderform]{ font-size: 0.82rem; color: var(--ink-soft); margin: -2px 0 12px; }.product-options[data-astro-cid-c23orderform]{ display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }.product-option[data-astro-cid-c23orderform]{
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    border: 1px solid var(--line); border-radius: 4px; padding: 8px 10px 8px 8px;
+    background: var(--paper-alt); transition: border-color .2s ease, background .2s ease, box-shadow .2s ease;
+  }.product-option.is-selected[data-astro-cid-c23orderform]{ border-color: var(--teal); background: rgba(46, 156, 147, 0.07); box-shadow: 0 0 0 1px var(--teal) inset; }.product-check[data-astro-cid-c23orderform]{ display: flex; align-items: center; gap: 8px; margin: 0; cursor: pointer; flex: 1; min-width: 0; }.product-check[data-astro-cid-c23orderform] input[data-astro-cid-c23orderform]{ accent-color: var(--teal); width: 16px; height: 16px; flex: none; }.product-thumb[data-astro-cid-c23orderform]{ width: 32px; height: 36px; flex: none; }.product-thumb[data-astro-cid-c23orderform] img[data-astro-cid-c23orderform]{ width: 100%; height: 100%; object-fit: cover; clip-path: var(--hex); display: block; }.product-name[data-astro-cid-c23orderform]{
+    font-weight: 600; font-size: 0.85rem; line-height: 1.25;
+    flex: 1; min-width: 0; overflow-wrap: break-word;
+  }.product-qty[data-astro-cid-c23orderform]{ display: flex; align-items: center; margin: 0; flex: none; }.product-qty[data-astro-cid-c23orderform] input[type='number'][data-astro-cid-c23orderform]{
+    width: 52px; padding: 8px 4px; font-size: 0.92rem; text-align: center; background: var(--paper);
+  }.product-qty[data-astro-cid-c23orderform] input[data-astro-cid-c23orderform]:disabled{ opacity: 0.4; cursor: not-allowed; }.product-option[data-product='honey'][data-astro-cid-c23orderform] .product-qty[data-astro-cid-c23orderform]{ display: none; }.honey-block[data-astro-cid-c23orderform]{
+    border: 1px solid var(--line); border-left: 3px solid var(--honey);
+    background: var(--paper-alt); padding: 18px 20px 20px;
+  }.honey-block[hidden][data-astro-cid-c23orderform]{ display: none; }.honey-block[data-astro-cid-c23orderform] legend[data-astro-cid-c23orderform]{
+    font-size: 0.92rem; padding: 0 8px; margin-left: -8px;
+  }.honey-grid[data-astro-cid-c23orderform]{ width: 100%; border-collapse: collapse; }.honey-grid[data-astro-cid-c23orderform] th[data-astro-cid-c23orderform], .honey-grid[data-astro-cid-c23orderform] td[data-astro-cid-c23orderform]{ padding: 8px 6px; text-align: center; }.honey-grid[data-astro-cid-c23orderform] thead[data-astro-cid-c23orderform] th[data-astro-cid-c23orderform]{ font-size: 0.8rem; font-weight: 700; color: var(--ink); white-space: nowrap; }.hg-size[data-astro-cid-c23orderform]{ display: block; }.hg-price[data-astro-cid-c23orderform]{ display: block; font-size: 0.74rem; font-weight: 400; color: var(--ink-soft); }.honey-grid[data-astro-cid-c23orderform] tbody[data-astro-cid-c23orderform] th[data-astro-cid-c23orderform]{
+    text-align: left; font-size: 0.86rem; font-weight: 600; white-space: nowrap;
+    padding-left: 0; border-top: 1px solid var(--line);
+  }.honey-grid[data-astro-cid-c23orderform] tbody[data-astro-cid-c23orderform] td[data-astro-cid-c23orderform]{ border-top: 1px solid var(--line); }.honey-grid[data-astro-cid-c23orderform] input[type='number'][data-astro-cid-c23orderform]{
+    width: 66px; padding: 7px 8px; font-size: 0.92rem; background: var(--paper); text-align: center;
+  }@media (max-width: 560px){.honey-grid[data-astro-cid-c23orderform], .honey-grid[data-astro-cid-c23orderform] tbody[data-astro-cid-c23orderform], .honey-grid[data-astro-cid-c23orderform] tr[data-astro-cid-c23orderform], .honey-grid[data-astro-cid-c23orderform] td[data-astro-cid-c23orderform]{ display: block; width: 100%; }.honey-grid[data-astro-cid-c23orderform] thead[data-astro-cid-c23orderform]{ display: none; }.honey-grid[data-astro-cid-c23orderform] tbody[data-astro-cid-c23orderform] tr[data-astro-cid-c23orderform]{ border: 1px solid var(--line); border-radius: 4px; background: var(--paper); margin-bottom: 10px; padding: 4px 12px 10px; }.honey-grid[data-astro-cid-c23orderform] tbody[data-astro-cid-c23orderform] th[data-astro-cid-c23orderform]{ display: block; border: none; padding: 10px 0 4px; }.honey-grid[data-astro-cid-c23orderform] tbody[data-astro-cid-c23orderform] td[data-astro-cid-c23orderform]{
+      display: flex; align-items: center; justify-content: space-between; gap: 10px;
+      border: none; border-top: 1px solid var(--line-soft); padding: 7px 0;
+    }.honey-grid[data-astro-cid-c23orderform] tbody[data-astro-cid-c23orderform] td[data-astro-cid-c23orderform]::before{
+      content: attr(data-size) " · " attr(data-price); font-weight: 600; font-size: 0.88rem;
+    }}.summary[data-astro-cid-c23orderform]{
+    border: 1px solid var(--line); border-top: 3px solid var(--honey);
+    background: var(--paper-alt); padding: 18px 20px; margin: 26px 0 20px;
+  }.summary-title[data-astro-cid-c23orderform]{
+    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-faint); margin: 0 0 10px;
+  }.summary-empty[data-astro-cid-c23orderform]{ margin: 0; font-size: 0.9rem; color: var(--ink-soft); }.summary-lines[data-astro-cid-c23orderform]{ list-style: none; margin: 0; padding: 0; }.summary-lines[data-astro-cid-c23orderform] li{
+    display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
+    padding: 7px 0; border-bottom: 1px solid var(--line-soft); font-size: 0.92rem;
+  }.summary-lines[data-astro-cid-c23orderform] li span:last-child{ font-variant-numeric: tabular-nums; white-space: nowrap; }.summary-lines[data-astro-cid-c23orderform] .is-tbd{ color: var(--ink-soft); font-style: italic; }.summary-total[data-astro-cid-c23orderform]{
+    display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
+    margin: 12px 0 0; font-size: 0.95rem; font-weight: 600;
+  }.summary-amount[data-astro-cid-c23orderform]{
+    font-family: var(--font-display); font-size: 1.4rem; font-weight: 500;
+    color: var(--ink); font-variant-numeric: tabular-nums; white-space: nowrap;
+  }.summary-note[data-astro-cid-c23orderform]{ margin: 10px 0 0; font-size: 0.8rem; color: var(--ink-soft); }.field-row[data-astro-cid-c23orderform]{ display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }.submit[data-astro-cid-c23orderform]{ width: 100%; text-align: center; border: none; }.form-note[data-astro-cid-c23orderform]{ font-size: 0.84rem; color: var(--ink-soft); margin: 14px 0 0; }.privacy-note[data-astro-cid-c23orderform]{ margin-top: 6px; }.privacy-note[data-astro-cid-c23orderform] a[data-astro-cid-c23orderform]{ color: var(--teal-dark); font-weight: 600; }.form-status[data-astro-cid-c23orderform]{ margin: 16px 0 0; font-size: 0.9rem; font-weight: 600; display: none; }.form-status.show[data-astro-cid-c23orderform]{ display: block; }.form-status.is-error[data-astro-cid-c23orderform]{ color: #B3261E; }.form-status.is-ok[data-astro-cid-c23orderform]{ color: var(--teal-dark); }@media (max-width: 760px){.order-form[data-astro-cid-c23orderform]{ padding: 24px 20px; }.field-row[data-astro-cid-c23orderform]{ grid-template-columns: 1fr; gap: 0; }.product-options[data-astro-cid-c23orderform]{ grid-template-columns: 1fr; }}
+.contact-grid[data-astro-cid-c22order]{ display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 56px; align-items: start; }.contact-info[data-astro-cid-c22order] p[data-astro-cid-c22order]{ color: var(--ink-soft); margin: 0 0 26px; }.contact-line[data-astro-cid-c22order] b[data-astro-cid-c22order]{ display: block; font-size: 0.84rem; color: var(--ink-soft); font-weight: 600; margin-bottom: 2px; }.contact-line[data-astro-cid-c22order] a[data-astro-cid-c22order]{ font-size: 1.05rem; text-decoration: none; color: var(--ink); font-weight: 600; }.contact-line[data-astro-cid-c22order] a[data-astro-cid-c22order]:hover{ color: var(--teal-dark); }.contact-logo[data-astro-cid-c22order]{ display: block; margin-top: 40px; border-radius: 50%; opacity: 0.95; }@media (max-width: 760px){.contact-grid[data-astro-cid-c22order]{ grid-template-columns: 1fr; gap: 36px; }.contact-logo[data-astro-cid-c22order]{ display: none; }}
+.map[data-astro-cid-c25mapembed]{
+    position: relative; width: 100%; aspect-ratio: 4 / 3; border: 1px solid var(--line); overflow: hidden;
+    background-color: #EEF4F3;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='48' viewBox='0 0 56 48'%3E%3Cpath d='M14 1h28l14 23-14 23H14L0 24z' fill='none' stroke='%232E9C93' stroke-opacity='0.16' stroke-width='1.2'/%3E%3C/svg%3E");
+    background-size: 56px 48px;
+  }.map[data-astro-cid-c25mapembed] iframe{ position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }.map-placeholder[data-astro-cid-c25mapembed]{
+    position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 24px; gap: 12px;
+  }.map-pin[data-astro-cid-c25mapembed]{ width: 40px; height: 52px; filter: drop-shadow(0 6px 10px rgba(22, 40, 61, 0.25)); }.map-place[data-astro-cid-c25mapembed]{ font-family: var(--font-display); font-size: 1.2rem; color: var(--ink); margin: 0; }.map-load[data-astro-cid-c25mapembed]{ border: none; }.map-note[data-astro-cid-c25mapembed]{ font-size: 0.78rem; color: var(--ink-soft); max-width: 42ch; margin: 4px 0 0; line-height: 1.5; }.map-prefs[data-astro-cid-c25mapembed]{ background: none; border: none; padding: 0; font: inherit; color: var(--teal-dark); text-decoration: underline; cursor: pointer; }.map-links[data-astro-cid-c25mapembed]{ display: flex; gap: 22px; flex-wrap: wrap; margin-top: 12px; font-size: 0.88rem; }.map-links[data-astro-cid-c25mapembed] a[data-astro-cid-c25mapembed]{ color: var(--teal-dark); font-weight: 600; text-decoration: none; }.map-links[data-astro-cid-c25mapembed] a[data-astro-cid-c25mapembed]:hover{ text-decoration: underline; }@media (max-width: 560px){.map[data-astro-cid-c25mapembed]{ aspect-ratio: 3 / 4; }}
+.contact-layout[data-astro-cid-c24contact]{ display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items: start; }.info-list[data-astro-cid-c24contact]{ margin: 0; display: grid; gap: 0; }.info-row[data-astro-cid-c24contact]{ border-top: 1px solid var(--line); padding: 18px 0; display: grid; grid-template-columns: 130px 1fr; gap: 16px; }.info-row[data-astro-cid-c24contact]:last-child{ border-bottom: 1px solid var(--line); }dt[data-astro-cid-c24contact]{ font-size: 0.8rem; font-weight: 600; color: var(--teal-dark); letter-spacing: 0.02em; padding-top: 3px; }dd[data-astro-cid-c24contact]{ margin: 0; color: var(--ink); line-height: 1.55; }.big[data-astro-cid-c24contact]{ font-size: 1.1rem; font-weight: 600; color: var(--ink); text-decoration: none; }.big[data-astro-cid-c24contact]:hover{ color: var(--teal-dark); }.social[data-astro-cid-c24contact]{ display: flex; gap: 18px; flex-wrap: wrap; }.social[data-astro-cid-c24contact] a[data-astro-cid-c24contact]{ color: var(--ink); font-weight: 600; text-decoration: none; }.social[data-astro-cid-c24contact] a[data-astro-cid-c24contact]:hover{ color: var(--teal-dark); }.order-card[data-astro-cid-c24contact]{ margin-top: 32px; background: var(--paper-alt); border: 1px solid var(--line-soft); padding: 26px 26px 28px; position: relative; overflow: hidden; }.order-card[data-astro-cid-c24contact]::after{
+    content: ""; position: absolute; right: -24px; top: -24px; width: 96px; height: 108px;
+    background: var(--honey); opacity: 0.18; clip-path: var(--hex);
+  }.order-card[data-astro-cid-c24contact] h2[data-astro-cid-c24contact], .map-title[data-astro-cid-c24contact]{ font-family: var(--font-display); font-weight: 500; font-size: 1.3rem; margin: 0 0 8px; color: var(--ink); }.order-card[data-astro-cid-c24contact] p[data-astro-cid-c24contact]{ color: var(--ink-soft); font-size: 0.94rem; margin: 0 0 18px; max-width: 40ch; }.map-title[data-astro-cid-c24contact]{ margin-bottom: 14px; }@media (max-width: 860px){.contact-layout[data-astro-cid-c24contact]{ grid-template-columns: 1fr; gap: 44px; }.info-row[data-astro-cid-c24contact]{ grid-template-columns: 1fr; gap: 4px; }}
+.policy[data-astro-cid-c26legalpage]{ max-width: 780px; }.policy-head[data-astro-cid-c26legalpage]{ margin-bottom: 40px; }.subtitle[data-astro-cid-c26legalpage]{ font-family: var(--font-display); font-style: italic; font-size: 1.15rem; color: var(--teal-dark); margin: -4px 0 10px; }.policy-list[data-astro-cid-c26legalpage] strong[data-astro-cid-c26legalpage]{ color: var(--ink); font-weight: 600; }.missing[data-astro-cid-c26legalpage]{ background: #FDECC0; color: #7A4F0E; font-weight: 600; font-size: 0.86em; padding: 1px 7px; border-radius: 3px; white-space: nowrap; }.updated[data-astro-cid-c26legalpage]{ font-size: 0.84rem; color: var(--ink-faint); margin: 0 0 22px; }.lead[data-astro-cid-c26legalpage]{ font-size: 1.05rem; color: var(--ink-soft); margin: 0; max-width: 65ch; }.policy-section[data-astro-cid-c26legalpage]{ border-top: 1px solid var(--line); padding: 30px 0; }h2[data-astro-cid-c26legalpage]{ font-family: var(--font-display); font-weight: 500; font-size: 1.35rem; margin: 0 0 12px; color: var(--ink); }.policy-section[data-astro-cid-c26legalpage] p[data-astro-cid-c26legalpage]{ color: var(--ink-soft); margin: 0 0 14px; max-width: 65ch; }.table-wrap[data-astro-cid-c26legalpage]{ overflow-x: auto; margin-top: 18px; border: 1px solid var(--line); }table[data-astro-cid-c26legalpage]{ width: 100%; border-collapse: collapse; font-size: 0.86rem; min-width: 620px; }th[data-astro-cid-c26legalpage], td[data-astro-cid-c26legalpage]{ text-align: left; padding: 12px 14px; vertical-align: top; border-bottom: 1px solid var(--line-soft); }th[data-astro-cid-c26legalpage]{ background: var(--paper-alt); font-weight: 600; color: var(--ink); font-size: 0.78rem; letter-spacing: 0.02em; }td[data-astro-cid-c26legalpage]{ color: var(--ink-soft); }tbody[data-astro-cid-c26legalpage] tr[data-astro-cid-c26legalpage]:last-child td[data-astro-cid-c26legalpage]{ border-bottom: none; }code[data-astro-cid-c26legalpage]{ white-space: nowrap; font-size: 0.85em; color: var(--ink); background: var(--paper-alt); padding: 2px 6px; border-radius: 3px; }.chip[data-astro-cid-c26legalpage]{ display: inline-block; font-size: 0.74rem; font-weight: 600; color: var(--teal-dark); background: rgba(46, 156, 147, 0.1); padding: 2px 9px; border-radius: 20px; white-space: nowrap; }.policy-list[data-astro-cid-c26legalpage]{ margin: 0 0 16px; padding-left: 20px; color: var(--ink-soft); max-width: 65ch; }.policy-list[data-astro-cid-c26legalpage] li[data-astro-cid-c26legalpage]{ margin-bottom: 10px; padding-left: 4px; }.policy-list[data-astro-cid-c26legalpage] li[data-astro-cid-c26legalpage]::marker{ color: var(--ochre); }.prefs-btn[data-astro-cid-c26legalpage]{ margin-top: 6px; border: none; }.owner[data-astro-cid-c26legalpage]{ display: grid; grid-template-columns: max-content 1fr; gap: 8px 20px; margin: 18px 0 0; font-size: 0.94rem; }dt[data-astro-cid-c26legalpage]{ font-weight: 600; color: var(--ink); }dd[data-astro-cid-c26legalpage]{ margin: 0; color: var(--ink-soft); }dd[data-astro-cid-c26legalpage] a[data-astro-cid-c26legalpage]{ color: var(--teal-dark); font-weight: 600; }@media (max-width: 560px){.owner[data-astro-cid-c26legalpage]{ grid-template-columns: 1fr; gap: 2px; }dd[data-astro-cid-c26legalpage]{ margin-bottom: 10px; }}
+.product-page[data-astro-cid-c27productpage]{ display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; }.price-line[data-astro-cid-c27productpage]{
+    display: inline-flex; align-items: baseline; gap: 7px;
+    margin: 26px 0 0; padding: 9px 16px;
+    background: var(--paper-alt); border: 1px solid var(--line); border-left: 3px solid var(--ochre);
+    font-family: var(--font-display); font-size: 1.22rem; font-weight: 500; color: var(--ink);
+  }.cta-row[data-astro-cid-c27productpage]{ margin-top: 24px; }.product-photo{ max-width: 420px; width: 100%; margin: 0 auto; }@media (max-width: 760px){.product-page[data-astro-cid-c27productpage]{ grid-template-columns: 1fr; gap: 40px; }.product-photo{ max-width: 300px; }}
+.nf[data-astro-cid-c28404]{ max-width: 560px; text-align: center; }.nf-hex[data-astro-cid-c28404]{ width: 120px; height: 134px; margin-bottom: 24px; }h1[data-astro-cid-c28404]{ font-family: var(--font-display); font-weight: 500; font-size: 2rem; margin: 0 0 12px; color: var(--ink); }p[data-astro-cid-c28404]{ color: var(--ink-soft); margin: 0 0 28px; }.nf-langs[data-astro-cid-c28404]{ list-style: none; margin: 34px 0 0; padding: 26px 0 0; border-top: 1px solid var(--line); display: grid; gap: 8px; }.nf-langs[data-astro-cid-c28404] a[data-astro-cid-c28404]{ color: var(--ink-soft); font-size: 0.9rem; text-decoration: none; }.nf-langs[data-astro-cid-c28404] a[data-astro-cid-c28404]:hover{ color: var(--teal-dark); }

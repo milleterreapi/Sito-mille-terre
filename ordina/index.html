@@ -1,0 +1,457 @@
+<!doctype html><html lang="it"><head><meta charset="UTF-8" data-astro-cid-c1baselayout><meta name="viewport" content="width=device-width, initial-scale=1.0" data-astro-cid-c1baselayout><title data-astro-cid-c1baselayout>Ordina — Apicoltura Mille Terre</title><meta name="description" content="Apicoltura Mille Terre alleva e seleziona api regine Anatolica, Caucasica, Athos, Carpatica, Ligustica × Cordovan, Ligustica, Buckfast VSH+ e Buckfast M142, celle reali, sciami e pacchi d'api." data-astro-cid-c1baselayout><link rel="canonical" href="https://apicolturamilleterre.com/ordina/" data-astro-cid-c1baselayout><link rel="alternate" hreflang="it" href="https://apicolturamilleterre.com/ordina/" data-astro-cid-c1baselayout><link rel="alternate" hreflang="en" href="https://apicolturamilleterre.com/en/order/" data-astro-cid-c1baselayout><link rel="alternate" hreflang="fr" href="https://apicolturamilleterre.com/fr/commander/" data-astro-cid-c1baselayout><link rel="alternate" hreflang="de" href="https://apicolturamilleterre.com/de/bestellen/" data-astro-cid-c1baselayout><link rel="alternate" hreflang="x-default" href="https://apicolturamilleterre.com/ordina/" data-astro-cid-c1baselayout><meta property="og:type" content="website" data-astro-cid-c1baselayout><meta property="og:title" content="Ordina — Apicoltura Mille Terre" data-astro-cid-c1baselayout><meta property="og:description" content="Apicoltura Mille Terre alleva e seleziona api regine Anatolica, Caucasica, Athos, Carpatica, Ligustica × Cordovan, Ligustica, Buckfast VSH+ e Buckfast M142, celle reali, sciami e pacchi d'api." data-astro-cid-c1baselayout><meta property="og:url" content="https://apicolturamilleterre.com/ordina/" data-astro-cid-c1baselayout><meta property="og:locale" content="it_IT" data-astro-cid-c1baselayout><meta property="og:image" content="https://apicolturamilleterre.com/images/hero-apiario.webp" data-astro-cid-c1baselayout><meta name="theme-color" content="#16283D" data-astro-cid-c1baselayout><link rel="icon" type="image/png" href="/favicon.png" data-astro-cid-c1baselayout><link rel="apple-touch-icon" href="/apple-touch-icon.png" data-astro-cid-c1baselayout><script>(function(){
+"use strict";
+document.documentElement.classList.add('js');
+
+})();</script><link rel="stylesheet" href="/_astro/site.css"></head><body><a class="skip-link" href="#main" data-astro-cid-c1baselayout>↓</a><header class="site-nav" data-astro-cid-c2nav><div class="nav-inner" data-astro-cid-c2nav><a class="brand" href="/" aria-label="Apicoltura Mille Terre — Home" data-astro-cid-c2nav><img src="/images/logo.webp" alt="" width="44" height="44" data-astro-cid-c2nav><span class="brand-name" data-astro-cid-c2nav>Mille <span data-astro-cid-c2nav>Terre</span></span></a><a href="/ordina/" class="nav-cta nav-cta-compact active" aria-current="page" data-astro-cid-c2nav>Ordina</a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" data-astro-cid-c2nav><span class="visually-hidden" data-astro-cid-c2nav>Menu</span><span class="bars" aria-hidden="true" data-astro-cid-c2nav><i data-astro-cid-c2nav></i><i data-astro-cid-c2nav></i><i data-astro-cid-c2nav></i></span></button><div class="menu" id="site-menu" data-astro-cid-c2nav><nav class="links" aria-label="Menu" data-astro-cid-c2nav><a href="/chi-siamo/" data-astro-cid-c2nav>Chi siamo</a><a href="/api-regine/" data-astro-cid-c2nav>Api regine</a><a href="/celle-reali/" data-astro-cid-c2nav>Celle reali</a><a href="/sciami/" data-astro-cid-c2nav>Sciami</a><a href="/pacchi-api/" data-astro-cid-c2nav>Pacchi d'api</a><a href="/impollinazione/" data-astro-cid-c2nav>Impollinazione</a><a href="/miele/" data-astro-cid-c2nav>Miele</a><a href="/contatti/" data-astro-cid-c2nav>Contatti</a></nav><a href="/ordina/" class="nav-cta active" aria-current="page" data-astro-cid-c2nav>Ordina</a><div class="lang-switch" role="group" aria-label="Lingua" data-astro-cid-c3languageswitcher><a href="/ordina/" hreflang="it" lang="it" class="active" aria-current="true" title="Italiano" data-astro-cid-c3languageswitcher>IT</a><a href="/en/order/" hreflang="en" lang="en" title="English" data-astro-cid-c3languageswitcher>EN</a><a href="/fr/commander/" hreflang="fr" lang="fr" title="Français" data-astro-cid-c3languageswitcher>FR</a><a href="/de/bestellen/" hreflang="de" lang="de" title="Deutsch" data-astro-cid-c3languageswitcher>DE</a></div></div></div></header><script>(function(){
+"use strict";
+const header = document.querySelector('.site-nav');
+const toggle = document.querySelector('.menu-toggle');
+const setOpen = (open) => {
+    toggle?.setAttribute('aria-expanded', String(open));
+    header?.classList.toggle('is-open', open);
+};
+toggle?.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+// si chiude da sola: con Esc, toccando fuori o scegliendo una voce
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && header?.classList.contains('is-open')) {
+        setOpen(false);
+        toggle?.focus();
+    }
+});
+document.addEventListener('click', (e) => {
+    if (!header?.classList.contains('is-open'))
+        return;
+    if (!header.contains(e.target))
+        setOpen(false);
+});
+header?.querySelectorAll('.menu a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
+let ticking = false;
+const apply = () => { ticking = false; header?.classList.toggle('is-scrolled', window.scrollY > 8); };
+const onScroll = () => { if (!ticking) {
+    ticking = true;
+    requestAnimationFrame(apply);
+} };
+window.addEventListener('scroll', onScroll, { passive: true });
+apply();
+
+})();</script><main id="main" data-astro-cid-c1baselayout><section class="section" data-astro-cid-c22order><div class="wrap" data-astro-cid-c22order><div class="contact-grid reveal" data-astro-cid-c22order><div class="contact-info" data-astro-cid-c22order><p class="section-label" data-astro-cid-c22order>Ordina</p><h1 class="section-title" data-astro-cid-c22order>Richiedi un ordine</h1><p data-astro-cid-c22order>Scegli i prodotti, le quantità e la genetica che ti interessano: si aprirà la tua app di posta con l'ordine già pronto da inviarci. Ti risponderemo per confermare disponibilità e consegna.</p><div class="contact-line" data-astro-cid-c22order><b data-astro-cid-c22order>Email ordini</b><a href="mailto:ordini@apicolturamilleterre.com" data-astro-cid-c22order>ordini@apicolturamilleterre.com</a></div><img class="contact-logo" src="/images/logo.webp" alt="" width="120" height="120" loading="lazy" data-astro-cid-c22order></div><form class="order-form" id="order-form" novalidate data-err="Seleziona almeno una genetica prima di inviare." data-err-product="Seleziona almeno un prodotto prima di inviare." data-l-products="Prodotti richiesti" data-sending="Apertura della tua app di posta in corso..." data-subject="Richiesta ordine" data-l-name="Nome" data-l-contact="Contatto" data-l-breeds="Genetiche richieste" data-l-qty="Quantità" data-l-notes="Note" data-l-honey="Miele" data-err-honey="Per il miele indica almeno un vasetto." data-l-total="Totale stimato" data-l-from="da" data-l-tbd="da concordare" data-breed-for="queens,virgin" data-mail="ordini@apicolturamilleterre.com" data-astro-cid-c23orderform><div class="field-row" data-astro-cid-c23orderform><div class="field" data-astro-cid-c23orderform><label for="nome" data-astro-cid-c23orderform>Nome e cognome</label><input type="text" id="nome" name="nome" autocomplete="name" required data-astro-cid-c23orderform></div><div class="field" data-astro-cid-c23orderform><label for="contatto" data-astro-cid-c23orderform>Email o telefono</label><input type="text" id="contatto" name="contatto" autocomplete="email" required data-astro-cid-c23orderform></div></div><fieldset class="field" data-astro-cid-c23orderform><legend data-astro-cid-c23orderform>Cosa desideri ordinare?</legend><p class="field-hint" data-astro-cid-c23orderform>Seleziona uno o più prodotti e indica la quantità.</p><div class="product-options" data-astro-cid-c23orderform><div class="product-option" data-product="queens" data-astro-cid-c23orderform><label class="product-check" data-astro-cid-c23orderform><input type="checkbox" name="prodotto" value="Api regine" data-key="queens" data-price="18" data-astro-cid-c23orderform><span class="product-thumb" aria-hidden="true" data-astro-cid-c23orderform><img src="/images/cat-regine.webp" alt="" width="48" height="54" loading="lazy" data-astro-cid-c23orderform></span><span class="product-name" data-astro-cid-c23orderform>Api regine</span></label><label class="product-qty" data-astro-cid-c23orderform><span class="visually-hidden" data-astro-cid-c23orderform>Q.tà</span><input type="number" name="qta-queens" min="1" value="1" disabled aria-label="Quantità — Api regine" data-astro-cid-c23orderform></label></div><div class="product-option" data-product="virgin" data-astro-cid-c23orderform><label class="product-check" data-astro-cid-c23orderform><input type="checkbox" name="prodotto" value="Regine vergini" data-key="virgin" data-price="8" data-astro-cid-c23orderform><span class="product-thumb" aria-hidden="true" data-astro-cid-c23orderform><img src="/images/cat-regine.webp" alt="" width="48" height="54" loading="lazy" data-astro-cid-c23orderform></span><span class="product-name" data-astro-cid-c23orderform>Regine vergini</span></label><label class="product-qty" data-astro-cid-c23orderform><span class="visually-hidden" data-astro-cid-c23orderform>Q.tà</span><input type="number" name="qta-virgin" min="1" value="1" disabled aria-label="Quantità — Regine vergini" data-astro-cid-c23orderform></label></div><div class="product-option" data-product="cells" data-astro-cid-c23orderform><label class="product-check" data-astro-cid-c23orderform><input type="checkbox" name="prodotto" value="Celle reali" data-key="cells" data-price="4" data-astro-cid-c23orderform><span class="product-thumb" aria-hidden="true" data-astro-cid-c23orderform><img src="/images/cat-celle.webp" alt="" width="48" height="54" loading="lazy" data-astro-cid-c23orderform></span><span class="product-name" data-astro-cid-c23orderform>Celle reali</span></label><label class="product-qty" data-astro-cid-c23orderform><span class="visually-hidden" data-astro-cid-c23orderform>Q.tà</span><input type="number" name="qta-cells" min="1" value="1" disabled aria-label="Quantità — Celle reali" data-astro-cid-c23orderform></label></div><div class="product-option" data-product="swarms" data-astro-cid-c23orderform><label class="product-check" data-astro-cid-c23orderform><input type="checkbox" name="prodotto" value="Sciami" data-key="swarms" data-price="130" data-astro-cid-c23orderform><span class="product-thumb" aria-hidden="true" data-astro-cid-c23orderform><img src="/images/cat-sciami.webp" alt="" width="48" height="54" loading="lazy" data-astro-cid-c23orderform></span><span class="product-name" data-astro-cid-c23orderform>Sciami</span></label><label class="product-qty" data-astro-cid-c23orderform><span class="visually-hidden" data-astro-cid-c23orderform>Q.tà</span><input type="number" name="qta-swarms" min="1" value="1" disabled aria-label="Quantità — Sciami" data-astro-cid-c23orderform></label></div><div class="product-option" data-product="packages" data-astro-cid-c23orderform><label class="product-check" data-astro-cid-c23orderform><input type="checkbox" name="prodotto" value="Pacchi d'api" data-key="packages" data-price="70" data-astro-cid-c23orderform><span class="product-thumb" aria-hidden="true" data-astro-cid-c23orderform><img src="/images/cat-pacchi.webp" alt="" width="48" height="54" loading="lazy" data-astro-cid-c23orderform></span><span class="product-name" data-astro-cid-c23orderform>Pacchi d'api</span></label><label class="product-qty" data-astro-cid-c23orderform><span class="visually-hidden" data-astro-cid-c23orderform>Q.tà</span><input type="number" name="qta-packages" min="1" value="1" disabled aria-label="Quantità — Pacchi d'api" data-astro-cid-c23orderform></label></div><div class="product-option" data-product="pollination" data-astro-cid-c23orderform><label class="product-check" data-astro-cid-c23orderform><input type="checkbox" name="prodotto" value="Sciami per impollinazione" data-key="pollination" data-price="70" data-astro-cid-c23orderform><span class="product-thumb" aria-hidden="true" data-astro-cid-c23orderform><img src="/images/cat-sciami.webp" alt="" width="48" height="54" loading="lazy" data-astro-cid-c23orderform></span><span class="product-name" data-astro-cid-c23orderform>Impollinazione</span></label><label class="product-qty" data-astro-cid-c23orderform><span class="visually-hidden" data-astro-cid-c23orderform>Q.tà</span><input type="number" name="qta-pollination" min="1" value="1" disabled aria-label="Quantità — Sciami per impollinazione" data-astro-cid-c23orderform></label></div><div class="product-option" data-product="honey" data-astro-cid-c23orderform><label class="product-check" data-astro-cid-c23orderform><input type="checkbox" name="prodotto" value="Miele" data-key="honey" data-astro-cid-c23orderform><span class="product-thumb" aria-hidden="true" data-astro-cid-c23orderform><img src="/images/cat-miele.webp" alt="" width="48" height="54" loading="lazy" data-astro-cid-c23orderform></span><span class="product-name" data-astro-cid-c23orderform>Miele</span></label><label class="product-qty" data-astro-cid-c23orderform><span class="visually-hidden" data-astro-cid-c23orderform>Q.tà</span><input type="number" name="qta-honey" min="1" value="1" disabled aria-label="Quantità — Miele" data-astro-cid-c23orderform></label></div></div></fieldset><fieldset class="field honey-block" id="honey-block" hidden data-astro-cid-c23orderform><legend data-astro-cid-c23orderform>Il miele</legend><p class="field-hint" data-astro-cid-c23orderform>Indica quanti vasetti vuoi per ogni linea e formato.</p><table class="honey-grid" data-astro-cid-c23orderform><thead data-astro-cid-c23orderform><tr data-astro-cid-c23orderform><th scope="col" data-astro-cid-c23orderform><span class="visually-hidden" data-astro-cid-c23orderform>Linea</span></th><th scope="col" data-astro-cid-c23orderform><span class="hg-size" data-astro-cid-c23orderform>150 g</span><span class="hg-price" data-astro-cid-c23orderform>4,00 €</span></th><th scope="col" data-astro-cid-c23orderform><span class="hg-size" data-astro-cid-c23orderform>400 g</span><span class="hg-price" data-astro-cid-c23orderform>7,00 €</span></th><th scope="col" data-astro-cid-c23orderform><span class="hg-size" data-astro-cid-c23orderform>750 g</span><span class="hg-price" data-astro-cid-c23orderform>10,00 €</span></th></tr></thead><tbody data-astro-cid-c23orderform><tr data-astro-cid-c23orderform><th scope="row" data-astro-cid-c23orderform>Spring Line</th><td data-size="150 g" data-price="4,00 €" data-astro-cid-c23orderform><input type="number" name="miele-spring-150" data-line="Spring Line" data-size="150 g" data-price="4" min="0" value="0" aria-label="Spring Line — 150 g" data-astro-cid-c23orderform></td><td data-size="400 g" data-price="7,00 €" data-astro-cid-c23orderform><input type="number" name="miele-spring-400" data-line="Spring Line" data-size="400 g" data-price="7" min="0" value="0" aria-label="Spring Line — 400 g" data-astro-cid-c23orderform></td><td data-size="750 g" data-price="10,00 €" data-astro-cid-c23orderform><input type="number" name="miele-spring-750" data-line="Spring Line" data-size="750 g" data-price="10" min="0" value="0" aria-label="Spring Line — 750 g" data-astro-cid-c23orderform></td></tr><tr data-astro-cid-c23orderform><th scope="row" data-astro-cid-c23orderform>Summer Line</th><td data-size="150 g" data-price="4,00 €" data-astro-cid-c23orderform><input type="number" name="miele-summer-150" data-line="Summer Line" data-size="150 g" data-price="4" min="0" value="0" aria-label="Summer Line — 150 g" data-astro-cid-c23orderform></td><td data-size="400 g" data-price="7,00 €" data-astro-cid-c23orderform><input type="number" name="miele-summer-400" data-line="Summer Line" data-size="400 g" data-price="7" min="0" value="0" aria-label="Summer Line — 400 g" data-astro-cid-c23orderform></td><td data-size="750 g" data-price="10,00 €" data-astro-cid-c23orderform><input type="number" name="miele-summer-750" data-line="Summer Line" data-size="750 g" data-price="10" min="0" value="0" aria-label="Summer Line — 750 g" data-astro-cid-c23orderform></td></tr></tbody></table></fieldset><fieldset class="field" id="breed-block" hidden data-astro-cid-c23orderform><legend data-astro-cid-c23orderform>Genetica/che desiderata/e</legend><div class="checkbox-group" data-astro-cid-c23orderform><label data-astro-cid-c23orderform><input type="checkbox" name="genetica" value="Anatolica" data-astro-cid-c23orderform> Anatolica</label><label data-astro-cid-c23orderform><input type="checkbox" name="genetica" value="Caucasica" data-astro-cid-c23orderform> Caucasica</label><label data-astro-cid-c23orderform><input type="checkbox" name="genetica" value="Athos 344" data-astro-cid-c23orderform> Athos 344</label><label data-astro-cid-c23orderform><input type="checkbox" name="genetica" value="Athos 389" data-astro-cid-c23orderform> Athos 389</label><label data-astro-cid-c23orderform><input type="checkbox" name="genetica" value="Carpatica" data-astro-cid-c23orderform> Carpatica</label><label data-astro-cid-c23orderform><input type="checkbox" name="genetica" value="Ligustica × Cordovan" data-astro-cid-c23orderform> Ligustica × Cordovan</label><label data-astro-cid-c23orderform><input type="checkbox" name="genetica" value="Ligustica" data-astro-cid-c23orderform> Ligustica</label><label data-astro-cid-c23orderform><input type="checkbox" name="genetica" value="Buckfast VSH+" data-astro-cid-c23orderform> Buckfast VSH+</label><label data-astro-cid-c23orderform><input type="checkbox" name="genetica" value="Carnica × Ligustica M142" data-astro-cid-c23orderform> Carnica × Ligustica M142</label></div></fieldset><div class="field" data-astro-cid-c23orderform><label for="note" data-astro-cid-c23orderform>Note (periodo di consegna, zona, altre richieste)</label><textarea id="note" name="note" data-astro-cid-c23orderform></textarea></div><section class="summary" aria-labelledby="summary-title" aria-live="polite" data-astro-cid-c23orderform><h2 class="summary-title" id="summary-title" data-astro-cid-c23orderform>Riepilogo</h2><p class="summary-empty" data-astro-cid-c23orderform>Seleziona i prodotti per vedere il totale stimato.</p><ul class="summary-lines" data-astro-cid-c23orderform></ul><p class="summary-total" hidden data-astro-cid-c23orderform><span data-astro-cid-c23orderform>Totale stimato</span><strong class="summary-amount" data-astro-cid-c23orderform></strong></p><p class="summary-note" hidden data-astro-cid-c23orderform>Spedizione esclusa. Ti confermiamo disponibilità, tempi e totale per email.</p></section><button type="submit" class="btn btn-primary submit" data-astro-cid-c23orderform>Invia richiesta d'ordine</button><p class="form-note" data-astro-cid-c23orderform>Il pulsante apre la tua app di posta con i dati già inseriti: dovrai solo premere invio.</p><p class="form-note privacy-note" data-astro-cid-c23orderform>Useremo i tuoi dati solo per rispondere alla richiesta e gestire l'eventuale ordine. <a href="/privacy-policy/" data-astro-cid-c23orderform>Leggi l'informativa privacy</a> · <a href="/condizioni-di-vendita/" data-astro-cid-c23orderform>Condizioni di vendita</a></p><p class="form-status" role="status" aria-live="polite" data-astro-cid-c23orderform></p></form><script>(function(){
+"use strict";
+const form = document.querySelector('#order-form');
+// Attiva/disattiva la quantità di ogni prodotto in base alla selezione
+const syncProduct = (cb) => {
+    const row = cb.closest('.product-option');
+    const qty = row.querySelector('input[type="number"]');
+    qty.disabled = !cb.checked;
+    row.classList.toggle('is-selected', cb.checked);
+};
+// Il blocco del miele compare solo se il miele è selezionato
+const honeyBlock = document.querySelector('#honey-block');
+const honeyCb = form?.querySelector('input[name="prodotto"][data-key="honey"]');
+const syncHoney = () => {
+    const on = !!honeyCb?.checked;
+    if (honeyBlock)
+        honeyBlock.hidden = !on;
+    honeyBlock?.querySelectorAll('input').forEach((i) => { i.disabled = !on; });
+};
+// La genetica si sceglie solo per i prodotti che la prevedono (api regine e vergini)
+const breedBlock = document.querySelector('#breed-block');
+const breedFor = (form?.dataset.breedFor ?? '').split(',').filter(Boolean);
+const wantsBreed = () => Array.from(form?.querySelectorAll('input[name="prodotto"]:checked') ?? [])
+    .some((cb) => breedFor.includes(cb.dataset.key ?? ''));
+const syncBreeds = () => {
+    const on = wantsBreed();
+    if (breedBlock)
+        breedBlock.hidden = !on;
+    breedBlock?.querySelectorAll('input').forEach((i) => { i.disabled = !on; });
+};
+form?.querySelectorAll('input[name="prodotto"]').forEach((cb) => {
+    cb.addEventListener('change', () => {
+        syncProduct(cb);
+        syncBreeds();
+        if (cb.dataset.key === 'honey') {
+            syncHoney();
+            syncBreeds();
+            if (cb.checked) {
+                honeyBlock?.querySelector('input')?.focus();
+                return;
+            }
+        }
+        if (cb.checked)
+            cb.closest('.product-option')?.querySelector('input[type="number"]')?.focus();
+    });
+});
+syncHoney();
+// ---- Riepilogo con totale stimato, aggiornato a ogni modifica ----
+const summary = form?.querySelector('.summary');
+const sumLines = summary?.querySelector('.summary-lines');
+const sumEmpty = summary?.querySelector('.summary-empty');
+const sumTotal = summary?.querySelector('.summary-total');
+const sumAmount = summary?.querySelector('.summary-amount');
+const sumNote = summary?.querySelector('.summary-note');
+const euro = (v) => v.toLocaleString(document.documentElement.lang || 'it', { style: 'currency', currency: 'EUR' });
+let totaleStimato = '';
+const updateSummary = () => {
+    if (!form || !sumLines)
+        return;
+    const righe = [];
+    for (const cb of Array.from(form.querySelectorAll('input[name="prodotto"]:checked'))) {
+        if (cb.dataset.key === 'honey')
+            continue; // il miele va per formato, sotto
+        const qta = Number(cb.closest('.product-option')?.querySelector('input[type="number"]')?.value || 1);
+        const p = cb.dataset.price ? Number(cb.dataset.price) : null;
+        righe.push({ nome: cb.value, qta, costo: p == null ? null : p * qta });
+    }
+    if (honeyCb?.checked) {
+        for (const i of Array.from(honeyBlock?.querySelectorAll('input[type="number"]') ?? [])) {
+            const n = Number(i.value);
+            if (!(n > 0))
+                continue;
+            const p = i.dataset.price ? Number(i.dataset.price) : null;
+            righe.push({ nome: `${i.dataset.line} · ${i.dataset.size}`, qta: n, costo: p == null ? null : p * n });
+        }
+    }
+    sumLines.textContent = '';
+    const vuoto = righe.length === 0;
+    if (vuoto)
+        totaleStimato = '';
+    if (sumEmpty)
+        sumEmpty.hidden = !vuoto;
+    if (sumTotal)
+        sumTotal.hidden = vuoto;
+    if (sumNote)
+        sumNote.hidden = vuoto;
+    if (vuoto)
+        return;
+    let totale = 0;
+    let daDefinire = false;
+    for (const r of righe) {
+        if (r.costo == null)
+            daDefinire = true;
+        else
+            totale += r.costo;
+        const li = document.createElement('li');
+        const nome = document.createElement('span');
+        nome.textContent = `${r.nome} × ${r.qta}`;
+        const val = document.createElement('span');
+        val.textContent = r.costo == null ? (form.dataset.lTbd ?? '') : euro(r.costo);
+        if (r.costo == null)
+            val.className = 'is-tbd';
+        li.append(nome, val);
+        sumLines.appendChild(li);
+    }
+    totaleStimato = daDefinire && totale > 0
+        ? `${form.dataset.lFrom} ${euro(totale)}`
+        : daDefinire ? (form.dataset.lTbd ?? '') : euro(totale);
+    if (sumAmount) {
+        sumAmount.textContent = daDefinire && totale > 0
+            ? `${form.dataset.lFrom} ${euro(totale)}`
+            : daDefinire ? (form.dataset.lTbd ?? '') : euro(totale);
+    }
+};
+form?.addEventListener('input', updateSummary);
+form?.addEventListener('change', updateSummary);
+// Preselezione da link, es. /contatti/?prodotto=swarms&genetica=Ligustica
+const params = new URLSearchParams(window.location.search);
+const preProduct = params.get('tipo') === 'vergine' ? 'virgin' : params.get('prodotto');
+const preBreed = params.get('genetica');
+const preQty = params.get('qta');
+if (form && preProduct) {
+    const cb = form.querySelector(`input[name="prodotto"][data-key="${CSS.escape(preProduct)}"]`);
+    if (cb) {
+        cb.checked = true;
+        syncProduct(cb);
+        if (cb.dataset.key === 'honey')
+            syncHoney();
+        syncBreeds();
+        const q = cb.closest('.product-option')?.querySelector('input[type="number"]');
+        if (q && preQty && Number(preQty) > 0)
+            q.value = String(Number(preQty));
+    }
+}
+if (form && preBreed) {
+    const cb = form.querySelector(`input[name="genetica"][value="${CSS.escape(preBreed)}"]`);
+    if (cb)
+        cb.checked = true;
+}
+updateSummary();
+form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const ds = form.dataset;
+    const status = form.querySelector('.form-status');
+    const val = (id) => (form.querySelector('#' + id)?.value ?? '').trim();
+    if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+    }
+    const prodotti = Array.from(form.querySelectorAll('input[name="prodotto"]:checked')).map((cb) => {
+        // per il miele il dettaglio sta nella riga dedicata, qui basta il nome
+        if (cb.dataset.key === 'honey')
+            return cb.value;
+        const qty = cb.closest('.product-option')?.querySelector('input[type="number"]')?.value || '1';
+        return `${cb.value} × ${qty}`;
+    });
+    if (prodotti.length === 0) {
+        status.textContent = ds.errProduct ?? '';
+        status.className = 'form-status show is-error';
+        return;
+    }
+    const genetiche = Array.from(form.querySelectorAll('input[name="genetica"]:checked')).map((cb) => cb.value);
+    const needsBreed = wantsBreed();
+    if (needsBreed && genetiche.length === 0) {
+        status.textContent = ds.err ?? '';
+        status.className = 'form-status show is-error';
+        return;
+    }
+    // miele: servono la linea e almeno un formato con quantità
+    let miele = '';
+    if (honeyCb?.checked) {
+        // una riga per linea, con i formati richiesti: "Spring Line — 400 g × 1"
+        const perLinea = new Map();
+        for (const i of Array.from(honeyBlock?.querySelectorAll('input[type="number"]') ?? [])) {
+            const n = Number(i.value);
+            if (!(n > 0))
+                continue;
+            const linea = i.dataset.line ?? '';
+            if (!perLinea.has(linea))
+                perLinea.set(linea, []);
+            perLinea.get(linea).push(`${i.dataset.size} × ${n}`);
+        }
+        if (perLinea.size === 0) {
+            status.textContent = ds.errHoney ?? '';
+            status.className = 'form-status show is-error';
+            honeyBlock?.scrollIntoView({ block: 'center', behavior: 'smooth' });
+            return;
+        }
+        miele = Array.from(perLinea, ([linea, v]) => `${linea} — ${v.join(', ')}`).join('; ');
+    }
+    const nome = val('nome');
+    const subject = `${ds.subject} - ${nome}`;
+    const body = [
+        `${ds.lName}: ${nome}`,
+        `${ds.lContact}: ${val('contatto')}`,
+        `${ds.lProducts}: ${prodotti.join(', ')}`,
+        ...(miele ? [`${ds.lHoney}: ${miele}`] : []),
+        `${ds.lBreeds}: ${genetiche.join(', ')}`,
+        `${ds.lNotes}: ${val('note') || '-'}`,
+        ...(totaleStimato ? [`${ds.lTotal}: ${totaleStimato}`] : []),
+    ].join('\n');
+    window.location.href =
+        'mailto:' + ds.mail + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    status.textContent = ds.sending ?? '';
+    status.className = 'form-status show is-ok';
+});
+
+})();</script></div></div></section></main><footer class="site-footer" data-astro-cid-c4footer><div class="wrap footer-top" data-astro-cid-c4footer><a class="footer-brand" href="/" data-astro-cid-c4footer><img src="/images/logo.webp" alt="Apicoltura Mille Terre" width="88" height="88" loading="lazy" data-astro-cid-c4footer><span data-astro-cid-c4footer><strong data-astro-cid-c4footer>Apicoltura Mille Terre</strong><small data-astro-cid-c4footer>Api regine, celle reali, sciami e pacchi d'api</small></span></a><nav class="footer-links" aria-label="Menu" data-astro-cid-c4footer><a href="/chi-siamo/" data-astro-cid-c4footer>Chi siamo</a><a href="/api-regine/" data-astro-cid-c4footer>Api regine</a><a href="/celle-reali/" data-astro-cid-c4footer>Celle reali</a><a href="/sciami/" data-astro-cid-c4footer>Sciami</a><a href="/pacchi-api/" data-astro-cid-c4footer>Pacchi d'api</a><a href="/impollinazione/" data-astro-cid-c4footer>Impollinazione</a><a href="/miele/" data-astro-cid-c4footer>Miele</a><a href="/ordina/" data-astro-cid-c4footer>Ordina</a><a href="/contatti/" data-astro-cid-c4footer>Contatti</a></nav><div class="footer-contact" data-astro-cid-c4footer><small data-astro-cid-c4footer>Email ordini</small><a href="mailto:ordini@apicolturamilleterre.com" data-astro-cid-c4footer>ordini@apicolturamilleterre.com</a></div></div><div class="wrap footer-bottom" data-astro-cid-c4footer><span data-astro-cid-c4footer>© 2026 Apicoltura Mille Terre</span><span class="legal-links" data-astro-cid-c4footer><a href="/condizioni-di-vendita/" data-astro-cid-c4footer>Condizioni di vendita</a><a href="/privacy-policy/" data-astro-cid-c4footer>Privacy policy</a><a href="/cookie-policy/" data-astro-cid-c4footer>Cookie policy</a><button type="button" data-cookie-prefs data-astro-cid-c4footer>Preferenze cookie</button></span></div></footer><button type="button" class="to-top" id="to-top" aria-label="Torna su" hidden data-astro-cid-c6backtotop><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-astro-cid-c6backtotop><path d="M12 19V6" data-astro-cid-c6backtotop></path><path d="M5 12l7-7 7 7" data-astro-cid-c6backtotop></path></svg></button><script>(function(){
+"use strict";
+const btn = document.querySelector('#to-top');
+if (btn) {
+    const soglia = () => window.innerHeight * 2;
+    let ticking = false;
+    const aggiorna = () => {
+        ticking = false;
+        const mostra = window.scrollY > soglia();
+        btn.hidden = !mostra;
+        btn.classList.toggle('is-on', mostra);
+    };
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(aggiorna);
+        }
+    }, { passive: true });
+    aggiorna();
+    btn.addEventListener('click', () => {
+        const dolce = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top: 0, behavior: dolce ? 'smooth' : 'auto' });
+    });
+}
+
+})();</script><div class="bees" aria-hidden="true" data-astro-cid-c5flyingbees><span class="bee bee-1" data-bee data-astro-cid-c5flyingbees><span class="bob" data-astro-cid-c5flyingbees><svg viewBox="0 0 28 22" data-astro-cid-c5flyingbees><g class="wings" data-astro-cid-c5flyingbees><ellipse cx="11" cy="5" rx="7" ry="4" fill="rgba(46, 156, 147, 0.30)" stroke="#16283D" stroke-width="1.5" data-astro-cid-c5flyingbees></ellipse><ellipse cx="18" cy="5" rx="7" ry="4" fill="rgba(46, 156, 147, 0.30)" stroke="#16283D" stroke-width="1.5" data-astro-cid-c5flyingbees></ellipse></g><ellipse cx="14" cy="12" rx="9" ry="5.6" fill="#F0B429" stroke="#16283D" stroke-width="1.8" data-astro-cid-c5flyingbees></ellipse><path d="M11 7.2 L11 16.8 M16 7.4 L16 16.6" stroke="#16283D" stroke-width="1.5" stroke-linecap="round" data-astro-cid-c5flyingbees></path></svg></span></span><span class="bee bee-2" data-bee data-astro-cid-c5flyingbees><span class="bob" data-astro-cid-c5flyingbees><svg viewBox="0 0 28 22" data-astro-cid-c5flyingbees><g class="wings" data-astro-cid-c5flyingbees><ellipse cx="11" cy="5" rx="7" ry="4" fill="rgba(46, 156, 147, 0.30)" stroke="#16283D" stroke-width="1.5" data-astro-cid-c5flyingbees></ellipse><ellipse cx="18" cy="5" rx="7" ry="4" fill="rgba(46, 156, 147, 0.30)" stroke="#16283D" stroke-width="1.5" data-astro-cid-c5flyingbees></ellipse></g><ellipse cx="14" cy="12" rx="9" ry="5.6" fill="#F0B429" stroke="#16283D" stroke-width="1.8" data-astro-cid-c5flyingbees></ellipse><path d="M11 7.2 L11 16.8 M16 7.4 L16 16.6" stroke="#16283D" stroke-width="1.5" stroke-linecap="round" data-astro-cid-c5flyingbees></path></svg></span></span><span class="bee bee-3" data-bee data-astro-cid-c5flyingbees><span class="bob" data-astro-cid-c5flyingbees><svg viewBox="0 0 28 22" data-astro-cid-c5flyingbees><g class="wings" data-astro-cid-c5flyingbees><ellipse cx="11" cy="5" rx="7" ry="4" fill="rgba(46, 156, 147, 0.30)" stroke="#16283D" stroke-width="1.5" data-astro-cid-c5flyingbees></ellipse><ellipse cx="18" cy="5" rx="7" ry="4" fill="rgba(46, 156, 147, 0.30)" stroke="#16283D" stroke-width="1.5" data-astro-cid-c5flyingbees></ellipse></g><ellipse cx="14" cy="12" rx="9" ry="5.6" fill="#F0B429" stroke="#16283D" stroke-width="1.8" data-astro-cid-c5flyingbees></ellipse><path d="M11 7.2 L11 16.8 M16 7.4 L16 16.6" stroke="#16283D" stroke-width="1.5" stroke-linecap="round" data-astro-cid-c5flyingbees></path></svg></span></span></div><script>(function(){
+"use strict";
+// Toccando un'ape, questa scappa nella direzione opposta al dito
+// e rientra più tardi riprendendo il suo giro abituale.
+const bees = document.querySelectorAll('[data-bee]');
+const still = window.matchMedia('(prefers-reduced-motion: reduce)');
+bees.forEach((bee) => {
+    bee.addEventListener('pointerdown', (ev) => {
+        if (still.matches || bee.classList.contains('fleeing'))
+            return;
+        const r = bee.getBoundingClientRect();
+        if (!r.width)
+            return;
+        // direzione: dal punto toccato verso l'esterno
+        let dx = r.left + r.width / 2 - ev.clientX;
+        let dy = r.top + r.height / 2 - ev.clientY;
+        if (!dx && !dy) {
+            dx = 1;
+            dy = -1;
+        }
+        const len = Math.hypot(dx, dy);
+        dx /= len;
+        dy /= len;
+        const far = Math.max(window.innerWidth, window.innerHeight) * 1.3;
+        const tilt = (Math.atan2(dy, dx) * 180) / Math.PI;
+        // scarto laterale, così la fuga non è una linea retta
+        const sx = -dy * 70, sy = dx * 70;
+        bee.classList.add('fleeing');
+        bee.style.animation = 'none';
+        const flight = bee.animate([
+            { transform: `translate(${r.left}px, ${r.top}px) rotate(0deg)`, opacity: 0.9 },
+            {
+                transform: `translate(${r.left + dx * far * 0.28 + sx}px, ${r.top + dy * far * 0.28 + sy}px) rotate(${tilt / 3}deg)`,
+                opacity: 0.9, offset: 0.4,
+            },
+            {
+                transform: `translate(${r.left + dx * far}px, ${r.top + dy * far}px) rotate(${tilt / 2}deg)`,
+                opacity: 0,
+            },
+        ], { duration: 1500, easing: 'cubic-bezier(.22,.7,.35,1)', fill: 'forwards' });
+        flight.addEventListener('finish', () => {
+            flight.cancel();
+            bee.style.animation = ''; // riparte il giro, con la sua attesa
+            bee.classList.remove('fleeing');
+        });
+    });
+});
+
+})();</script><div class="cc-root" id="cc-root" data-key="mt-consent" data-version="1" data-max-age="180" data-saved="Preferenze salvate." data-astro-cid-c7cookieconsent><section class="cc-banner" id="cc-banner" role="dialog" aria-labelledby="cc-title" aria-describedby="cc-text" hidden data-astro-cid-c7cookieconsent><button class="cc-x" type="button" data-cc="reject" aria-label="Chiudi e rifiuta" title="Chiudi e rifiuta" data-astro-cid-c7cookieconsent><svg viewBox="0 0 20 20" aria-hidden="true" data-astro-cid-c7cookieconsent><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" data-astro-cid-c7cookieconsent></path></svg></button><div class="cc-head" data-astro-cid-c7cookieconsent><svg class="cc-hex" viewBox="0 0 46 46" aria-hidden="true" data-astro-cid-c7cookieconsent><path d="M23 2 L42 13 L42 33 L23 44 L4 33 L4 13 Z" fill="#F0B429" data-astro-cid-c7cookieconsent></path></svg><h2 id="cc-title" data-astro-cid-c7cookieconsent>Rispettiamo la tua privacy</h2></div><p id="cc-text" data-astro-cid-c7cookieconsent>Usiamo solo strumenti tecnici necessari al funzionamento del sito. Con il tuo consenso potremmo usare anche cookie statistici o di marketing. Puoi accettare, rifiutare o scegliere cosa attivare, e cambiare idea in qualsiasi momento. <a href="/cookie-policy/" data-astro-cid-c7cookieconsent>Leggi la cookie policy</a></p><div class="cc-actions" data-astro-cid-c7cookieconsent><button type="button" class="cc-btn cc-solid" data-cc="reject" data-astro-cid-c7cookieconsent>Rifiuta</button><button type="button" class="cc-btn cc-solid" data-cc="accept" data-astro-cid-c7cookieconsent>Accetta tutti</button><button type="button" class="cc-btn cc-link" data-cc="customize" data-astro-cid-c7cookieconsent>Personalizza</button></div></section><dialog class="cc-dialog" id="cc-dialog" aria-labelledby="cc-prefs-title" data-astro-cid-c7cookieconsent><form method="dialog" class="cc-dialog-inner" data-astro-cid-c7cookieconsent><header class="cc-dialog-head" data-astro-cid-c7cookieconsent><h2 id="cc-prefs-title" data-astro-cid-c7cookieconsent>Preferenze cookie</h2><button class="cc-x cc-x-static" type="submit" value="close" aria-label="Chiudi" data-astro-cid-c7cookieconsent><svg viewBox="0 0 20 20" aria-hidden="true" data-astro-cid-c7cookieconsent><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" data-astro-cid-c7cookieconsent></path></svg></button></header><p class="cc-intro" data-astro-cid-c7cookieconsent>Scegli quali categorie attivare. I cookie necessari servono al funzionamento del sito e non possono essere disattivati.</p><ul class="cc-cats" data-astro-cid-c7cookieconsent><li class="cc-cat" data-astro-cid-c7cookieconsent><div class="cc-cat-row" data-astro-cid-c7cookieconsent><label class="cc-cat-label" for="cc-cat-necessary" data-astro-cid-c7cookieconsent>Necessari</label><span class="cc-always" data-astro-cid-c7cookieconsent>Sempre attivi</span></div><p class="cc-cat-desc" data-astro-cid-c7cookieconsent>Permettono al sito di funzionare e ricordano le tue scelte sui cookie. Non richiedono consenso.</p><p class="cc-cat-services" data-astro-cid-c7cookieconsent>mt-consent · Apicoltura Mille Terre</p></li><li class="cc-cat" data-astro-cid-c7cookieconsent><div class="cc-cat-row" data-astro-cid-c7cookieconsent><label class="cc-cat-label" for="cc-cat-external" data-astro-cid-c7cookieconsent>Contenuti esterni</label><span class="cc-switch" data-astro-cid-c7cookieconsent><input type="checkbox" id="cc-cat-external" data-cat="external" data-astro-cid-c7cookieconsent><span class="cc-track" aria-hidden="true" data-astro-cid-c7cookieconsent></span></span></div><p class="cc-cat-desc" data-astro-cid-c7cookieconsent>Permettono di mostrare contenuti di altri siti, come la mappa di Google Maps nella pagina Contatti.</p><p class="cc-cat-services" data-astro-cid-c7cookieconsent>Google Maps · Google Ireland Ltd.</p></li><li class="cc-cat" data-astro-cid-c7cookieconsent><div class="cc-cat-row" data-astro-cid-c7cookieconsent><label class="cc-cat-label" for="cc-cat-analytics" data-astro-cid-c7cookieconsent>Statistici</label><span class="cc-switch" data-astro-cid-c7cookieconsent><input type="checkbox" id="cc-cat-analytics" data-cat="analytics" data-astro-cid-c7cookieconsent><span class="cc-track" aria-hidden="true" data-astro-cid-c7cookieconsent></span></span></div><p class="cc-cat-desc" data-astro-cid-c7cookieconsent>Ci aiutano a capire in forma aggregata come viene usato il sito, per migliorarlo.</p><p class="cc-cat-services" data-astro-cid-c7cookieconsent>Al momento nessun servizio attivo in questa categoria.</p></li><li class="cc-cat" data-astro-cid-c7cookieconsent><div class="cc-cat-row" data-astro-cid-c7cookieconsent><label class="cc-cat-label" for="cc-cat-marketing" data-astro-cid-c7cookieconsent>Marketing</label><span class="cc-switch" data-astro-cid-c7cookieconsent><input type="checkbox" id="cc-cat-marketing" data-cat="marketing" data-astro-cid-c7cookieconsent><span class="cc-track" aria-hidden="true" data-astro-cid-c7cookieconsent></span></span></div><p class="cc-cat-desc" data-astro-cid-c7cookieconsent>Servono a mostrarti contenuti e annunci in linea con i tuoi interessi, anche su altri siti.</p><p class="cc-cat-services" data-astro-cid-c7cookieconsent>Al momento nessun servizio attivo in questa categoria.</p></li></ul><footer class="cc-dialog-actions" data-astro-cid-c7cookieconsent><button type="button" class="cc-btn cc-ghost" data-cc="reject" data-astro-cid-c7cookieconsent>Rifiuta tutti</button><button type="button" class="cc-btn cc-ghost" data-cc="accept" data-astro-cid-c7cookieconsent>Accetta tutti</button><button type="button" class="cc-btn cc-solid" data-cc="save" data-astro-cid-c7cookieconsent>Salva le scelte</button></footer></form></dialog><p class="cc-toast" id="cc-toast" role="status" aria-live="polite" data-astro-cid-c7cookieconsent></p></div><script>(function(){
+"use strict";
+const root = document.getElementById('cc-root');
+const banner = document.getElementById('cc-banner');
+const dialog = document.getElementById('cc-dialog');
+const toast = document.getElementById('cc-toast');
+const KEY = root.dataset.key;
+const VERSION = Number(root.dataset.version);
+const MAX_AGE = Number(root.dataset.maxAge) * 864e5;
+const OPTIONAL = ['external', 'analytics', 'marketing'];
+function read() {
+    try {
+        const c = JSON.parse(localStorage.getItem(KEY) || 'null');
+        if (!c || c.v !== VERSION || Date.now() - c.ts > MAX_AGE)
+            return null;
+        return c;
+    }
+    catch {
+        return null;
+    }
+}
+/** Attiva gli script bloccati delle categorie accettate */
+function apply(c) {
+    document.querySelectorAll('script[type="text/plain"][data-consent]').forEach((old) => {
+        const cat = old.dataset.consent;
+        if (!c.categories[cat])
+            return;
+        const s = document.createElement('script');
+        for (const a of Array.from(old.attributes)) {
+            if (a.name !== 'type' && a.name !== 'data-consent')
+                s.setAttribute(a.name, a.value);
+        }
+        s.text = old.text;
+        old.replaceWith(s);
+    });
+    // Google Consent Mode v2, se in futuro viene aggiunto gtag
+    const w = window;
+    if (typeof w.gtag === 'function') {
+        const g = (on) => (on ? 'granted' : 'denied');
+        w.gtag('consent', 'update', {
+            analytics_storage: g(c.categories.analytics),
+            ad_storage: g(c.categories.marketing),
+            ad_user_data: g(c.categories.marketing),
+            ad_personalization: g(c.categories.marketing),
+        });
+    }
+}
+function save(cats) {
+    const prev = read();
+    const c = { v: VERSION, ts: Date.now(), categories: cats };
+    try {
+        localStorage.setItem(KEY, JSON.stringify(c));
+    }
+    catch { /* storage non disponibile */ }
+    banner.hidden = true;
+    if (dialog.open)
+        dialog.close();
+    document.dispatchEvent(new CustomEvent('mt:consent', { detail: c }));
+    // Se una categoria già attiva viene revocata, ricarichiamo per fermarne gli script
+    const revoked = prev && OPTIONAL.some((k) => prev.categories[k] && !cats[k]);
+    if (revoked) {
+        location.reload();
+        return;
+    }
+    apply(c);
+    toast.textContent = root.dataset.saved ?? '';
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2200);
+}
+const all = (on) => ({ external: on, analytics: on, marketing: on });
+function openPrefs() {
+    const c = read();
+    dialog.querySelectorAll('input[data-cat]').forEach((i) => {
+        i.checked = !!c?.categories[i.dataset.cat];
+    });
+    if (typeof dialog.showModal === 'function')
+        dialog.showModal();
+    else
+        dialog.setAttribute('open', '');
+}
+root.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-cc]');
+    if (!btn)
+        return;
+    const action = btn.dataset.cc;
+    if (action === 'accept')
+        save(all(true));
+    else if (action === 'reject')
+        save(all(false));
+    else if (action === 'customize')
+        openPrefs();
+    else if (action === 'save') {
+        const cats = all(false);
+        dialog.querySelectorAll('input[data-cat]').forEach((i) => {
+            cats[i.dataset.cat] = i.checked;
+        });
+        save(cats);
+    }
+});
+// Chiudere il pannello senza salvare non cambia nulla; se non c'è ancora una scelta il banner resta visibile
+dialog.addEventListener('close', () => { if (!read())
+    banner.hidden = false; });
+// Link "Preferenze cookie" nel footer e nella cookie policy
+const w = window;
+if (!w.__mtCookieBound) {
+    w.__mtCookieBound = true;
+    document.addEventListener('click', (e) => {
+        const link = e.target.closest('[data-cookie-prefs]');
+        if (!link)
+            return;
+        e.preventDefault();
+        document.getElementById('cc-root') && window.mtCookies?.open();
+    });
+}
+w.mtCookies = { open: openPrefs, get: read };
+const current = read();
+if (current)
+    apply(current);
+else
+    banner.hidden = false;
+
+})();</script><script>(function(){
+"use strict";
+// Animazioni di comparsa degli elementi allo scroll
+const els = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                io.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+    els.forEach((el) => io.observe(el));
+}
+else {
+    els.forEach((el) => el.classList.add('in-view'));
+}
+
+})();</script></body></html>

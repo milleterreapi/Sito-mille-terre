@@ -1,0 +1,9 @@
+# Sito statico: nessuna build, si pubblica la cartella principale
+[build]
+  publish = "."
+  command = ""
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"

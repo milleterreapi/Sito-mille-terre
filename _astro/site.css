@@ -334,7 +334,7 @@ figcaption {
   }@media (hover: hover) and (pointer: fine){.partner-badge[data-astro-cid-c16partners]:hover{ transform: translateY(-2px); }}.partner-badge[data-astro-cid-c16partners] a[data-astro-cid-c16partners]{ display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; }.partner-badge[data-astro-cid-c16partners] a[data-astro-cid-c16partners]:focus-visible{ outline: 2px solid var(--teal); outline-offset: 6px; }img[data-astro-cid-c16partners]{ max-width: 100%; max-height: 130px; width: auto; height: auto; object-fit: contain; }@media (max-width: 760px){.partners-grid[data-astro-cid-c16partners]{ grid-template-columns: 1fr 1fr; gap: 16px; }.partner-badge[data-astro-cid-c16partners]{ min-height: 120px; }img[data-astro-cid-c16partners]{ max-height: 104px; }}
 .hero[data-astro-cid-c8home]{ padding: 64px 0 8px; position: relative; overflow: hidden; }.hero-grid[data-astro-cid-c8home]{ position: relative; z-index: 1; text-align: center; }.hero-text[data-astro-cid-c8home]{ max-width: 44rem; margin-inline: auto; }.hero-logo[data-astro-cid-c8home]{
     display: block; margin: 0 auto 24px; border-radius: 50%;
-    width: clamp(104px, 11vw, 150px); height: auto;
+    width: clamp(150px, 16vw, 230px); height: auto;
   }h1[data-astro-cid-c8home]{
     font-family: var(--font-display); font-weight: 500;
     font-size: clamp(2.1rem, 3.6vw, 3.1rem); line-height: 1.1;

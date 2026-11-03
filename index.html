@@ -587,7 +587,9 @@ function vaiAllAncora() {
 }
 function render() {
   if (isAncora()) { vaiAllAncora(); return; }
-  let route = (location.hash.replace(/^#/, '') || '/').split('?')[0];
+  // una rotta può portare un'ancora: #/#prodotti = home, sezione "Cosa produciamo"
+  const [percorso, ancora] = (location.hash.replace(/^#/, '') || '/').split('?')[0].split('#');
+  let route = percorso || '/';
   if (!route.endsWith('/')) route += '/';
   const pg = PAGES[route] || PAGES['/'];
   const app = document.getElementById('app');
@@ -600,7 +602,9 @@ function render() {
     s.textContent = old.textContent;
     old.replaceWith(s);
   });
-  window.scrollTo(0, 0);
+  const dest = ancora && document.getElementById(decodeURIComponent(ancora));
+  if (dest) requestAnimationFrame(() => dest.scrollIntoView({ block: 'start' }));
+  else window.scrollTo(0, 0);
 }
 // i parametri ?prodotto= dei link vanno nel search, dove il modulo ordini li cerca
 window.addEventListener('hashchange', () => {

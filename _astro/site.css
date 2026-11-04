@@ -566,3 +566,6 @@ figcaption {
 .features li{position:relative;padding-left:22px;color:var(--ink-soft);line-height:1.55}
 .features li::before{content:"";position:absolute;left:0;top:.5em;width:10px;height:10px;background:var(--ochre);clip-path:var(--hex)}
 .features strong{color:var(--ink)}
+.phones a{font-weight:600;color:var(--ink);text-decoration:none;white-space:nowrap}
+.phones a:hover{color:var(--teal-dark);text-decoration:underline}
+.phones .tel-name{color:var(--ink-soft)}

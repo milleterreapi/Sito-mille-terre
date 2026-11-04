@@ -561,3 +561,8 @@ figcaption {
     font-family: var(--font-display); font-size: 1.22rem; font-weight: 500; color: var(--ink);
   }.cta-row[data-astro-cid-c27productpage]{ margin-top: 24px; }.product-photo{ max-width: 420px; width: 100%; margin: 0 auto; }@media (max-width: 760px){.product-page[data-astro-cid-c27productpage]{ grid-template-columns: 1fr; gap: 40px; }.product-photo{ max-width: 300px; }}
 .nf[data-astro-cid-c28404]{ max-width: 560px; text-align: center; }.nf-hex[data-astro-cid-c28404]{ width: 120px; height: 134px; margin-bottom: 24px; }h1[data-astro-cid-c28404]{ font-family: var(--font-display); font-weight: 500; font-size: 2rem; margin: 0 0 12px; color: var(--ink); }p[data-astro-cid-c28404]{ color: var(--ink-soft); margin: 0 0 28px; }.nf-langs[data-astro-cid-c28404]{ list-style: none; margin: 34px 0 0; padding: 26px 0 0; border-top: 1px solid var(--line); display: grid; gap: 8px; }.nf-langs[data-astro-cid-c28404] a[data-astro-cid-c28404]{ color: var(--ink-soft); font-size: 0.9rem; text-decoration: none; }.nf-langs[data-astro-cid-c28404] a[data-astro-cid-c28404]:hover{ color: var(--teal-dark); }.ps-price .vat{align-self:flex-end;margin:0 0 8px 8px;font-weight:700;font-size:1rem;color:var(--ink-soft);white-space:nowrap}
+.features-title{margin:6px 0 10px!important;font-weight:700;color:var(--ink)!important;font-size:.98rem}
+.features{list-style:none;margin:0 0 22px;padding:0;display:grid;gap:10px}
+.features li{position:relative;padding-left:22px;color:var(--ink-soft);line-height:1.55}
+.features li::before{content:"";position:absolute;left:0;top:.5em;width:10px;height:10px;background:var(--ochre);clip-path:var(--hex)}
+.features strong{color:var(--ink)}

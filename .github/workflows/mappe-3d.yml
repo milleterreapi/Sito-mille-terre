@@ -1,0 +1,41 @@
+name: Mappe Galatone 3D
+on:
+  workflow_dispatch:
+    inputs:
+      towns:
+        description: "Slug dei paesi da aggiornare, separati da virgola (vuoto = tutti)"
+        required: false
+        default: ""
+  push:
+    branches: [main]
+    paths:
+      - "galatone-3d/towns.json"
+      - "galatone-3d/tools/**"
+      - ".github/workflows/mappe-3d.yml"
+permissions:
+  contents: write
+concurrency:
+  group: mappe-3d
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Scarica i paesi da OpenStreetMap
+        env:
+          TOWNS: ${{ github.event.inputs.towns }}
+        run: node galatone-3d/tools/build-maps.js
+      - name: Salva le mappe nel sito
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898699+github-actions[bot]@users.noreply.github.com"
+          git add galatone-3d/data
+          git diff --cached --quiet && echo "Nessuna novità" && exit 0
+          git commit -m "Mappe Galatone 3D aggiornate da OpenStreetMap"
+          git pull --rebase origin main
+          git push
